@@ -1,0 +1,213 @@
+enum_key,enum_title,item_value,item_label_en,item_label_fr
+lead_height,Height,ht_less_than_0_5m,Height less than 0.5 m,Ht < 0,5 m
+lead_height,Height,ht_0_5_to_1m,Height between 0.5 m and 1 m,0,5 m < Ht < 1 m
+lead_height,Height,ht_1_to_1_5m,Height between 1 m and 1.5 m,1 m < Ht < 1,5 m
+lead_height,Height,ht_1_5_to_2m,Height between 1.5 m and 2 m,1,5 m < Ht < 2 m
+lead_height,Height,ht_2_to_2_5m,Height between 2 m and 2.5 m,2 m < Ht < 2,5 m
+lead_height,Height,ht_2_5_to_3m,Height between 2.5 m and 3 m,2,5 m < Ht < 3 m
+lead_height,Height,ht_greater_than_3m,Height greater than 3 m,Ht > 3 m
+lead_ud_name,Diagnostic Unit Name,furniture,Furniture,Ameublement
+lead_ud_name,Diagnostic Unit Name,rafter,Rafter,Arbalétrier
+lead_ud_name,Diagnostic Unit Name,water_inlet,Water Inlet,Arrivée d'eau
+lead_ud_name,Diagnostic Unit Name,woodwork,Woodwork,Boiseries
+lead_ud_name,Diagnostic Unit Name,water_connection,Water Connection,Branchement d'eau
+lead_ud_name,Diagnostic Unit Name,wiring,Wiring,Câblage
+lead_ud_name,Diagnostic Unit Name,crates,Crates,Cageots
+lead_ud_name,Diagnostic Unit Name,crates_small,Small Crates,Cagettes
+lead_ud_name,Diagnostic Unit Name,cleat,Cleat,Chantignolle
+lead_ud_name,Diagnostic Unit Name,framework,Framework,Charpente
+lead_ud_name,Diagnostic Unit Name,rafters,Rafters,Chevrons
+lead_ud_name,Diagnostic Unit Name,strut,Strut,Contrefiche
+lead_ud_name,Diagnostic Unit Name,slab,Slab,Dalle
+lead_ud_name,Diagnostic Unit Name,wood_debris,Wood Debris,Débris de bois
+lead_ud_name,Diagnostic Unit Name,tie_beam,Tie Beam,Entrait
+lead_ud_name,Diagnostic Unit Name,staircase,Staircase,Escalier
+lead_ud_name,Diagnostic Unit Name,water_drainage,Water Drainage,Évacuation d'eau
+lead_ud_name,Diagnostic Unit Name,false_ceiling,False Ceiling,Faux plafond
+lead_ud_name,Diagnostic Unit Name,false_floor,False Floor,Faux plancher
+lead_ud_name,Diagnostic Unit Name,false_tie_beam,False Tie Beam,Faux-entrait
+lead_ud_name,Diagnostic Unit Name,window,Window,Fenêtre
+lead_ud_name,Diagnostic Unit Name,truss,Truss,Ferme
+lead_ud_name,Diagnostic Unit Name,duct,Duct,Gaine
+lead_ud_name,Diagnostic Unit Name,door_frame,Door Frame,Huisseries
+lead_ud_name,Diagnostic Unit Name,expansion_joint,Expansion Joint,Joints de dilatation
+lead_ud_name,Diagnostic Unit Name,lathwork,Lathwork,Liteaunage
+lead_ud_name,Diagnostic Unit Name,equipment,Equipment,Matériel
+lead_ud_name,Diagnostic Unit Name,joinery,Joinery,Menuiserie
+lead_ud_name,Diagnostic Unit Name,walls,Walls,Murs
+lead_ud_name,Diagnostic Unit Name,wall_plate,Wall Plate,Panne sablière
+lead_ud_name,Diagnostic Unit Name,cardboard_paper,Cardboard Paper,Papier carton
+lead_ud_name,Diagnostic Unit Name,closet,Closet,Placard
+lead_ud_name,Diagnostic Unit Name,planks,Planks,Planches
+lead_ud_name,Diagnostic Unit Name,baseboard,Baseboard,Plinthes
+lead_ud_name,Diagnostic Unit Name,king_post,King Post,Poinçon
+lead_ud_name,Diagnostic Unit Name,door,Door,Porte
+lead_ud_name,Diagnostic Unit Name,beams,Beams,Poutres
+lead_ud_name,Diagnostic Unit Name,inspection_cover,Inspection Cover,Regard
+lead_ud_name,Diagnostic Unit Name,ceiling_coating,Ceiling Coating,Revêtement de plafond
+lead_ud_name,Diagnostic Unit Name,floor_coating,Floor Coating,Revêtement de sol
+lead_ud_name,Diagnostic Unit Name,wall_coating,Wall Coating,Revêtement mural
+lead_ud_name,Diagnostic Unit Name,floor,Floor,Sol
+lead_ud_name,Diagnostic Unit Name,base,Base,Soubassement
+lead_ud_name,Diagnostic Unit Name,storage,Storage,Stockage
+lead_ud_name,Diagnostic Unit Name,shutters,Shutters,Volets
+lead_ud_name,Diagnostic Unit Name,sheathing,Sheathing,Voligeage
+lead_ud_name,Diagnostic Unit Name,trees,Trees,Arbres
+lead_ud_name,Diagnostic Unit Name,other_vegetation,Other Vegetation,Autres végétaux
+lead_ud_name,Diagnostic Unit Name,crops,Crops,Cultures
+lead_ud_name,Diagnostic Unit Name,vegetation_debris,Vegetation Debris,Débris de végétaux
+lead_ud_name,Diagnostic Unit Name,footbridge,Footbridge,Passerelle
+lead_ud_name,Diagnostic Unit Name,fence_posts,Fence Posts,Piquets de clôture
+lead_ud_name,Diagnostic Unit Name,gate,Gate,Portail
+lead_ud_name,Diagnostic Unit Name,posts,Posts,Poteaux
+lead_ud_name,Diagnostic Unit Name,backfill,Backfill,Remblais
+lead_ud_name,Diagnostic Unit Name,stumps,Stumps,Souches
+lead_ud_name,Diagnostic Unit Name,wood_storage,Wood Storage,Stockage de bois
+lead_measured_part,Measured Part,woodwork,Woodwork,Boiseries
+lead_measured_part,Measured Part,water_connection,Water Connection,Branchement d'eau
+lead_measured_part,Measured Part,wiring,Wiring,Câblage
+lead_measured_part,Measured Part,crates,Crates,Cageots
+lead_measured_part,Measured Part,slab,Slab,Dalle
+lead_measured_part,Measured Part,wood_debris,Wood Debris,Débris de bois
+lead_measured_part,Measured Part,staircase,Staircase,Escalier
+lead_measured_part,Measured Part,water_drainage,Water Drainage,Évacuation d'eau
+lead_measured_part,Measured Part,false_ceiling,False Ceiling,Faux plafond
+lead_measured_part,Measured Part,false_floor,False Floor,Faux plancher
+lead_measured_part,Measured Part,window,Window,Fenêtre
+lead_measured_part,Measured Part,duct,Duct,Gaine
+lead_measured_part,Measured Part,door_frame,Door Frame,Huisseries
+lead_measured_part,Measured Part,expansion_joint,Expansion Joint,Joints de dilatation
+lead_measured_part,Measured Part,equipment,Equipment,Matériel
+lead_measured_part,Measured Part,joinery,Joinery,Menuiserie
+lead_measured_part,Measured Part,walls,Walls,Murs
+lead_measured_part,Measured Part,structure,Structure,Ossature
+lead_measured_part,Measured Part,cardboard_paper,Cardboard Paper,Papier carton
+lead_measured_part,Measured Part,closet,Closet,Placard
+lead_measured_part,Measured Part,planks,Planks,Planches
+lead_measured_part,Measured Part,baseboard,Baseboard,Plinthes
+lead_measured_part,Measured Part,door,Door,Porte
+lead_measured_part,Measured Part,beams,Beams,Poutres
+lead_measured_part,Measured Part,inspection_cover,Inspection Cover,Regard
+lead_measured_part,Measured Part,ceiling_coating,Ceiling Coating,Revêtement de plafond
+lead_measured_part,Measured Part,floor_coating,Floor Coating,Revêtement de sol
+lead_measured_part,Measured Part,wall_coating,Wall Coating,Revêtement mural
+lead_measured_part,Measured Part,floor,Floor,Sol
+lead_measured_part,Measured Part,base,Base,Soubassement
+lead_measured_part,Measured Part,storage,Storage,Stockage
+lead_measured_part,Measured Part,ventilation,Ventilation,Ventilation
+lead_measured_part,Measured Part,shutters,Shutters,Volets
+lead_measured_part,Measured Part,framework,Framework,Charpente
+lead_measured_part,Measured Part,shutter,Shutter,Volet
+lead_measured_part,Measured Part,window_interior,Window Interior,Intérieure fenêtre
+lead_measured_part,Measured Part,window_exterior,Window Exterior,Extérieur fenêtre
+lead_measured_part,Measured Part,shutter_interior,Shutter Interior,Intérieur volet
+lead_measured_part,Measured Part,shutter_exterior,Shutter Exterior,Extérieur volet
+lead_substrate,Substrate,slate,Slate,ardoises
+lead_substrate,Substrate,metal_cladding,Metal Cladding,bardage métallique
+lead_substrate,Substrate,concrete,Concrete,béton
+lead_substrate,Substrate,bitumen,Bitumen,bitume
+lead_substrate,Substrate,wood,Wood,bois
+lead_substrate,Substrate,glued_laminated_wood,Glued Laminated Wood,bois lamellé
+lead_substrate,Substrate,bricks,Bricks,briques
+lead_substrate,Substrate,cement,Cement,ciment
+lead_substrate,Substrate,render,Render,crépi
+lead_substrate,Substrate,ceiling_tiles,Ceiling Tiles,dalles de faux-plafond
+lead_substrate,Substrate,plaster,Plaster,enduit
+lead_substrate,Substrate,wood_paneling,Wood Paneling,lambris bois
+lead_substrate,Substrate,metal_paneling,Metal Paneling,lambris métallique
+lead_substrate,Substrate,pvc_paneling,PVC Paneling,lambris pvc
+lead_substrate,Substrate,plastered_lath,Plastered Lath,lattis plâtré
+lead_substrate,Substrate,fiber_plaster_boards,Fiber Plaster Boards,panneaux fibro-plâtre
+lead_substrate,Substrate,concrete_blocks,Concrete Blocks,parpaings
+lead_substrate,Substrate,wood_parquet,Wood Parquet,parquet bois
+lead_substrate,Substrate,floating_parquet,Floating Parquet,parquet flottant
+lead_substrate,Substrate,stone,Stone,pierres
+lead_substrate,Substrate,plasterboard,Plasterboard,placoplâtre
+lead_substrate,Substrate,wood_floor,Wood Floor,plancher bois
+lead_substrate,Substrate,plastic_linoleum,Plastic Linoleum,plastique (lino)
+lead_substrate,Substrate,plaster_material,Plaster Material,plâtre
+lead_substrate,Substrate,pvc,PVC,pvc
+lead_substrate,Substrate,resin,Resin,résine
+lead_substrate,Substrate,terracotta_tiles,Terracotta Tiles,tomettes
+lead_substrate,Substrate,cob,Cob,torchis
+lead_substrate,Substrate,tiles,Tiles,tuiles
+lead_substrate,Substrate,glazing,Glazing,vitrage
+lead_apparent_coating,Apparent Coating,slate,Slate,ardoises
+lead_apparent_coating,Apparent Coating,none,None,aucun
+lead_apparent_coating,Apparent Coating,cladding,Cladding,bardage
+lead_apparent_coating,Apparent Coating,bitumen,Bitumen,bitume
+lead_apparent_coating,Apparent Coating,raw,Raw,brut
+lead_apparent_coating,Apparent Coating,tiles,Tiles,carrelage
+lead_apparent_coating,Apparent Coating,render,Render,crépi
+lead_apparent_coating,Apparent Coating,cork_tiles,Cork Tiles,dalles de liège
+lead_apparent_coating,Apparent Coating,plastic_floor_tiles,Plastic Floor Tiles,dalles de sol plastiques
+lead_apparent_coating,Apparent Coating,faience,Faience,faïence
+lead_apparent_coating,Apparent Coating,seagrass,Seagrass,jonc de mer
+lead_apparent_coating,Apparent Coating,wood_paneling,Wood Paneling,lambris bois
+lead_apparent_coating,Apparent Coating,metal_paneling,Metal Paneling,lambris métallique
+lead_apparent_coating,Apparent Coating,pvc_paneling,PVC Paneling,lambris pvc
+lead_apparent_coating,Apparent Coating,marble,Marble,marbre
+lead_apparent_coating,Apparent Coating,pvc,PVC,pvc
+lead_apparent_coating,Apparent Coating,resin,Resin,résine
+lead_apparent_coating,Apparent Coating,plastic_linoleum,Plastic Linoleum,revêtement plastique (lino)
+lead_apparent_coating,Apparent Coating,pvc_coating,PVC Coating,revêtement pvc
+lead_apparent_coating,Apparent Coating,textile_coating,Textile Coating,revêtement textile
+lead_apparent_coating,Apparent Coating,sisal,Sisal,sisal
+lead_apparent_coating,Apparent Coating,carpet,Carpet,tapis
+lead_apparent_coating,Apparent Coating,wallpaper,Wallpaper,tapisserie
+lead_apparent_coating,Apparent Coating,stretched_fabric,Stretched Fabric,tissu tendu
+lead_apparent_coating,Apparent Coating,jute_cloth,Jute Cloth,toile de jute
+lead_apparent_coating,Apparent Coating,painted_glass_cloth,Painted Glass Cloth,toile de verre peinte
+lead_apparent_coating,Apparent Coating,terracotta_tiles,Terracotta Tiles,tomettes
+lead_apparent_coating,Apparent Coating,cob,Cob,torchis
+lead_apparent_coating,Apparent Coating,varnish,Varnish,vernis
+lead_apparent_coating,Apparent Coating,glazing,Glazing,vitrage
+lead_building_degradation_factors,Building Degradation Factors,mold_or_humidity_stains,Mold or numerous humidity stains have been detected,Des traces de moisissures ou de nombreuses taches d'humidité ont été repérées
+lead_building_degradation_factors,Building Degradation Factors,water_runoff_stains,Significant traces of water runoff or leakage have been detected,Des traces importantes de coulures de ruissellement ou d'écoulement d'eau ont été repérées
+lead_building_degradation_factors,Building Degradation Factors,floor_ceiling_collapse,Floor or ceiling threatens to collapse or is partially or completely collapsed,Le plancher ou le plafond menace de s'effondrer ou en tout ou partie effondré
+lead_observations_nm_travaux,Observations Reason NM Works,absence_of_coating,Absence of coating,Absence de revêtement
+lead_observations_nm_travaux,Observations Reason NM Works,recent_element_substrate_coating,Recent element (Substrate+coating),Elément (Substrat+revêtement) récent
+lead_observations_nm_travaux,Observations Reason NM Works,inaccessible_with_device,Part inaccessible with device,Partie inaccessible avec l'appareil
+lead_observations_nm_travaux,Observations Reason NM Works,no_coating_raw_substrate,No coating raw substrate,Pas de revêtement substrat brut
+lead_observations_nm_travaux,Observations Reason NM Works,raw_substrate,Raw substrate,Substrat brut
+lead_observations_nm_travaux,Observations Reason NM Works,substrate_coating_not_regulated,Substrate or coating for which regulations do not apply,Substrat ou revêtement pour lequel la réglementation ne s'applique pas
+lead_observations_nm_travaux,Observations Reason NM Works,part_not_covered_by_regulation,Part not covered by regulation,Partie non visée par la réglementation
+lead_observations_nm_travaux,Observations Reason NM Works,torch_cutting,Torch cutting,Découpe chalumeau
+lead_observations_nm_travaux,Observations Reason NM Works,washing,Washing,Lessivage
+lead_observations_nm_travaux,Observations Reason NM Works,paint_sanding,Paint sanding,Ponçage peinture
+lead_observations_nm_travaux,Observations Reason NM Works,replacement,Replacement,Remplacement
+lead_observations_nm_travaux,Observations Reason NM Works,removal,Removal,Retrait
+lead_observations_nm_travaux,Observations Reason NM Works,sanding,Sanding,Sablage
+lead_degradation_nature,Degradation Nature,nc,NC,NC
+lead_degradation_nature,Degradation Nature,friction_wear,Friction Wear,Usure par friction
+lead_degradation_nature,Degradation Nature,impact_marks,Impact Marks,Traces de chocs
+lead_degradation_nature,Degradation Nature,micro_cracks,Micro Cracks,Microfissures
+lead_degradation_nature,Degradation Nature,powdering,Powdering,Pulvérence
+lead_degradation_nature,Degradation Nature,flaking,Flaking,Ecaillage
+lead_degradation_nature,Degradation Nature,blistering,Blistering,Cloquage
+lead_degradation_nature,Degradation Nature,cracks,Cracks,Fissures
+lead_degradation_nature,Degradation Nature,crazing,Crazing,Faïençage
+lead_degradation_nature,Degradation Nature,scratch_marks,Scratch Marks,Traces de grattage
+lead_degradation_nature,Degradation Nature,cracks_major,Major Cracks,Lézardes
+lead_conservation_state,Conservation State,not_visible,Not Visible,Non visible
+lead_conservation_state,Conservation State,not_degraded,Not Degraded,Non dégradé
+lead_conservation_state,Conservation State,usage_state,Usage State,Etat d'usage
+lead_conservation_state,Conservation State,degraded,Degraded,Dégradé
+lead_element_class,Element Class in [0;1;2;3],0,"Class 0: Lead < 1 mg/cm² (Regardless of condition)","Classe 0 : Plomb < 1 mg/cm² (Quel que soit l'état)"
+lead_element_class,Element Class in [0;1;2;3],1,"Class 1: Lead >= 1 mg/cm² (Non-degraded or good condition)","Classe 1 : Plomb >= 1 mg/cm² (Non dégradé ou état d'usage)"
+lead_element_class,Element Class in [0;1;2;3],2,"Class 2: Lead >= 1 mg/cm² (Slightly degraded / Wear and tear)","Classe 2 : Plomb >= 1 mg/cm² (État d'usage / Dégradation légère)"
+lead_element_class,Element Class in [0;1;2;3],3,"Class 3: Lead >= 1 mg/cm² (Severely degraded / Dangerous)","Classe 3 : Plomb >= 1 mg/cm² (Dégradé / Risque d'exposition)"
+lead_device_manufacturer,Device Manufacturer,arelco,ARELCO,ARELCO
+lead_device_manufacturer,Device Manufacturer,fondis,FONDIS,FONDIS
+lead_device_manufacturer,Device Manufacturer,protec,PROTEC,PROTEC
+lead_device_manufacturer,Device Manufacturer,cegelec,CEGELEC,CEGELEC
+lead_device_model,Device Model,niton_xlp_300,Niton XLp 300,Niton XLp 300
+lead_device_model,Device Model,niton_xl_300,Niton XL 300,Niton XL 300
+lead_device_model,Device Model,niton_xli_300,Niton XLi 300,Niton XLi 300
+lead_device_model,Device Model,horizon_pbi,Horizon Pbi,Horizon Pbi
+lead_device_model,Device Model,lpa_1,LPA 1,LPA 1
+lead_device_model,Device Model,micro_lead,Micro Lead,Micro Lead
+lead_device_source_type,Device Source Type,cd_109,109 Cd,109 Cd
+lead_device_source_type,Device Source Type,co_57,57 Co,57 Co
+lead_device_source_type,Device Source Type,cadmium_109,Cadmium 109,Cadmium 109
+lead_device_source_type,Device Source Type,cobalt_57,Cobalt 57,Cobalt 57

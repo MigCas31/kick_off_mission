@@ -1,0 +1,165 @@
+enum_key,enum_title,item_value,item_label_en,item_label_fr
+client_type,Client Type,owner,Owner,Propriétaire
+client_type,Client Type,contributor,Contributor,Apporteur
+client_type,Client Type,tenant,Tenant,Locataire
+client_type,Client Type,notary,Notary,Notaire
+client_type,Client Type,other,Other,Autre
+property_nature,Property Nature,individual_house,Housing (individual house),Habitation (maison individuelle)
+property_nature,Property Nature,individual_houses,Housing (individual houses),Habitation (maisons individuelles)
+property_nature,Property Nature,private_part_building,Housing (private part of a building),Habitation (partie privative d'immeuble)
+property_nature,Property Nature,common_parts,Housing (common parts),Habitation (parties communes)
+file_type,File Type,apartment_rental,Apartment rental,Appartement location
+property_occupation,Property Occupation,owner,The owner,Le propriétaire
+property_occupation,Property Occupation,tenant,The tenant,Le locataire
+property_occupation,Property Occupation,vacant,Not applicable; the property is vacant,Sans objet; le bien est vacant
+property_occupation,Property Occupation,not_applicable,Not concerned,Non concerné
+property_occupation,Property Occupation,co_owners_tenants,The co-owners and tenants,Les copropriétaires et locataires
+country,Country,france,France,France
+building_level_designation,Building Level Designation,ground_floor,Ground Floor,RDC
+building_level_designation,Building Level Designation,first_floor,First Floor,1er étage
+building_level_designation,Building Level Designation,second_floor,Second Floor,2ème étage
+building_level_designation,Building Level Designation,third_floor,Third Floor,3ème étage
+building_level_designation,Building Level Designation,basement,Basement,Sous-sol
+building_level_designation,Building Level Designation,attic,Attic,Combles
+room_designation,Room Designation,living_room,Living Room,Salon
+room_designation,Room Designation,kitchen,Kitchen,Cuisine
+room_designation,Room Designation,bedroom,Bedroom,Chambre
+room_designation,Room Designation,bathroom,Bathroom,Salle de bain
+room_designation,Room Designation,toilet,Toilet,Toilettes
+room_designation,Room Designation,corridor,Corridor,Couloir
+room_designation,Room Designation,entrance,Entrance,Entrée
+room_designation,Room Designation,office,Office,Bureau
+non_visit_justification,Non-Visit Justification,access_impossible,Access impossible,Accès impossible
+non_visit_justification,Non-Visit Justification,room_locked,Room locked,Pièce fermée
+non_visit_justification,Non-Visit Justification,occupant_refusal,Occupant refusal,Refus occupant
+window_type,Window Type,raw_aluminum,Raw aluminum,Fenêtre(s) en aluminium brut
+window_type,Window Type,painted_aluminum,Painted aluminum,Fenêtre(s) en aluminium peint
+window_type,Window Type,tinted_aluminum,Tinted aluminum,Fenêtre(s) en aluminium teinté
+window_type,Window Type,wood,Wood,Fenêtre(s) en bois
+window_type,Window Type,wood_aluminum,Wood and aluminum,Fenêtre(s) en bois et aluminium
+window_type,Window Type,painted_wood,Painted wood,Fenêtre(s) en bois peint
+window_type,Window Type,varnished_wood,Varnished wood,Fenêtre(s) en bois vernis
+window_type,Window Type,painted_metal,Painted metal,Fenêtre(s) en métal peint
+window_type,Window Type,pvc,PVC,Fenêtre(s) en pvc
+window_type,Window Type,metal,Metal,Fenêtre(s) métallique(s)
+door_type,Door Type,aluminum,Aluminum door,Porte(s) en aluminium
+door_type,Door Type,aluminum_colored,Colored aluminum door,Porte(s) en aluminium de couleur
+door_type,Door Type,wood,Wood door,Porte(s) en bois
+door_type,Door Type,wood_painted,Painted wood door,Porte(s) en bois peinte(s)
+door_type,Door Type,metal,Metal door,Porte(s) en métal
+door_type,Door Type,metal_colored,Colored metal door,Porte(s) en métal de couleur
+door_type,Door Type,pvc,PVC door,Porte(s) en PVC
+door_type,Door Type,pvc_colored,Colored PVC door,Porte(s) en PVC de couleur
+skirting_board_type,Skirting Board Type,aluminum,Aluminum skirting board,Plinthes en aluminium
+skirting_board_type,Skirting Board Type,molded_concrete,Molded concrete skirting board,Plinthes en béton moulé
+skirting_board_type,Skirting Board Type,wood,Wood skirting board,Plinthes en bois
+skirting_board_type,Skirting Board Type,wood_painted,Painted wood skirting board,Plinthes en bois peintes
+skirting_board_type,Skirting Board Type,tiles,Tile skirting board,Plinthes en carrelage
+skirting_board_type,Skirting Board Type,plastic_tiles,Plastic tiles skirting board,Plinthes en dalles plastiques
+skirting_board_type,Skirting Board Type,marble,Marble skirting board,Plinthes en marbre
+skirting_board_type,Skirting Board Type,carpet,Carpet skirting board,Plinthes en moquette
+skirting_board_type,Skirting Board Type,pvc,PVC skirting board,Plinthes en PVC
+floor_material,Floor Material,slates,Slates,Ardoises
+floor_material,Floor Material,concrete,Concrete,Béton
+floor_material,Floor Material,bitumen,Bitumen,Bitume
+floor_material,Floor Material,wood,Wood,Bois
+floor_material,Floor Material,laminated_wood,Laminated wood,Bois lamellé
+floor_material,Floor Material,wooden_duckboards,Wooden duckboards,Caillebottis bois
+floor_material,Floor Material,metal_duckboards,Metal duckboards,Caillebottis métalliques
+floor_material,Floor Material,tiles,Tiles,Carrelage
+floor_material,Floor Material,cement_screed,Cement screed,Chape ciment
+floor_material,Floor Material,cement,Cement,Ciment
+floor_material,Floor Material,plastic_floor_tiles,Plastic floor tiles,Dalles de sol plastiques
+floor_material,Floor Material,mineral_tiles,Mineral tiles,Dalles minérales
+floor_material,Floor Material,polystyrene_tiles,Polystyrene tiles,Dalles polystyrène
+floor_material,Floor Material,insulation,Insulation,Isolant
+floor_material,Floor Material,glass_wool,Glass wool,Laine de verre
+floor_material,Floor Material,marble,Marble,Marbre
+floor_material,Floor Material,carpet,Carpet,Moquette
+floor_material,Floor Material,mosaic,Mosaic,Mosaïque
+floor_material,Floor Material,chipboard_panels,Chipboard panels,Panneaux agglomérés
+floor_material,Floor Material,plywood_panels,Plywood panels,Panneaux contre-plaqués
+floor_material,Floor Material,wood_parquet,Wood parquet,Parquet bois
+floor_material,Floor Material,floating_parquet,Floating parquet,Parquet flottant
+floor_material,Floor Material,stones,Stones,Pierres
+floor_material,Floor Material,resin,Resin,Résine
+floor_material,Floor Material,plastic_covering_lino,Plastic covering (lino),Revêtement plastique (lino)
+floor_material,Floor Material,pvc_covering,PVC covering,Revêtement pvc
+floor_material,Floor Material,rug,Rug,Tapis
+floor_material,Floor Material,earthen_floor,Earthen floor,Terre battue
+floor_material,Floor Material,earth_grass,Earth and grass,Terre et herbe
+floor_material,Floor Material,terracotta_tiles,Terracotta tiles,Tomettes
+wall_material,Wall Material,slates,Slates,Ardoises
+wall_material,Wall Material,none,None,Aucun
+wall_material,Wall Material,cladding,Cladding,Bardage
+wall_material,Wall Material,steel_cladding,Steel cladding,Bardage acier
+wall_material,Wall Material,metal_cladding,Metal cladding,Bardage métallique
+wall_material,Wall Material,concrete,Concrete,Béton
+wall_material,Wall Material,raw_concrete,Raw concrete,Béton brut
+wall_material,Wall Material,painted_concrete,Painted concrete,Béton peint
+wall_material,Wall Material,bitumen,Bitumen,Bitume
+wall_material,Wall Material,wood,Wood,Bois
+wall_material,Wall Material,laminated_wood,Laminated wood,Bois lamellé
+wall_material,Wall Material,bricks,Bricks,Briques
+wall_material,Wall Material,raw,Raw,Brut
+wall_material,Wall Material,tiles,Tiles,Carrelage
+wall_material,Wall Material,plasterboard,Plasterboard,Carton plâtre
+wall_material,Wall Material,cement,Cement,Ciment
+wall_material,Wall Material,partition,Partition,Cloison
+wall_material,Wall Material,plywood,Plywood,Contre-plaqué
+wall_material,Wall Material,roughcast,Roughcast,Crépi
+wall_material,Wall Material,coating,Coating,Enduit
+wall_material,Wall Material,raw_cement_coating,Raw cement coating,Enduit ciment brut
+wall_material,Wall Material,painted_coating,Painted coating,Enduit peint
+wall_material,Wall Material,tinted_coating,Tinted coating,Enduit teinté
+wall_material,Wall Material,false_ceiling_tiles,False ceiling tiles,Dalles de faux-plafond
+wall_material,Wall Material,cork_tiles,Cork tiles,Dalles de liège
+wall_material,Wall Material,plastic_floor_tiles,Plastic floor tiles,Dalles de sol plastiques
+wall_material,Wall Material,faience,Faience,Faïence
+wall_material,Wall Material,seagrass,Seagrass,Jonc de mer
+wall_material,Wall Material,wood_paneling,Wood paneling,Lambris bois
+wall_material,Wall Material,metal_paneling,Metal paneling,Lambris métal
+ceiling_material,Ceiling Material,slates,Slates,Ardoises
+ceiling_material,Ceiling Material,cladding,Cladding,Bardage
+ceiling_material,Ceiling Material,metal_cladding,Metal cladding,Bardage métallique
+ceiling_material,Ceiling Material,bitumen,Bitumen,Bitume
+ceiling_material,Ceiling Material,wood,Wood,Bois
+ceiling_material,Ceiling Material,laminated_wood,Laminated wood,Bois lamellé
+ceiling_material,Ceiling Material,bricks,Bricks,Briques
+ceiling_material,Ceiling Material,tiles,Tiles,Carrelage
+ceiling_material,Ceiling Material,plasterboard,Plasterboard,Carton plâtre
+ceiling_material,Ceiling Material,cement,Cement,Ciment
+ceiling_material,Ceiling Material,slate_roofing,Slate roofing,Couverture en ardoises
+ceiling_material,Ceiling Material,tile_roofing,Tile roofing,Couverture en tuiles
+ceiling_material,Ceiling Material,roughcast,Roughcast,Crépi
+ceiling_material,Ceiling Material,coating,Coating,Enduit
+ceiling_material,Ceiling Material,faience,Faience,Faïence
+ceiling_material,Ceiling Material,false_ceiling,False ceiling,Faux plafond
+ceiling_material,Ceiling Material,bare_insulation,Bare insulation,Isolant nu
+ceiling_material,Ceiling Material,wood_paneling,Wood paneling,Lambris bois
+ceiling_material,Ceiling Material,painted_wood_paneling,Painted wood paneling,Lambris bois peint
+ceiling_material,Ceiling Material,metal_paneling,Metal paneling,Lambris métallique
+ceiling_material,Ceiling Material,pvc_paneling,PVC paneling,Lambris PVC
+ceiling_material,Ceiling Material,aluminum_slats,Aluminum slats,Lamelles aluminium
+ceiling_material,Ceiling Material,plaster_lath,Plaster lath,Lattis plâtré
+ceiling_material,Ceiling Material,carpet,Carpet,Moquette
+ceiling_material,Ceiling Material,composite_panels,Composite panels,Panneaux composites
+ceiling_material,Ceiling Material,fiber_panels,Fiber panels,Panneaux fibres
+ceiling_material,Ceiling Material,wallpaper,Wallpaper,Papier peint
+ceiling_material,Ceiling Material,paint,Paint,Peinture
+ceiling_material,Ceiling Material,stones,Stones,Pierres
+ceiling_material,Ceiling Material,plasterboard,Plasterboard,Placoplâtre
+report_type,Report Type,french_electrical,French Electrical,Électricité
+report_type,Report Type,french_gas,French Gas,Gaz
+report_type,Report Type,french_lead,French Lead,Plomb
+report_type,Report Type,french_asbestos,French Asbestos,Amiante
+report_type,Report Type,french_termites,French Termites,Termites
+report_type,Report Type,french_carrez,French Carrez,Carrez
+report_type,Report Type,french_boutin,French Boutin,Boutin
+mission_analysis_scope,Mission Analysis Scope,private_parts,Private parts,Analyse des parties privatives
+mission_analysis_scope,Mission Analysis Scope,occupied_parts,Occupied parts,Analyse des parties occupées
+mission_analysis_scope,Mission Analysis Scope,common_parts,Common parts,Analyse des parties communes
+property_purpose,Property Purpose,rental,Intended for rental,Bien destiné à la location
+property_purpose,Property Purpose,sale,Intended for sale,Bien destiné à la vente
+property_purpose,Property Purpose,future_works,Future works,Travaux futurs
+property_purpose,Property Purpose,not_applicable,Not applicable,Sans objet

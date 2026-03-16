@@ -1,0 +1,69 @@
+---
+description: Language requirements for diagnostic CSV templates - only _fr columns should be in French
+globs: diag_csv/**/*.csv,context/note_types_template.csv
+---
+
+# Language Requirements for CSV Templates
+
+## Rule: Language Separation
+
+**Only columns with `_fr` suffix should contain French text. All other columns must be in English.**
+
+### Applies To
+All CSV template files in:
+- `diag_csv/**/*.csv`
+- `context/note_types_template.csv`
+
+### Column Language Rules
+
+#### French Columns (must contain French text)
+- `item_label_fr` - French label for enum items
+- `label_fr` - French label for variables
+- `note_type_label_fr` - French label for note types
+- `generator_label_fr` - French label for generators
+- `catalogue_label_fr` - French label for catalogues
+- `wizard_flow_step_label_fr` - French label for wizard steps
+- Any column ending with `_fr`
+
+#### English Columns (must contain English text)
+- `item_value` - Must be English, lowercase, with underscores
+- `item_label_en` - Must be English
+- `label_en` - Must be English
+- `task_name` - Must be English
+- `task_description` - Must be English
+- `variable_key` - Must be English, lowercase, with underscores
+- `enum_key` - Must be English, lowercase, with underscores
+- `note_type_key` - Must be English, lowercase, with underscores
+- `generator_key` - Must be English, lowercase, with underscores
+- `catalogue_key` - Must be English, lowercase, with underscores
+- `note_type_title` - Must be English
+- `note_type_description` - Must be English
+- `generator_title` - Must be English
+- `generator_description` - Must be English
+- `catalogue_title` - Must be English
+- `catalogue_description` - Must be English
+- All other columns without `_fr` suffix
+
+### Validation Examples
+
+✅ **Correct:**
+```csv
+item_value,item_label_en,item_label_fr
+furniture,Furniture,Ameublement
+water_inlet,Water inlet,Arrivée d'eau
+```
+
+❌ **Incorrect:**
+```csv
+item_value,item_label_en,item_label_fr
+ameublement,Ameublement,Ameublement  # item_value and item_label_en should be English
+furniture,Furniture,Furniture  # item_label_fr should be French
+```
+
+### Enforcement
+
+This rule should be checked:
+- Before saving any CSV file
+- During validation hooks
+- When adding new rows or columns
+- When importing or migrating data

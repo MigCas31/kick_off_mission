@@ -1,0 +1,6 @@
+enum_name,item_values
+location_side,"Côté A; Côté B; Côté C; Côté D; Côté E; Côté F; Côté G; Côté H; Côtés A B; Côtés A D; Côtés B C; Côtés C D; Face; Gauche; Droite; Arrière; Devant"
+location_height,"Inférieure; Médiane; Supérieure; Totale; Basse; Haute; Hauteur < 0,5m; 0,5m < Hauteur < 1m; 1m < Hauteur < 1,5m; 1,5m < Hauteur < 2m; 2m < Hauteur < 2,5m; 2,5m < Hauteur < 3m; Hauteur > 3m"
+opening_type,"Ouvrant; Dormant; Cadre; Châssis; Battant; Battant gauche; Battant droit; Petit bois; Parclose; Allège; Linteau; Appui; Seuil; Chambranle; Montant; Traverse; Traverse haute; Traverse basse; Traverse intermédiaire"
+shutter_detail,"Volet roulant; Volet battant; Volet pliant; Persienne; Jalousie; Contre-vent; Tablier; Lame; Coffre; Coulisse"
+door_window_detail,"Porte; Fenêtre; Porte-fenêtre; Imposte; Fixe; Soupirail; Lucarne; Trappe; Grille; Garde-corps"

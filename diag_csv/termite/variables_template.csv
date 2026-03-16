@@ -1,0 +1,18 @@
+variable_key,label_en,label_fr,description,task_key,variable_kind,value_source_type,level_registered_at,level_belongs_to,standard_key,required_default,required_if,enum_ref,catalogue_ref,generator_ref,unit,status
+summary_status_termites,Summary Status Termites,Statut Termites,Summary status for termites infestation,termite_004,string,computed,room,room,,false,,,,draft
+summary_status_parasites,Summary Status Parasites,Statut Parasites,Summary status for parasites infestation,termite_004,string,computed,room,room,,false,,,,draft
+summary_status_fungi,Summary Status Fungi,Statut Champ.,Summary status for fungi infestation,termite_004,string,computed,room,room,,false,,,,draft
+element_additional_information,Element Additional Information,Informations complémentaires,Additional information and notes for the inspected element,termite_005,rich_text,user_input,room,room,,false,,,,draft
+termite_detection_duration,Termite Detection Duration,Durée de repérage termites,Duration of termite detection in minutes or hours,termite_006,string,user_input,report,report,,false,,,,draft
+various_observations,Various Observations,Constatations diverses,Various observations and miscellaneous findings,termite_007,rich_text,user_input,report,report,,false,,,,draft
+comments_deviation_from_norm,Comments Deviation from Norm,Commentaires (Ecart par rapport à la norme),Comments regarding deviations from the norm,termite_008,rich_text,user_input,report,report,,false,,,,draft
+prior_treatments_presence,Prior Treatments Presence,Présence de traitements antérieurs contre les termites,Presence of prior treatments against termites,termite_009,boolean,user_input,report,report,,false,,,,draft
+termites_in_building_presence,Termites in Building Presence,Présence de termites dans le bâtiment,Presence of termites in the building,termite_009,boolean,user_input,report,report,,false,,,,draft
+technical_notice_provision,Technical Notice Provision,Fourniture de la notice technique relatif à l'article R 131-3 du CCH,Provision of the technical notice relating to article R 131-3 of the CCH if date of building permit application or commencement of works is after 01/11/2006,termite_009,boolean,user_input,report,report,,false,,,,draft
+information_from_client,Information from Client,Informations collectées auprès du donneur d'ordre,Information collected from the client or ordering party,termite_009,rich_text,user_input,report,report,,false,,,,draft
+official_comments_arrete_status,Official Comments Arrêté Status,Statut Commentaires Arrêtés,Status of official comments regarding decrees (subject to order; not subject to order; verification needed),termite_010,enum_single,user_input,report,report,,false,,termite_arrete_status,,draft
+official_comments_arrete_text,Official Comments Arrêté Text,Commentaires Arrêtés,Official comments regarding decrees and zoning,termite_010,rich_text,user_input,report,report,,false,,,,draft
+parasite_conclusion_manual_override,Parasite Conclusion Manual Override,Fixer la conclusion manuellement,Option to manually fix the conclusion for parasites,termite_011,boolean,user_input,report,report,,false,,,,draft
+parasite_specific_conclusion,Parasite Specific Conclusion,Conclusion spécifique pour les Parasitaires,Specific conclusion for parasites,termite_011,string,user_input,report,report,,false,,,,draft
+parasite_conclusion_text,Parasite Conclusion Text,Conclusion texte,Detailed text for parasite conclusion,termite_011,rich_text,user_input,report,report,,false,,,,draft
+documents_from_client,Documents from Client,Documents remis par le donneur d'ordre,Documents submitted by the client or ordering party,termite_012,rich_text,user_input,report,report,,false,,,,draft

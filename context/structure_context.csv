@@ -1,0 +1,15 @@
+entity_type,entity_key,parent_entity,relationship_type,primary_key_field,description,required_when,example
+diag,diag_name,,root entity,diag_name,Diagnostic report that gets split into tasks,always,"termite, lead_CREP, Absestos_Amiante"
+task,task_id,diag_name,one-to-many,task_id,Individual task within a diag,always,"task_001, task_002"
+ui_type,ui_type,task_id,one-to-one,ui_type,UI interaction pattern for the task,always,"form, checklist_with_answers, catalogue_registration, generator, observation_capture"
+catalogue,catalogue_key,task_id,one-to-one (via primary key),catalogue_key,Primary key to join task with catalogue definition,when ui_type = catalogue_registration,"french_electrical_defects, termite_evidence"
+generator,generator_key,task_id,one-to-one (via primary key),generator_key,Primary key to join task with generator definition,when ui_type = generator,"heating_installation, termite_treatment"
+note_type,note_type_keys,task_id,many-to-many,note_type_keys,Note types linked to task (comma-separated or JSON),optional,"termite_observation, defect_photo"
+catalogue_step,catalogue_key,catalogue_key,one-to-many,catalogue_key,One row per step/column/template of catalogue,when catalogue exists,"See csv_templates_logic.md"
+generator_step,generator_key,generator_key,one-to-many,generator_key,One row per step/field of generator,when generator exists,"See csv_templates_logic.md"
+enum_item,enum_key,enum_key,one-to-many,enum_key,One row per value of enum,when enum is referenced,"See csv_templates_logic.md"
+template_file,tasks_template.csv,diag_name,contains,task_id,CSV file with all tasks for the diag,always,One file per diag
+template_file,catalogues_template.csv,diag_name,contains,catalogue_key,CSV file with catalogue definitions,when catalogue tasks exist,One file per diag (if needed)
+template_file,generators_template.csv,diag_name,contains,generator_key,CSV file with generator definitions,when generator tasks exist,One file per diag (if needed)
+template_file,enums_template.csv,diag_name,contains,enum_key,CSV file with enum definitions,when enums are referenced,One file per diag (if needed)
+diag_sav_folder,diag_sav/{diag_name},diag_name,empty copy,diag_name,Empty template copies for screenshots/prompts,always,One folder per diag in diag_sav/

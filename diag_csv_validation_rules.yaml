@@ -1,0 +1,654 @@
+---
+name: Diagnostic CSV Templates Validation Rules
+version: 1.0.0
+description: Rules, hooks, skills, and validation procedures for diagnostic CSV templates automation
+---
+
+# Diagnostic CSV Templates Validation and Automation Rules
+
+## Metadata
+folder_pattern: "diag_csv/*/"
+required_files:
+  - tasks_template.csv
+  - variables_template.csv
+  - enums_template.csv
+  - catalogues_template.csv
+  - generators_template.csv
+
+## CSV File Schemas
+
+### tasks_template.csv
+columns:
+  - name: task_id
+    type: string
+    required: true
+    unique: true
+    description: "Unique identifier for the task (e.g., admin_001, admin_002)"
+    example: "admin_023"
+  
+  - name: task_name
+    type: string
+    required: true
+    description: "Human-readable task name in English"
+    example: "Lead Report Mission Configuration"
+  
+  - name: task_description
+    type: string
+    required: true
+    description: "Detailed description of what the task does"
+    no_commas: true
+    example: "Configure mission type analysis scope property purpose and occupant information for lead report"
+  
+  - name: pattern
+    type: enum
+    required: true
+    values: ["form", "checklist_with_answers", "checklist_with_evidence", "catalogue_registration", "observation_capture"]
+    example: "form"
+  
+  - name: lifecycle_phase
+    type: enum
+    required: true
+    values: ["offsite-pre", "onsite", "offsite-post"]
+    example: "offsite-pre"
+  
+  - name: lifecycle_level
+    type: enum
+    required: true
+    values: ["case", "report", "building", "storey", "room"]
+    example: "case"
+  
+  - name: lifecycle_moment
+    type: enum
+    required: true
+    values: ["before_arriving", "on_creation", "on_overview", "on_completion", "annotation_mode"]
+    example: "before_arriving"
+  
+  - name: stage
+    type: string
+    required: true
+    description: "Stage identifier (e.g., 1.A, 2.C)"
+    example: "1.A"
+  
+  - name: step
+    type: string
+    required: true
+    description: "Step identifier (e.g., case.selection, room.overview)"
+    example: "case.selection"
+  
+  - name: requiredness
+    type: enum
+    required: true
+    values: ["always", "optional", "always_if"]
+    example: "always_if"
+  
+  - name: condition
+    type: string
+    required: false
+    description: "Condition expression if requiredness=always_if"
+    example: "report_type_selection includes french_lead"
+    validation: "Must be set if requiredness=always_if"
+  
+  - name: has_coverage_rules
+    type: boolean
+    required: true
+    values: ["true", "false"]
+    example: "false"
+  
+  - name: coverage_rules_description
+    type: string
+    required: false
+    description: "Description of coverage rules if applicable"
+    example: ""
+  
+  - name: ui_type
+    type: enum
+    required: true
+    values: ["form", "checklist_with_answers", "catalogue_registration", "generator"]
+    example: "form"
+  
+  - name: note_type_keys
+    type: string
+    required: false
+    description: "Comma-separated note type keys"
+    example: ""
+  
+  - name: catalogue_key
+    type: string
+    required: false
+    description: "Reference to catalogue if ui_type=catalogue_registration"
+    foreign_key: "catalogues_template.csv.catalogue_key"
+    validation: "Must exist if ui_type=catalogue_registration"
+    example: ""
+  
+  - name: generator_key
+    type: string
+    required: false
+    description: "Reference to generator if ui_type=generator"
+    foreign_key: "generators_template.csv.generator_key"
+    validation: "Must exist if ui_type=generator"
+    example: ""
+
+### variables_template.csv
+columns:
+  - name: variable_key
+    type: string
+    required: true
+    unique: true
+    description: "Unique identifier for the variable"
+    example: "mission_analysis_scope"
+  
+  - name: label_en
+    type: string
+    required: true
+    description: "English label for the variable"
+    example: "Mission Analysis Scope"
+  
+  - name: label_fr
+    type: string
+    required: true
+    description: "French label for the variable"
+    example: "Perimetre d'analyse de la mission"
+  
+  - name: description
+    type: string
+    required: true
+    description: "Detailed description (MUST NOT contain commas - use semicolons instead)"
+    no_commas: true
+    example: "Scope of analysis for the mission (private parts; occupied parts; common parts)"
+  
+  - name: task_key
+    type: string
+    required: true
+    foreign_key: "tasks_template.csv.task_id"
+    description: "Reference to task_id in tasks_template.csv"
+    example: "admin_023"
+  
+  - name: variable_kind
+    type: enum
+    required: true
+    values: ["boolean", "number", "string", "rich_text", "enum_single", "enum_multiple", "tags", "catalogue", "generator", "computed"]
+    example: "enum_multiple"
+  
+  - name: value_source_type
+    type: enum
+    required: true
+    values: ["user_input", "static_default", "inherited", "system_provided", "computed", "derived"]
+    example: "user_input"
+  
+  - name: level_registered_at
+    type: enum
+    required: true
+    values: ["case", "report", "property", "building", "storey", "room", "building_element", "object"]
+    description: "Level where variable is registered. Must be one of: case, report, property, building, storey, room, building_element, object"
+    example: "case"
+    validation: "Must be a valid hierarchy level value"
+  
+  - name: level_belongs_to
+    type: enum
+    required: true
+    values: ["case", "report", "property", "building", "storey", "room", "building_element", "object"]
+    description: "Level the variable belongs to. Must be one of: case, report, property, building, storey, room, building_element, object"
+    example: "case"
+    validation: "Must be a valid hierarchy level value"
+  
+  - name: standard_key
+    type: string
+    required: false
+    description: "Reference to standard if applicable"
+    example: ""
+  
+  - name: required_default
+    type: boolean
+    required: true
+    values: ["true", "false"]
+    example: "true"
+  
+  - name: required_if
+    type: string
+    required: false
+    description: "Condition for required status"
+    example: "minors_present=true"
+  
+  - name: enum_ref
+    type: string
+    required: false
+    foreign_key: "enums_template.csv.enum_key"
+    description: "Reference to enum_key in enums_template.csv (required if variable_kind is enum_single or enum_multiple)"
+    validation: "Must exist if variable_kind in [enum_single, enum_multiple]"
+    example: "mission_analysis_scope"
+  
+  - name: catalogue_ref
+    type: string
+    required: false
+    foreign_key: "catalogues_template.csv.catalogue_key"
+    example: ""
+  
+  - name: generator_ref
+    type: string
+    required: false
+    foreign_key: "generators_template.csv.generator_key"
+    example: ""
+  
+  - name: unit
+    type: string
+    required: false
+    description: "Unit of measurement if applicable"
+    example: ""
+  
+  - name: status
+    type: enum
+    required: true
+    values: ["draft", "final", "deprecated"]
+    default: "draft"
+    description: "Status of variable"
+    example: "draft"
+
+### enums_template.csv
+columns:
+  - name: enum_key
+    type: string
+    required: true
+    description: "Unique identifier for the enum (can appear multiple times - one per item)"
+    example: "mission_analysis_scope"
+  
+  - name: enum_title
+    type: string
+    required: true
+    description: "Human-readable title for the enum"
+    example: "Mission Analysis Scope"
+  
+  - name: item_value
+    type: string
+    required: true
+    unique_with: "enum_key"
+    description: "Value identifier (MUST be in English, lowercase with underscores)"
+    format: "lowercase_with_underscores"
+    example: "private_parts"
+    validation: "Must be lowercase English with underscores, no spaces"
+  
+  - name: item_label_en
+    type: string
+    required: true
+    description: "English label for the item"
+    example: "Private parts"
+  
+  - name: item_label_fr
+    type: string
+    required: true
+    description: "French label for the item"
+    example: "Analyse des parties privatives"
+
+### catalogues_template.csv
+columns:
+  - name: catalogue_key
+    type: string
+    required: true
+    unique: true
+    description: "Unique identifier for the catalogue"
+    example: ""
+  
+  - name: catalogue_title
+    type: string
+    required: false
+    description: "Title of the catalogue"
+    example: ""
+  
+  - name: catalogue_description
+    type: string
+    required: false
+    description: "Description of the catalogue"
+    example: ""
+  
+  - name: catalogue_label_en
+    type: string
+    required: false
+    description: "English label"
+    example: ""
+  
+  - name: catalogue_label_fr
+    type: string
+    required: false
+    description: "French label"
+    example: ""
+  
+  - name: wizard_flow_step_label_en
+    type: string
+    required: false
+    description: "English label for wizard step"
+    example: ""
+  
+  - name: wizard_flow_step_label_fr
+    type: string
+    required: false
+    description: "French label for wizard step"
+    example: ""
+  
+  - name: wizard_flow_step
+    type: string
+    required: false
+    description: "Step identifier in wizard flow"
+    example: ""
+  
+  - name: step_visibility_rule
+    type: string
+    required: false
+    description: "Rule for step visibility"
+    example: ""
+
+### generators_template.csv
+columns:
+  - name: generator_key
+    type: string
+    required: true
+    unique: true
+    description: "Unique identifier for the generator"
+    example: ""
+  
+  - name: generator_title
+    type: string
+    required: false
+    description: "Title of the generator"
+    example: ""
+  
+  - name: generator_description
+    type: string
+    required: false
+    description: "Description of the generator"
+    example: ""
+  
+  - name: generator_label_en
+    type: string
+    required: false
+    description: "English label"
+    example: ""
+  
+  - name: generator_label_fr
+    type: string
+    required: false
+    description: "French label"
+    example: ""
+  
+  - name: step_visibility_rule
+    type: string
+    required: false
+    description: "Rule for step visibility"
+    example: ""
+
+## Validation Rules
+
+rules:
+  - id: csv_format_validation
+    name: "CSV Format Validation"
+    description: "Commas must only be used as column separators, never inside column values"
+    severity: error
+    check: "No commas inside column values"
+    action: "Replace commas with semicolons in column values (especially description fields)"
+    example_bad: "Scope of analysis (private parts, occupied parts, common parts)"
+    example_good: "Scope of analysis (private parts; occupied parts; common parts)"
+    applies_to: ["variables_template.csv.description", "tasks_template.csv.task_description"]
+  
+  - id: enum_variable_validation
+    name: "Enum Variable Validation"
+    description: "All enum variables must reference valid enums with sufficient items"
+    severity: error
+    check: |
+      1. Extract all enum_ref values from variables_template.csv where variable_kind in [enum_single, enum_multiple]
+      2. Extract all unique enum_key values from enums_template.csv
+      3. Verify each enum_ref exists in enum_key list
+      4. Count items for each enum_ref
+      5. Report variables referencing enums with <= 1 items
+    action: "Report missing enum_ref or enums with insufficient items"
+    skill: "enum_variable_audit"
+  
+  - id: enum_completeness_check
+    name: "Enum Completeness Check"
+    description: "Return the name of enum type variables that has 1 or None item_values assigned in the enum_template.csv"
+    severity: warning
+    check: |
+      For each enum_ref in variables:
+        - Count items in enums_template.csv where enum_key == enum_ref
+        - If count <= 1, flag variable_key
+    action: "List variable_key values for incomplete enums"
+    output_format: "List of variable_key values"
+  
+  - id: task_variable_consistency
+    name: "Task-Variable Consistency"
+    description: "All task_key values must exist in tasks_template.csv"
+    severity: error
+    check: "All task_key in variables_template.csv exist as task_id in tasks_template.csv"
+    action: "Report orphaned variables"
+  
+  - id: ui_type_consistency
+    name: "UI Type Consistency"
+    description: "Tasks with catalogue/generator UI types must have valid references"
+    severity: error
+    check: |
+      - If ui_type=catalogue_registration, catalogue_key must exist in catalogues_template.csv
+      - If ui_type=generator, generator_key must exist in generators_template.csv
+    action: "Report missing catalogue_key or generator_key references"
+  
+  - id: status_field_validation
+    name: "Status Field Validation"
+    description: "All variables must have status field set"
+    severity: error
+    check: "All rows in variables_template.csv have status column populated"
+    action: "Set status to 'draft' if empty"
+  
+  - id: required_field_validation
+    name: "Required Field Validation"
+    description: "Conditional requiredness must have conditions"
+    severity: error
+    check: |
+      - If requiredness=always_if in tasks, condition must be populated
+      - If required_if is set in variables, condition must be valid
+    action: "Report missing conditions"
+  
+  - id: enum_item_value_format
+    name: "Enum Item Value Format"
+    description: "All item_value fields must be in English, lowercase, with underscores"
+    severity: error
+    check: "item_value matches pattern: lowercase English with underscores"
+    pattern: "^[a-z][a-z0-9_]*$"
+    action: "Normalize enum item values to this format"
+    example_bad: "Private Parts"
+    example_good: "private_parts"
+  
+  - id: description_field_format
+    name: "Description Field Format"
+    description: "Description fields must not contain commas"
+    severity: error
+    check: "Check if the comma is not used inside a column value but to split the column because we work on .csv file"
+    action: "Replace commas with semicolons in description fields"
+    applies_to: ["variables_template.csv.description"]
+  
+  - id: primary_key_uniqueness
+    name: "Primary Key Uniqueness"
+    description: "Primary keys must be unique"
+    severity: error
+    checks:
+      - "task_id must be unique in tasks_template.csv"
+      - "variable_key must be unique in variables_template.csv"
+      - "enum_key + item_value combination must be unique in enums_template.csv"
+    action: "Report duplicates"
+  
+  - id: variable_level_validation
+    name: "Variable Level Validation"
+    description: "level_registered_at and level_belongs_to must contain valid hierarchy level values"
+    severity: error
+    check: |
+      For each row in variables_template.csv:
+        - Verify level_registered_at is in [case, report, property, building, storey, room, building_element, object]
+        - Verify level_belongs_to is in [case, report, property, building, storey, room, building_element, object]
+        - Report any variables with invalid level values
+    action: "Report variables with invalid level_registered_at or level_belongs_to values"
+    applies_to: ["variables_template.csv.level_registered_at", "variables_template.csv.level_belongs_to"]
+
+## Hooks
+
+hooks:
+  - name: pre_save_validation
+    trigger: "Before saving any CSV file in diag_csv/**/"
+    rules:
+      - csv_format_validation
+      - enum_variable_validation
+      - description_field_format
+      - primary_key_uniqueness
+    actions:
+      - "Run CSV format validation"
+      - "Check enum references"
+      - "Sanitize description fields"
+      - "Verify primary key uniqueness"
+  
+  - name: post_edit_validation
+    trigger: "After editing any CSV file in diag_csv/**/"
+    rules:
+      - task_variable_consistency
+      - ui_type_consistency
+      - status_field_validation
+      - variable_level_validation
+    actions:
+      - "Verify task-variable consistency"
+      - "Check UI type references"
+      - "Ensure status fields are populated"
+      - "Validate level_registered_at and level_belongs_to values"
+  
+  - name: cross_file_consistency_check
+    trigger: "When working with multiple CSV files in the same diagnostic folder"
+    rules:
+      - enum_variable_validation
+      - task_variable_consistency
+      - ui_type_consistency
+    actions:
+      - "Verify all enum_ref in variables exist in enums"
+      - "Verify all task_key in variables exist in tasks"
+      - "Verify all catalogue_key in tasks exist in catalogues"
+      - "Verify all generator_key in tasks exist in generators"
+
+## Skills
+
+skills:
+  - name: enum_variable_audit
+    description: "Identify enum variables with incomplete enum definitions"
+    function: |
+      1. Read variables_template.csv
+      2. Filter rows where variable_kind in ['enum_single', 'enum_multiple']
+      3. For each enum_ref:
+         - Count items in enums_template.csv where enum_key == enum_ref
+         - If count <= 1, report variable_key
+      4. Return list of problematic variables
+    output: "List of variable_key values referencing enums with <= 1 items"
+  
+  - name: csv_sanitization
+    description: "Clean CSV files to ensure proper formatting"
+    function: |
+      1. Read CSV file
+      2. For each cell in description columns:
+         - Replace commas with semicolons
+      3. Ensure all rows have same number of columns
+      4. Verify no trailing commas cause column misalignment
+    output: "Sanitized CSV content"
+  
+  - name: reference_integrity_check
+    description: "Verify all foreign key references are valid"
+    function: |
+      1. Load all CSV files in diagnostic folder
+      2. Extract all primary keys:
+         - task_ids from tasks_template.csv
+         - enum_keys from enums_template.csv
+         - catalogue_keys from catalogues_template.csv
+         - generator_keys from generators_template.csv
+      3. Check all references:
+         - variables.task_key -> tasks.task_id
+         - variables.enum_ref -> enums.enum_key
+         - tasks.catalogue_key -> catalogues.catalogue_key
+         - tasks.generator_key -> generators.generator_key
+      4. Report broken references
+    output: "List of broken foreign key references"
+  
+  - name: status_field_population
+    description: "Ensure all variables have status field set"
+    function: |
+      1. Read variables_template.csv
+      2. For each row:
+         - If status column is empty or has trailing commas:
+           - Set status to 'draft'
+           - Ensure proper column alignment
+      3. Save file
+    output: "Updated variables_template.csv with status fields"
+
+## Safeguarding Rules
+
+safeguards:
+  - name: never_delete_without_backup
+    description: "Before deleting any row from CSV files, create a backup comment or log the deletion"
+    action: "Log deletion with timestamp and row content"
+  
+  - name: validate_before_bulk_operations
+    description: "Before applying bulk changes, validate the change on a sample first"
+    action: "Run validation on sample before applying to all rows"
+  
+  - name: cross_reference_validation
+    description: "After adding/removing tasks, variables, or enums, always run cross-reference validation"
+    action: "Run reference_integrity_check after modifications"
+  
+  - name: enum_item_value_consistency
+    description: "When updating enum item values, ensure they remain in English, lowercase, with underscores format"
+    action: "Validate format before saving"
+  
+  - name: description_field_safety
+    description: "Always check description fields for commas before saving. Use semicolons as separators within descriptions"
+    action: "Run csv_format_validation before saving"
+
+## Double-Check Procedures
+
+double_checks:
+  - name: after_adding_new_variables
+    steps:
+      - "Verify task_key exists in tasks_template.csv"
+      - "If enum variable, verify enum_ref exists and has at least 2 items"
+      - "Verify status field is set"
+      - "Verify description has no commas"
+      - "Verify level_registered_at and level_belongs_to are valid hierarchy levels (case, report, property, building, storey, room, building_element, object)"
+  
+  - name: after_adding_new_tasks
+    steps:
+      - "Verify ui_type is valid"
+      - "If ui_type=catalogue_registration, verify catalogue_key exists"
+      - "If ui_type=generator, verify generator_key exists"
+      - "If requiredness=always_if, verify condition is set"
+  
+  - name: after_adding_new_enums
+    steps:
+      - "Verify all item_value are in English, lowercase, with underscores"
+      - "Verify enum has at least 2 items (unless boolean-like)"
+      - "Verify no duplicate enum_key + item_value combinations"
+  
+  - name: before_finalizing
+    steps:
+      - "Run all validation rules"
+      - "Check for orphaned references"
+      - "Verify CSV format is correct (no commas in values)"
+      - "Ensure all status fields are populated"
+      - "Verify enum completeness for all enum variables"
+      - "Verify all variables have valid level_registered_at and level_belongs_to values"
+
+## Usage Examples
+
+examples:
+  - name: finding_incomplete_enums
+    query: "Return the name of enum type variables that has 1 or None item_values assigned in the enum_template.csv of the same folder"
+    process: |
+      1. Read variables_template.csv, filter enum variables
+      2. For each enum_ref, count items in enums_template.csv
+      3. Return variable_key where count <= 1
+    skill: enum_variable_audit
+  
+  - name: csv_format_check
+    query: "Check if the comma is not used inside a column value but to split the column because we work on .csv file"
+    process: |
+      1. Parse CSV file
+      2. For each cell, check if it contains commas
+      3. If found, verify it's properly quoted or replace with semicolon
+      4. Report locations of problematic commas
+    rule: csv_format_validation
+    skill: csv_sanitization

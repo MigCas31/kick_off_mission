@@ -1,0 +1,6 @@
+ui_type,description
+form,Flat list of fields. Surveyor at fixed location. 1–10 simple fields. No evidence capture. Setup/overview/completion moments.
+checklist_with_answers,"Checklist concept, answers-only. Fixed list of questions. Segmented control (Yes/No/Other). Proactive, sequential, no evidence."
+checklist_with_evidence,"Checklist concept, references observations. Reactive scanning. Surveyor captures evidence when spotting problems. Implicit compliance."
+catalogue_registration,"Note Type concept, by_selection. Proactive registration from catalogue taxonomy. Category dashboard, set selector, wizard, parameter form."
+observation_capture,"Note Type concept, by_discovery. Space-driven. Surveyor discovers items as they go; done when surveyor says done. No fixed list."

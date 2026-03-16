@@ -1,0 +1,255 @@
+enum_key,enum_title,item_value,item_label_en,item_label_fr
+termite_inspection_probe,Inspection Probe,king_post,King post,Poinçon
+termite_inspection_probe,Inspection Probe,wood_knife,Wood knife,Couteau à bois
+termite_inspection_probe,Inspection Probe,axe,Axe,Hache
+termite_inspection_probe,Inspection Probe,knife,Knife,Couteau
+termite_inspection_probe,Inspection Probe,cutter,Cutter,Cutter
+termite_inspection_probe,Inspection Probe,screwdriver,Screwdriver,Tournevis
+termite_inspection_object,Inspection Object,furniture,Furniture,Ameublement
+termite_inspection_object,Inspection Object,water_inlet,Water inlet,Arrivée d'eau
+termite_inspection_object,Inspection Object,woodwork,Woodwork,Boiseries
+termite_inspection_object,Inspection Object,water_connection,Water connection,Branchement d'eau
+termite_inspection_object,Inspection Object,wiring,Wiring,Câblage
+termite_inspection_object,Inspection Object,small_crates,Small crates,Cagettes
+termite_inspection_object,Inspection Object,crates,Crates,Cageots
+termite_inspection_object,Inspection Object,expansion_joints,Expansion joints,Joints de dilatation
+termite_inspection_object,Inspection Object,equipment,Equipment,Matériel
+termite_inspection_object,Inspection Object,joinery,Joinery,Menuiserie
+termite_inspection_object,Inspection Object,walls,Walls,Murs
+termite_inspection_object,Inspection Object,framework,Framework,Ossature
+termite_inspection_object,Inspection Object,pallet,Pallet,Palette
+termite_inspection_object,Inspection Object,cardboard,Cardboard,Papier carton
+termite_inspection_object,Inspection Object,closet,Closet,Placard
+termite_inspection_object,Inspection Object,base,Base,Soubassement
+termite_inspection_object,Inspection Object,storage,Storage,Stockage
+termite_inspection_object,Inspection Object,ventilation,Ventilation,Ventilation
+termite_inspection_object,Inspection Object,shutters,Shutters,Volets
+termite_inspection_object,Inspection Object,framework_structure,Framework,Charpente
+termite_inspection_object,Inspection Object,truss,Truss,Ferme
+termite_inspection_object,Inspection Object,rafter,Rafter,Arbalétrier
+termite_inspection_object,Inspection Object,cleat,Cleat,Chantignolle
+termite_inspection_object,Inspection Object,strut,Strut,Contrefiche
+termite_inspection_object,Inspection Object,ridge_purlin,Ridge purlin,Panne faîtière
+termite_inspection_object,Inspection Object,intermediate_purlin,Intermediate purlin,Panne intermédiaire
+termite_inspection_object,Inspection Object,wall_plate,Wall plate,Panne sablière
+termite_inspection_object,Inspection Object,rafters,Rafters,Chevrons
+termite_inspection_object,Inspection Object,battening,Battening,Voligeage
+termite_inspection_object,Inspection Object,lathwork,Lathwork,Liteaunage
+termite_object_detail,Object Detail,steel,Steel,Acier
+termite_object_detail,Object Detail,steel_lacquered,Steel lacquered,Acier laqué
+termite_object_detail,Object Detail,steel_painted,Steel painted,Acier peint
+termite_object_detail,Object Detail,aluminium,Aluminium,Aluminium
+termite_object_detail,Object Detail,aluminium_lacquered,Aluminium lacquered,Aluminium laqué
+termite_object_detail,Object Detail,aluminium_natural,Aluminium natural,Aluminium naturel
+termite_object_detail,Object Detail,steel_cladding,Steel cladding,Bardage acier
+termite_object_detail,Object Detail,aluminium_cladding,Aluminium cladding,Bardage aluminium
+termite_object_detail,Object Detail,metal_cladding,Metal cladding,Bardage métallique
+termite_object_detail,Object Detail,raw_concrete,Raw concrete,Béton brut
+termite_object_detail,Object Detail,bare_concrete,Bare concrete,Béton nus
+termite_object_detail,Object Detail,painted_concrete,Painted concrete,Béton peint
+termite_object_detail,Object Detail,wood,Wood,Bois
+termite_object_detail,Object Detail,wood_and_painted_steel,Wood and painted steel,Bois et acier peints
+termite_object_detail,Object Detail,wood_and_aluminium,Wood and aluminium,Bois et aluminium
+termite_object_detail,Object Detail,wood_and_lacquered_aluminium,Wood and lacquered aluminium,Bois et aluminium laqué
+termite_object_detail,Object Detail,wood_and_natural_aluminium,Wood and natural aluminium,Bois et aluminium naturel
+termite_object_detail,Object Detail,wood_and_pvc,Wood and PVC,Bois et PVC
+termite_object_detail,Object Detail,painted_wood,Painted wood,Bois peint
+termite_object_detail,Object Detail,wood_with_tiling,Wood with tiling,Bois revêtu de carrelage
+termite_object_detail,Object Detail,tiling,Tiling,Carrelage
+termite_object_detail,Object Detail,cork_tiles,Cork tiles,Dalles de liège
+termite_object_detail,Object Detail,lined,Lined,Doublés
+termite_object_detail,Object Detail,raw_cement_coating,Raw cement coating,Enduit ciment brut
+termite_object_detail,Object Detail,painted_coating,Painted coating,Enduit peint
+termite_object_detail,Object Detail,mass_tinted_coating,Mass tinted coating,Enduit teinté masse
+termite_object_detail,Object Detail,faience,Faience,Faïence
+termite_object_detail,Object Detail,wood_paneling,Wood paneling,Lambris bois
+termite_object_detail,Object Detail,metal_paneling,Metal paneling,Lambris métallique
+termite_object_detail,Object Detail,pvc_paneling,PVC paneling,Lambris pvc
+termite_object_detail,Object Detail,metal,Metal,Métal
+termite_object_detail,Object Detail,wall_carpet,Wall carpet,Moquette murale
+termite_object_detail,Object Detail,raw_wood_panels,Raw wood panels,Panneaux bois bruts
+termite_object_detail,Object Detail,painted_wood_panels,Painted wood panels,Panneaux bois peints
+termite_object_detail,Object Detail,wallpaper,Wallpaper,Papier peint
+termite_object_detail,Object Detail,raw_concrete_blocks,Raw concrete blocks,Parpaings bruts
+termite_object_detail,Object Detail,painted_concrete_blocks,Painted concrete blocks,Parpaings peints
+termite_object_detail,Object Detail,parquet_with_carpet,Parquet with carpet,Parquet revêtu de moquette
+termite_object_detail,Object Detail,joined_stones,Joined stones,Pierres jointées
+termite_object_detail,Object Detail,plasterboard,Plasterboard,Placoplâtre
+termite_object_detail,Object Detail,wood_floor,Wood floor,Plancher bois
+termite_object_detail,Object Detail,floor_and_tiled_ground,Floor and tiled ground,Plancher et sol carrelés
+termite_object_detail,Object Detail,fiber_cement_sheets,Fiber cement sheets,Plaques fibro-ciment
+termite_object_detail,Object Detail,corrugated_fiber_cement_sheets,Corrugated fiber cement sheets,Plaques ondulées fibro-ciment
+termite_object_detail,Object Detail,plaster,Plaster,Plâtre
+termite_object_detail,Object Detail,scraped_plaster,Scraped plaster,Plâtre gratté
+termite_object_detail,Object Detail,painted_plaster,Painted plaster,Plâtre peint
+termite_object_detail,Object Detail,pvc,PVC,PVC
+termite_object_detail,Object Detail,resin,Resin,Résine
+termite_object_detail,Object Detail,with_carpet,With carpet,Revêtu de moquette
+termite_object_detail,Object Detail,with_floating_parquet,With floating parquet,Revêtu de parquet flottant
+termite_object_detail,Object Detail,wallpapered,Wallpapered,Tapissés
+termite_object_detail,Object Detail,terrace,Terrace,Terrasse
+termite_object_detail,Object Detail,painted_fiberglass_canvas,Painted fiberglass canvas,Toile de verre peinte
+termite_object_detail,Object Detail,slate_roof,Slate roof,Toiture Ardoise
+termite_object_detail,Object Detail,concrete_roof,Concrete roof,Toiture béton
+termite_object_detail,Object Detail,bituminous_roof,Bituminous roof,Toiture bitumineuse
+termite_object_detail,Object Detail,composite_roof,Composite roof,Toiture composite
+termite_object_detail,Object Detail,fiber_cement_roof,Fiber cement roof,Toiture fibro-ciment
+termite_object_detail,Object Detail,tile_roof,Tile roof,Toiture tuiles
+termite_object_detail,Object Detail,wattle_and_daub,Wattle and daub,Torchis
+termite_object_detail,Object Detail,varnish,Varnish,Vernis
+termite_object_detail,Object Detail,glazed,Glazed,Vitré
+termite_object_detail,Object Detail,vitrified,Vitrified,Vitrifié
+termite_object_part,Object Part,framework,Framework,Charpente
+termite_object_part,Object Part,rafter,Rafter,Arbalétrier
+termite_object_part,Object Part,bevel_square,Bevel square,Bisaiguë
+termite_object_part,Object Part,block,Block,Blochet
+termite_object_part,Object Part,cleat,Cleat,Chantignolle
+termite_object_part,Object Part,rafter_beam,Rafter beam,Chevron
+termite_object_part,Object Part,strut,Strut,Contrefiche
+termite_object_part,Object Part,bracing,Bracing,Contreventement
+termite_object_part,Object Part,half_truss_hip,Half truss hip,Demi-ferme d'arêtier
+termite_object_part,Object Part,half_truss_hip_end,Half truss hip end,Demi-ferme de croupe
+termite_object_part,Object Part,cleat_support,Cleat support,Echantignolle
+termite_object_part,Object Part,adze,Adze,Herminette
+termite_object_part,Object Part,leg,Leg,Jambette
+termite_object_part,Object Part,joist,Joist,Lambourde
+termite_object_part,Object Part,ridge_tie,Ridge tie,Lien de faîtage
+termite_object_part,Object Part,member,Member,Membron
+termite_object_part,Object Part,spacer,Spacer,Moise
+termite_object_part,Object Part,purlin,Purlin,Panne
+termite_object_part,Object Part,common_purlin,Common purlin,Panne courante
+termite_object_part,Object Part,ridge_purlin,Ridge purlin,Panne faîtière
+termite_object_part,Object Part,wall_plate,Wall plate,Panne sablière
+termite_object_part,Object Part,purlin_end,Purlin end,Panneton
+termite_object_part,Object Part,hip_rafter,Hip rafter,Arêtier
+termite_object_part,Object Part,hip,Hip,Brisis
+termite_object_part,Object Part,batten,Batten,Chanlatte
+termite_object_part,Object Part,chalk_line,Chalk line,Cordeau
+termite_object_part,Object Part,interlocking,Interlocking,Emboîtement
+termite_object_part,Object Part,ridge_ornament,Ridge ornament,Epi de faîtage
+termite_object_part,Object Part,false_overlap,False overlap,Faux pureau
+termite_object_part,Object Part,laths,Laths,Liteaux
+termite_object_part,Object Part,dormers,Dormers,Lucarnes
+termite_object_part,Object Part,hip_tile,Hip tile,Noquet
+termite_object_part,Object Part,valley,Valley,Noue
+termite_object_part,Object Part,edge,Edge,Rive
+termite_object_part,Object Part,chimney_stack,Chimney stack,Souche de cheminée
+termite_object_part,Object Part,hip_section,Hip section,Terrasson
+termite_object_part,Object Part,hip_end,Hip end,Tiercée
+termite_object_part,Object Part,mansard_roof,Mansard roof,Toit à la Mansard
+termite_object_part,Object Part,square_cut,Square cut,Trait carré
+termite_object_part,Object Part,ridge_end_tile,Ridge end tile,Tuile d'about de faîtage
+termite_object_part,Object Part,hip_tile,Hip tile,Tuile d'arêtier
+termite_object_part,Object Part,ridge_tile,Ridge tile,Tuile de faîtage
+termite_object_part,Object Part,edge_tile,Edge tile,Tuile de rive
+termite_object_part,Object Part,dr_tile,DR tile,Tuile DE DR
+termite_object_part,Object Part,wall_plate,Wall plate,Sablière
+termite_object_part,Object Part,wood_joists,Wood joists,Solivages bois
+termite_object_part,Object Part,joists,Joists,Solives
+termite_object_part,Object Part,battens,Battens,Voliges
+termite_room_shortcut,Room Shortcut,room_shutters,Room + Shutters,Chambre + Volets
+termite_room_shortcut,Room Shortcut,room_window,Room + Window,Chambre + Fenêtre
+termite_room_shortcut,Room Shortcut,closed_room,Closed room,Local fermé
+termite_room_shortcut,Room Shortcut,attic,Attic,Combles
+termite_location_side,Location Side,side_a,Side A,Côté A
+termite_location_side,Location Side,side_b,Side B,Côté B
+termite_location_side,Location Side,side_c,Side C,Côté C
+termite_location_side,Location Side,side_d,Side D,Côté D
+termite_location_side,Location Side,side_e,Side E,Côté E
+termite_location_side,Location Side,side_f,Side F,Côté F
+termite_location_side,Location Side,side_g,Side G,Côté G
+termite_location_side,Location Side,side_h,Side H,Côté H
+termite_location_side,Location Side,sides_a_b,Sides A B,Côtés A B
+termite_location_side,Location Side,sides_a_d,Sides A D,Côtés A D
+termite_location_side,Location Side,sides_b_c,Sides B C,Côtés B C
+termite_location_side,Location Side,sides_c_d,Sides C D,Côtés C D
+termite_location_side,Location Side,front,Front,Face
+termite_location_side,Location Side,left,Left,Gauche
+termite_location_side,Location Side,right,Right,Droite
+termite_location_side,Location Side,rear,Rear,Arrière
+termite_location_side,Location Side,front_side,Front,Devant
+termite_location_height,Location Height,lower,Lower,Inférieure
+termite_location_height,Location Height,middle,Middle,Médiane
+termite_location_height,Location Height,upper,Upper,Supérieure
+termite_location_height,Location Height,total,Total,Totale
+termite_location_height,Location Height,low,Low,Basse
+termite_location_height,Location Height,high,High,Haute
+termite_location_height,Location Height,height_less_than_0_5m,Height < 0.5m,Hauteur < 0,5m
+termite_location_height,Location Height,height_0_5_to_1m,0.5m < Height < 1m,0,5m < Hauteur < 1m
+termite_location_height,Location Height,height_1_to_1_5m,1m < Height < 1.5m,1m < Hauteur < 1,5m
+termite_location_height,Location Height,height_1_5_to_2m,1.5m < Height < 2m,1,5m < Hauteur < 2m
+termite_location_height,Location Height,height_2_to_2_5m,2m < Height < 2.5m,2m < Hauteur < 2,5m
+termite_location_height,Location Height,height_2_5_to_3m,2.5m < Height < 3m,2,5m < Hauteur < 3m
+termite_location_height,Location Height,height_greater_than_3m,Height > 3m,Hauteur > 3m
+termite_opening_type,Opening Type,opening,Opening,Ouvrant
+termite_opening_type,Opening Type,fixed,Fixed,Dormant
+termite_opening_type,Opening Type,frame,Frame,Cadre
+termite_opening_type,Opening Type,window_frame,Window frame,Châssis
+termite_opening_type,Opening Type,swinging,Swinging,Battant
+termite_opening_type,Opening Type,left_swinging,Left swinging,Battant gauche
+termite_opening_type,Opening Type,right_swinging,Right swinging,Battant droit
+termite_opening_type,Opening Type,small_wood,Small wood,Petit bois
+termite_opening_type,Opening Type,glazing_bar,Glazing bar,Parclose
+termite_opening_type,Opening Type,transom,Transom,Allège
+termite_opening_type,Opening Type,lintel,Lintel,Linteau
+termite_opening_type,Opening Type,sill,Sill,Appui
+termite_opening_type,Opening Type,threshold,Threshold,Seuil
+termite_opening_type,Opening Type,door_frame,Door frame,Chambranle
+termite_opening_type,Opening Type,post,Post,Montant
+termite_opening_type,Opening Type,crossbar,Crossbar,Traverse
+termite_opening_type,Opening Type,top_crossbar,Top crossbar,Traverse haute
+termite_opening_type,Opening Type,bottom_crossbar,Bottom crossbar,Traverse basse
+termite_opening_type,Opening Type,intermediate_crossbar,Intermediate crossbar,Traverse intermédiaire
+termite_shutter_detail,Shutter Detail,rolling_shutter,Rolling shutter,Volet roulant
+termite_shutter_detail,Shutter Detail,swinging_shutter,Swinging shutter,Volet battant
+termite_shutter_detail,Shutter Detail,folding_shutter,Folding shutter,Volet pliant
+termite_shutter_detail,Shutter Detail,louvered_shutter,Louvered shutter,Persienne
+termite_shutter_detail,Shutter Detail,venetian_blind,Venetian blind,Jalousie
+termite_shutter_detail,Shutter Detail,windbreak,Windbreak,Contre-vent
+termite_shutter_detail,Shutter Detail,apron,Apron,Tablier
+termite_shutter_detail,Shutter Detail,slat,Slat,Lame
+termite_shutter_detail,Shutter Detail,box,Box,Coffre
+termite_shutter_detail,Shutter Detail,slide,Slide,Coulisse
+termite_door_window_detail,Door Window Detail,door,Door,Porte
+termite_door_window_detail,Door Window Detail,window,Window,Fenêtre
+termite_door_window_detail,Door Window Detail,door_window,Door window,Porte-fenêtre
+termite_door_window_detail,Door Window Detail,transom_window,Transom window,Imposte
+termite_door_window_detail,Door Window Detail,fixed,Fixed,Fixe
+termite_door_window_detail,Door Window Detail,cellar_window,Cellar window,Soupirail
+termite_door_window_detail,Door Window Detail,dormer,Dormer,Lucarne
+termite_door_window_detail,Door Window Detail,trapdoor,Trapdoor,Trappe
+termite_door_window_detail,Door Window Detail,grille,Grille,Grille
+termite_door_window_detail,Door Window Detail,guardrail,Guardrail,Garde-corps
+termite_presence_indicators,Presence Indicators,flaky_wood_appearance,Flaky wood appearance,bois d'apparence feuilleté
+termite_presence_indicators,Presence Indicators,wood_degradation,Wood degradation,dégradation du bois
+termite_presence_indicators,Presence Indicators,superficial_wood_degradation,Superficial wood degradation,dégradation superficielle du bois
+termite_presence_indicators,Presence Indicators,presence_of_mud_tubes,Presence of mud tubes,présence de cordonnets
+termite_presence_indicators,Presence Indicators,presence_of_tunnel_gallery,Presence of tunnel gallery,présence de galerie tunnel
+termite_presence_indicators,Presence Indicators,presence_of_tunnel_galleries,Presence of tunnel galleries,présence de galeries tunnels
+termite_presence_indicators,Presence Indicators,presence_of_visible_galleries,Presence of visible galleries,présence de galeries visibles
+termite_presence_indicators,Presence Indicators,presence_of_exit_holes,Presence of exit holes,présence de trous de sortie
+termite_presence_indicators,Presence Indicators,presence_of_frass,Presence of frass,présence de vermoulure
+termite_presence_indicators,Presence Indicators,presence_of_frass_on_ground,Presence of frass on ground,présence de vermoulure sur le sol
+termite_infestation_degree,Infestation Degree,minor_degradations,Minor degradation(s),dégradation(s) faible(s)
+termite_infestation_degree,Infestation Degree,major_degradations,Major degradation(s),dégradation(s) importante(s)
+termite_infestation_degree,Infestation Degree,slightly_degraded_elements,Slightly degraded element(s),élément(s) faiblement dégradé(s)
+termite_infestation_degree,Infestation Degree,heavily_degraded_elements,Heavily degraded element(s),élément(s) fortement dégradé(s)
+termite_infestation_degree,Infestation Degree,minor_infestations,Minor infestation(s),infestation(s) faible(s)
+termite_infestation_degree,Infestation Degree,major_infestations,Major infestation(s),infestation(s) importante(s)
+termite_infestation_degree,Infestation Degree,widespread_presence,Widespread presence,présence étendue
+termite_infestation_degree,Infestation Degree,minor_presence,Minor presence,présence faible
+termite_infestation_degree,Infestation Degree,presence_on_entire_element,Presence on entire element,présence sur tout l'élément concerné
+termite_infestation_degree,Infestation Degree,presence_on_part_of_element,Presence on part of element,présence sur une partie de l'élément
+termite_species_result,Termite Species Result,kalotermes,Kalotermes,Kalotermes
+termite_species_result,Termite Species Result,kalotermes_flavicolis,Kalotermes flavicolis,Kalotermes flavicolis
+termite_species_result,Termite Species Result,reticulitermes,Reticulitermes,Reticulitermes
+termite_species_result,Termite Species Result,reticulitermes_banyulensis,Reticulitermes banyulensis,Reticulitermes banyulensis
+termite_species_result,Termite Species Result,reticulitermes_grassei,Reticulitermes grassei,Reticulitermes grassei
+termite_species_result,Termite Species Result,reticulitermes_lucifugus,Reticulitermes lucifugus,Reticulitermes lucifugus
+termite_species_result,Termite Species Result,reticulitermes_santonensis,Reticulitermes santonensis,Reticulitermes santonensis
+termite_species_result,Termite Species Result,reticulitermes_urbis,Reticulitermes urbis,Reticulitermes urbis
+termite_species_result,Termite Species Result,others,--- Others ---,--- Autres ---
+termite_species_result,Termite Species Result,unspecified_type,Unspecified type,Type non spécifié
+termite_arrete_status,Official Comments Arrêté Status,located_in_arrete_zone,Located in area subject to order,Bien situé dans une zone soumise à un arrêté
+termite_arrete_status,Official Comments Arrêté Status,not_subject_to_arrete,Not subject to order,Non soumise à un arrêté
+termite_arrete_status,Official Comments Arrêté Status,verify_termite_com_fr,Verify Termite.com.fr,Vérif. Termite.com.fr
