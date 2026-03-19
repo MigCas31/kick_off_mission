@@ -1,23 +1,22 @@
 ---
 description: Rules and validation for diagnostic CSV templates (tasks, variables, enums, catalogues, generators, note_types)
-globs: diag_csv/**/*.csv,context/note_types_template.csv
+globs: diag_csv/**/*.csv,template/note_types_template.csv
 ---
 
 # Diagnostic CSV Templates Validation and Automation Rules
 
 ## Overview
-This rule set defines validation, automation, and safeguarding rules for working with diagnostic CSV templates. Each diagnostic folder (e.g., `diag_csv/Admin_data`) contains 5 CSV templates that must be kept consistent and validated. Note types are defined in `context/note_types_template.csv` and referenced by tasks via `note_type_keys`.
+This rule set defines validation, automation, and safeguarding rules for working with diagnostic CSV templates. Each diagnostic folder (e.g., `diag_csv/Admin_data`) contains 5 CSV templates that must be kept consistent and validated. Note types are defined in `template/note_types_template.csv` and referenced by tasks via `note_type_keys`.
 
 ## CSV File Structure
 
 ### 1. tasks_template.csv
 **Purpose**: Defines tasks for a diagnostic report.
 
-**Columns**:
+**Columns** (must match template exactly):
 - `task_id`: Unique identifier (e.g., `admin_001`, `admin_002`)
 - `task_name`: Human-readable task name in English
 - `task_description`: Detailed description of what the task does
-- `pattern`: Task pattern type (e.g., `form`, `checklist_with_answers`)
 - `lifecycle_phase`: Phase in app lifecycle (`offsite-pre`, `onsite`, `offsite-post`)
 - `lifecycle_level`: Level at which task operates (`case`, `report`, `building`, `storey`, `room`)
 - `lifecycle_moment`: Moment in lifecycle (`before_arriving`, `on_creation`, `on_overview`, `on_completion`)
@@ -25,8 +24,6 @@ This rule set defines validation, automation, and safeguarding rules for working
 - `step`: Step identifier (e.g., `case.selection`, `room.overview`)
 - `requiredness`: When task is required (`always`, `optional`, `always_if`)
 - `condition`: Condition expression if `requiredness=always_if` (e.g., `report_type_selection includes french_lead`)
-- `has_coverage_rules`: Boolean (`true`/`false`)
-- `coverage_rules_description`: Description of coverage rules if applicable
 - `ui_type`: UI type for the task (`form`, `checklist_with_answers`, `catalogue_registration`, `generator`)
 - `note_type_keys`: Comma-separated note type keys (if applicable)
 - `catalogue_key`: Reference to catalogue if `ui_type=catalogue_registration`
@@ -40,34 +37,34 @@ admin_023,Lead Report Mission Configuration,Configure mission type analysis scop
 ### 2. variables_template.csv
 **Purpose**: Defines variables (data fields) for each task.
 
-**Columns**:
+**Columns** (must match template exactly):
 - `variable_key`: Unique identifier (e.g., `report_type_selection`, `property_address`)
 - `label_en`: English label for the variable
 - `label_fr`: French label for the variable
 - `description`: Detailed description (MUST NOT contain commas - use semicolons instead)
 - `task_key`: Reference to `task_id` in tasks_template.csv
-- `variable_kind`: Type of variable (`boolean`, `number`, `string`, `rich_text`, `enum_single`, `enum_multiple`, `tags`, `catalogue`, `generator`, `computed`)
-- `value_source_type`: Source of value (`user_input`, `static_default`, `inherited`, `system_provided`, `computed`, `derived`)
+- `variable_kind`: Type of variable (`boolean`, `number`, `string`, `enum_single`, `enum_multiple`)
+- `value_source_type`: Source of value (`user_input`, `static_default`, `inherited`, `computed`)
 - `level_registered_at`: Level where variable is registered. Must be one of: `case`, `report`, `property`, `building`, `storey`, `room`, `building_element`, `object`
 - `level_belongs_to`: Level the variable belongs to. Must be one of: `case`, `report`, `property`, `building`, `storey`, `room`, `building_element`, `object`
-- `standard_key`: Reference to standard if applicable
 - `required_default`: Default required status (`true`/`false`)
 - `required_if`: Condition for required status (e.g., `minors_present=true`)
 - `enum_ref`: Reference to `enum_key` in enums_template.csv (if `variable_kind` is `enum_single` or `enum_multiple`)
 - `catalogue_ref`: Reference to catalogue if applicable
 - `generator_ref`: Reference to generator if applicable
-- `unit`: Unit of measurement if applicable
-- `status`: Status of variable (`draft`, `final`, etc.)
+- `note_type_ref`: Reference to `note_type_key` in note_types_template.csv (if the variable is used in a note type)
 
 **Example**:
 ```csv
 mission_analysis_scope,Mission Analysis Scope,Perimetre d'analyse de la mission,Scope of analysis for the mission (private parts; occupied parts; common parts),admin_023,enum_multiple,user_input,case,case,,true,,mission_analysis_scope,,draft
 ```
 
+**Joint keys** (variables_template.*_ref references *_key in the other template): `note_type_key` (note_types_template) ↔ `note_type_ref` (variables); `generator_key` (generators_template) ↔ `generator_ref` (variables); `catalogue_key` (catalogues_template) ↔ `catalogue_ref` (variables). In note_types_template, `note_type_key` is required. In variables_template, `note_type_ref`, `generator_ref`, and `catalogue_ref` are required when applicable; when set, each must reference an existing *_key in the corresponding template.
+
 ### 3. enums_template.csv
 **Purpose**: Defines controlled value lists (enumerations) for enum-type variables.
 
-**Columns**:
+**Columns** (must match template exactly):
 - `enum_key`: Unique identifier for the enum (e.g., `report_type`, `country`, `mission_analysis_scope`)
 - `enum_title`: Human-readable title for the enum
 - `item_value`: Value identifier (MUST be in English, lowercase with underscores)
@@ -86,52 +83,37 @@ mission_analysis_scope,Mission Analysis Scope,common_parts,Common parts,Analyse 
 ### 4. catalogues_template.csv
 **Purpose**: Defines catalogue structures for catalogue-type UI.
 
-**Columns**:
+**Columns** (must match template exactly):
 - `catalogue_key`: Unique identifier for the catalogue
 - `catalogue_title`: Title of the catalogue
 - `catalogue_description`: Description of the catalogue
 - `catalogue_label_en`: English label
 - `catalogue_label_fr`: French label
-- `wizard_flow_step_label_en`: English label for wizard step
-- `wizard_flow_step_label_fr`: French label for wizard step
-- `wizard_flow_step`: Step identifier in wizard flow
-- `step_visibility_rule`: Rule for step visibility
 
 ### 5. generators_template.csv
 **Purpose**: Defines generator structures for generator-type UI.
 
-**Columns**:
+**Columns** (must match template exactly):
 - `generator_key`: Unique identifier for the generator
 - `generator_title`: Title of the generator
 - `generator_description`: Description of the generator
 - `generator_label_en`: English label
 - `generator_label_fr`: French label
-- `step_visibility_rule`: Rule for step visibility
 
 ### 6. note_types_template.csv
-**Purpose**: Defines note type structures for observation capture and evidence-based tasks. Note types are stored in `context/note_types_template.csv` and referenced by tasks via `note_type_keys` (comma-separated list).
+**Purpose**: Defines note type structures for observation capture and evidence-based tasks. Note types are stored in `template/note_types_template.csv` and referenced by tasks via `note_type_keys` (comma-separated list).
 
-**Columns**:
-- `note_type_key`: Unique identifier for the note type (primary key, links to `tasks.note_type_keys`)
+**Columns** (must match template exactly):
+- `note_type_key`: Unique identifier for the note type (primary key, links to `tasks.note_type_keys`; required)
 - `note_type_title`: Human-readable title for the note type
 - `note_type_description`: Detailed description of the note type
 - `note_type_label_en`: English label for the note type
 - `note_type_label_fr`: French label for the note type
-- `variable_key`: Unique identifier for the variable within the note type
-- `variable_kind`: Type of variable (`image`, `text`, `rich_text`, `location`, `number`, `string`, etc.)
-- `field_order`: Order of the field in the note type (integer)
-- `label_en`: English label for the variable
-- `label_fr`: French label for the variable
-- `required`: Whether the field is required (`true`/`false`)
-- `description`: Description of the variable (MUST NOT contain commas - use semicolons instead)
-
-**Note**: Multiple rows can have the same `note_type_key` - each row represents one variable/field in the note type. Variables can be of type `image`, `text`, `location`, `number`, etc.
 
 **Example**:
 ```csv
-lead_element_sample,Lead Element Sample,Observation note for capturing element samples with images text and location,Lead Element Sample,Note d'observation plomb,picture,image,0,Picture,Photo,true,Photo of the sampled element
-lead_element_sample,Lead Element Sample,Observation note for capturing element samples with images text and location,Lead Element Sample,Note d'observation plomb,position,location,1,Position,Position,true,Spatial location of the element sample
-lead_element_sample,Lead Element Sample,Observation note for capturing element samples with images text and location,Lead Element Sample,Note d'observation plomb,observation_text,rich_text,2,Observation,Observation,false,Text description of the observation
+note_type_key,note_type_title,note_type_description,note_type_label_en,note_type_label_fr
+lead_element_sample,Lead Element Sample,Observation note for capturing element samples with images text and location,Lead Element Sample,Note d'observation plomb
 ```
 
 ## Validation Rules
@@ -168,8 +150,8 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 **Action**: Report inconsistencies.
 
 ### Rule 6: Status Field Validation
-**Check**: All variables must have a `status` field set (typically `draft` for work in progress).
-**Action**: Ensure all rows in `variables_template.csv` have the `status` column populated.
+**Check**: `status` field is optional in `variables_template.csv`.
+**Action**: If `status` column exists, it may be empty or populated. No validation required.
 
 ### Rule 7: Required Field Validation
 **Check**: 
@@ -183,7 +165,7 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 
 ### Rule 16: Language Requirements for CSV Columns
 **Check**: Only columns with `_fr` suffix should contain French text. All other columns must be in English.
-**Applies to**: All CSV template files in `diag_csv/**/` and `context/note_types_template.csv`
+**Applies to**: All CSV template files in `diag_csv/**/` and `template/note_types_template.csv`
 **Action**: 
 - Verify that columns ending with `_fr` (e.g., `item_label_fr`, `label_fr`, `note_type_label_fr`) contain French text
 - Verify that all other columns (e.g., `item_value`, `item_label_en`, `label_en`, `task_name`, `task_description`, `variable_key`, `enum_key`, etc.) contain English text
@@ -203,7 +185,6 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 - `task_id` must be unique in `tasks_template.csv`
 - `variable_key` must be unique in `variables_template.csv`
 - `enum_key` + `item_value` combination must be unique in `enums_template.csv`
-- `note_type_key` + `variable_key` combination must be unique in `note_types_template.csv`
 **Action**: Report duplicates.
 
 ### Rule 11: Note Type-Task Consistency
@@ -236,36 +217,97 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 - Report any variables with invalid level values
 - Ensure consistency between the two level columns (they should typically match, but can differ in specific inheritance scenarios)
 
+### Rule 17: Joint Keys and Reference Validation (enum_ref, catalogue_ref, generator_ref, note_type_ref)
+**Check**: All *_ref columns in `variables_template.csv` reference existing *_key in the corresponding template (joint keys).
+**Action**: 
+1. Extract all `enum_ref` values from `variables_template.csv` where `enum_ref` is not empty; verify each exists in `enums_template.csv.enum_key`.
+2. Extract all `catalogue_ref` values from `variables_template.csv` where `catalogue_ref` is not empty; verify each exists in `catalogues_template.csv.catalogue_key`.
+3. Extract all `generator_ref` values from `variables_template.csv` where `generator_ref` is not empty; verify each exists in `generators_template.csv.generator_key`.
+4. Extract all `note_type_ref` values from `variables_template.csv` where `note_type_ref` is not empty; verify each exists in `note_types_template.csv.note_type_key`.
+5. Report any *_ref that doesn't exist in its respective reference table.
+
+### Rule 19: Variable Kind Restricted Validation
+**Check**: `variable_kind` in `variables_template.csv` must be one of: `boolean`, `number`, `string`, `enum_single`, `enum_multiple`.
+**Action**: 
+- For each row in `variables_template.csv`, verify `variable_kind` is in the allowed list: `[boolean, number, string, enum_single, enum_multiple]`
+- Report any variables with invalid `variable_kind` values
+
+### Rule 20: Value Source Type Restricted Validation
+**Check**: `value_source_type` in `variables_template.csv` must be one of: `user_input`, `static_default`, `inherited`, `computed`.
+**Action**: 
+- For each row in `variables_template.csv`, verify `value_source_type` is in the allowed list: `[user_input, static_default, inherited, computed]`
+- Report any variables with invalid `value_source_type` values
+
+### Rule 21: Required Files and Structure Validation
+**Check**: Each folder in `diag_csv/**/` must have all required CSV files from the `template/` folder, and each CSV structure must match the template structure exactly.
+**Action**: 
+1. For each folder in `diag_csv/**/`:
+   - Verify all 6 required files exist: `tasks_template.csv`, `variables_template.csv`, `enums_template.csv`, `catalogues_template.csv`, `generators_template.csv`, `note_types_template.csv`
+   - If any file is missing, copy it from `template/` folder (with header row only)
+   - Files may be empty (only headers) but must exist
+   - For each CSV file:
+     a. Read header row from `template/` folder CSV
+     b. Read header row from `diag_csv` folder CSV
+     c. Compare column names (order may differ, but all columns must match exactly - no extra columns, no missing columns)
+     d. Report missing files or structure mismatches
+2. Report:
+   - Folders missing required CSV files (and copy missing files from template)
+   - CSV files with column structure that doesn't match template
+   - Missing columns in CSV files
+   - Extra columns in CSV files (must be removed to match template exactly)
+
+### Rule 22: Ensure All Template Files Exist
+**Check**: At the end of implementation, ensure all 6 CSV files from `template/` folder exist in the working folder.
+**Action**: 
+1. Check if all 6 files exist in the working folder:
+   - `tasks_template.csv`
+   - `variables_template.csv`
+   - `enums_template.csv`
+   - `catalogues_template.csv`
+   - `generators_template.csv`
+   - `note_types_template.csv`
+2. For each missing file:
+   - Copy the file from `template/` folder
+   - File should contain only the header row (column names)
+   - File may be empty except for headers
+3. This ensures the folder structure is complete even if some files are not yet populated
+
 ## Automation Hooks
 
 ### Hook 1: Pre-Save Validation
-**Trigger**: Before saving any CSV file in `diag_csv/**/` or `context/note_types_template.csv`
+**Trigger**: Before saving any CSV file in `diag_csv/**/` or `template/note_types_template.csv`
 **Actions**:
-1. Run Rule 1 (CSV format validation)
-2. Run Rule 2 (Enum variable validation)
-3. Run Rule 9 (Description field format)
-4. Run Rule 10 (Primary key uniqueness)
-5. Run Rule 14 (Note type description format) - if editing note_types_template.csv
+1. Run Rule 21 (Required Files and Structure Validation) - verify folder structure matches template
+2. Run Rule 22 (Ensure All Template Files Exist) - copy missing files from template
+3. Run Rule 1 (CSV format validation)
+4. Run Rule 2 (Enum variable validation)
+5. Run Rule 9 (Description field format)
+6. Run Rule 10 (Primary key uniqueness)
+7. Run Rule 14 (Note type description format) - if editing note_types_template.csv
 
 ### Hook 2: Post-Edit Validation
-**Trigger**: After editing any CSV file in `diag_csv/**/` or `context/note_types_template.csv`
+**Trigger**: After editing any CSV file in `diag_csv/**/` or `template/note_types_template.csv`
 **Actions**:
 1. Run Rule 4 (Task-Variable consistency)
 2. Run Rule 5 (UI Type consistency)
-3. Run Rule 6 (Status field validation)
-4. Run Rule 11 (Note Type-Task consistency) - if editing tasks or note_types
-5. Run Rule 12 (Note type variable kind validation) - if editing note_types
-6. Run Rule 13 (Note type field order validation) - if editing note_types
-7. Run Rule 15 (Variable level validation) - if editing variables_template.csv
+3. Run Rule 11 (Note Type-Task consistency) - if editing tasks or note_types
+4. Run Rule 12 (Note type variable kind validation) - if editing note_types
+5. Run Rule 13 (Note type field order validation) - if editing note_types
+6. Run Rule 15 (Variable level validation) - if editing variables_template.csv
+7. Run Rule 17 (Joint Keys and Reference Validation) - if editing variables_template.csv
+8. Run Rule 19 (Variable Kind Restricted Validation) - if editing variables_template.csv
+9. Run Rule 20 (Value Source Type Restricted Validation) - if editing variables_template.csv
 
 ### Hook 3: Cross-File Consistency Check
 **Trigger**: When working with multiple CSV files in the same diagnostic folder or when working with note_types_template.csv
 **Actions**:
 1. Verify all `enum_ref` in variables exist in enums
-2. Verify all `task_key` in variables exist in tasks
-3. Verify all `catalogue_key` in tasks exist in catalogues
-4. Verify all `generator_key` in tasks exist in generators
-5. Verify all `note_type_keys` in tasks exist in note_types_template.csv (parse comma-separated values)
+2. Verify all `catalogue_ref` in variables exist in catalogues
+3. Verify all `task_key` in variables exist in tasks
+4. Verify all `catalogue_key` in tasks exist in catalogues
+5. Verify all `generator_key` in tasks exist in generators
+6. Verify all `note_type_keys` in tasks exist in note_types_template.csv (parse comma-separated values)
+7. Verify all *_ref in variables (catalogue_ref, generator_ref, note_type_ref) reference existing *_key (joint keys)
 
 ## Skills
 
@@ -299,33 +341,34 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 **Implementation**:
 ```python
 # Pseudo-code
-1. Load all CSV files in diagnostic folder and context/note_types_template.csv
+1. Load all CSV files in diagnostic folder and template/note_types_template.csv
 2. Extract all primary keys:
    - task_ids from tasks_template.csv
+   - variable_keys from variables_template.csv
    - enum_keys from enums_template.csv
    - catalogue_keys from catalogues_template.csv
    - generator_keys from generators_template.csv
-   - note_type_keys from context/note_types_template.csv
+   - note_type_keys from template/note_types_template.csv
 3. Check all references:
    - variables.task_key -> tasks.task_id
-   - variables.enum_ref -> enums.enum_key
+   - variables.enum_ref -> enums.enum_key (if not empty)
+   - variables.catalogue_ref -> catalogues.catalogue_key (if not empty)
    - tasks.catalogue_key -> catalogues.catalogue_key
    - tasks.generator_key -> generators.generator_key
    - tasks.note_type_keys (comma-separated) -> note_types.note_type_key
+   - variables.catalogue_ref -> catalogues.catalogue_key (if not empty)
+   - variables.generator_ref -> generators.generator_key (if not empty)
+   - variables.note_type_ref -> note_types.note_type_key (if not empty)
 4. Report broken references
 ```
 
 ### Skill 4: Status Field Population
-**Function**: Ensure all variables have status field set
+**Function**: Status field is optional - no action required
 **Implementation**:
 ```python
 # Pseudo-code
-1. Read variables_template.csv
-2. For each row:
-   - If status column is empty or has trailing commas:
-     - Set status to 'draft'
-     - Ensure proper column alignment
-3. Save file
+# Status field is optional in variables_template.csv
+# No validation or population required
 ```
 
 ### Skill 5: Note Type Reference Validation
@@ -336,7 +379,7 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 1. Read tasks_template.csv
 2. Extract all note_type_keys values (comma-separated lists)
 3. Split comma-separated values and collect unique note_type_key values
-4. Read context/note_types_template.csv
+4. Read template/note_types_template.csv
 5. Extract all unique note_type_key values
 6. Compare and report:
    - Note type keys in tasks that don't exist in note_types_template.csv
@@ -349,7 +392,7 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 **Implementation**:
 ```python
 # Pseudo-code
-1. Read context/note_types_template.csv
+1. Read template/note_types_template.csv
 2. For each note_type_key:
    - Group rows by note_type_key
    - Verify field_order values are unique and sequential
@@ -368,13 +411,51 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 **Implementation**:
 ```python
 # Pseudo-code
-1. Read context/note_types_template.csv
+1. Read template/note_types_template.csv
 2. Group rows by note_type_key
 3. For each note_type_key:
    - Count number of variables (rows)
    - If count == 0, report as error
    - If count == 1, flag as potential issue (note types typically have multiple fields)
 4. Return list of note types with insufficient variables
+```
+
+### Skill 8: Joint Keys Reference Audit
+**Function**: Verify all *_ref in variables_template (catalogue_ref, generator_ref, note_type_ref) reference existing *_key in the corresponding template. (variable_key is no longer used in generators, catalogues, or note_types.)
+**Implementation**:
+```python
+# Pseudo-code
+1. For each non-empty catalogue_ref in variables_template.csv, verify it exists in catalogues_template.csv.catalogue_key
+2. For each non-empty generator_ref in variables_template.csv, verify it exists in generators_template.csv.generator_key
+3. For each non-empty note_type_ref in variables_template.csv, verify it exists in note_types_template.csv.note_type_key
+4. Report any broken *_ref references
+```
+
+### Skill 9: Folder Structure Validation
+**Function**: Verify each folder in diag_csv has all 6 required CSV files and matching structure, copy missing files from template
+**Implementation**:
+```python
+# Pseudo-code
+1. Read template/ folder and extract column headers from each template CSV file:
+   - tasks_template.csv
+   - variables_template.csv
+   - enums_template.csv
+   - catalogues_template.csv
+   - generators_template.csv
+   - note_types_template.csv
+2. For each folder in diag_csv/*/:
+   - Check if all 6 required files exist
+   - If any file is missing:
+     a. Copy the file from template/ folder (with header row only)
+     b. Report which files were copied
+   - For each existing file:
+     a. Read header row
+     b. Compare with template header (normalize column names, ignore order)
+     c. Check for missing columns (must match exactly)
+     d. Check for extra columns (must be removed to match template exactly)
+   - Report missing files (and copy them)
+   - Report structure mismatches
+3. Return list of folders with issues and details of mismatches
 ```
 
 ## Safeguarding Rules
@@ -405,9 +486,11 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 ### Double-Check 1: After Adding New Variables
 1. Verify `task_key` exists in tasks_template.csv
 2. If enum variable, verify `enum_ref` exists and has at least 2 items
-3. Verify `status` field is set
-4. Verify description has no commas
-5. Verify `level_registered_at` and `level_belongs_to` are valid hierarchy levels (`case`, `report`, `property`, `building`, `storey`, `room`, `building_element`, `object`)
+3. If catalogue variable, verify `catalogue_ref` exists in catalogues_template.csv
+4. Verify `variable_kind` is in `[boolean, number, string, enum_single, enum_multiple]`
+5. Verify `value_source_type` is in `[user_input, static_default, inherited, computed]`
+6. Verify description has no commas
+7. Verify `level_registered_at` and `level_belongs_to` are valid hierarchy levels (`case`, `report`, `property`, `building`, `storey`, `room`, `building_element`, `object`)
 
 ### Double-Check 2: After Adding New Tasks
 1. Verify `ui_type` is valid
@@ -430,14 +513,26 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 5. Verify description fields have no commas (use semicolons)
 
 ### Double-Check 5: Before Finalizing
-1. Run all validation rules
-2. Check for orphaned references (tasks, variables, enums, catalogues, generators, note types)
-3. Verify CSV format is correct (no commas in values)
-4. Ensure all status fields are populated
-5. Verify enum completeness for all enum variables
-6. Verify all note_type_keys referenced in tasks exist in note_types_template.csv
-7. Verify note type variables have correct structure and field orders
-8. Verify all variables have valid `level_registered_at` and `level_belongs_to` values
+1. Verify each folder in `diag_csv/**/` has all 6 required CSV files from `template/` folder:
+   - `tasks_template.csv`
+   - `variables_template.csv`
+   - `enums_template.csv`
+   - `catalogues_template.csv`
+   - `generators_template.csv`
+   - `note_types_template.csv`
+   - If any file is missing, copy it from `template/` folder (with header row only)
+2. Verify each CSV file structure matches template structure exactly (all columns present, no missing columns, no extra columns)
+3. Run all validation rules
+4. Check for orphaned references (tasks, variables, enums, catalogues, generators, note types)
+5. Verify CSV format is correct (no commas in values)
+6. Verify enum completeness for all enum variables
+7. Verify all note_type_keys referenced in tasks exist in note_types_template.csv
+8. Verify note type variables have correct structure and field orders
+9. Verify all variables have valid `level_registered_at` and `level_belongs_to` values
+10. Verify all `enum_ref` and `catalogue_ref` reference existing enums/catalogues
+11. Verify all *_ref in variables (catalogue_ref, generator_ref, note_type_ref) reference existing *_key (joint keys)
+12. Verify `variable_kind` is in `[boolean, number, string, enum_single, enum_multiple]` for all variables
+13. Verify `value_source_type` is in `[user_input, static_default, inherited, computed]` for all variables
 
 ## Usage Examples
 
@@ -461,15 +556,26 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 **Process**:
 1. Read tasks_template.csv, extract all note_type_keys values
 2. Parse comma-separated note type keys
-3. Read context/note_types_template.csv, extract all unique note_type_key values
+3. Read template/note_types_template.csv, extract all unique note_type_key values
 4. Compare and report missing note type keys
 5. Return list of tasks with broken note type references
 
 ### Example 4: Note Type Variable Validation
 **Query**: "Check if note type variables have correct field_order and variable_kind"
 **Process**:
-1. Read context/note_types_template.csv
+1. Read template/note_types_template.csv
 2. Group by note_type_key
 3. For each note type, verify field_order values are unique and sequential
 4. Verify variable_kind values are valid (image, text, location, number, etc.)
 5. Report any inconsistencies
+
+### Example 5: Folder Structure Validation
+**Query**: "Verify each folder in diag_csv has all 6 required CSV files and matching structure"
+**Process**:
+1. Read template/ folder and extract column headers from each template CSV file (all 6 files)
+2. For each folder in diag_csv/*/:
+   - Check if all 6 required files exist: tasks_template.csv, variables_template.csv, enums_template.csv, catalogues_template.csv, generators_template.csv, note_types_template.csv
+   - If any file is missing, copy it from template/ folder (with header row only)
+   - For each existing file, compare header structure with template (must match exactly - no extra columns)
+   - Report missing files (and copy them) or structure mismatches
+3. Return list of folders with issues and details

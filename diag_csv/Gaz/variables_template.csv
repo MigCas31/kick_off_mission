@@ -1,0 +1,62 @@
+variable_key,label_en,label_fr,description,task_key,variable_kind,value_source_type,level_registered_at,level_belongs_to,required_default,required_if,enum_ref,catalogue_ref,generator_ref, note_type_ref
+building_type,Building Type,Type de bâtiment,Type of building (e.g. single house; apartment),gaz_001,enum_single,user_input,report,report,true,,building_type,,,
+gas_supplied,Gas Supplied,Installation alimentée en gaz,Whether the installation is supplied with gas,gaz_001,enum_single,user_input,report,report,true,,gas_supplied,,,
+gas_nature,Gas Nature,Nature du gaz,Type of gas (natural gas or GPL),gaz_001,enum_single,user_input,report,report,true,,gas_nature,,,
+gas_label,Gas Label,Libellé nature du gaz,Label relating to the nature of the gas,gaz_001,enum_single,user_input,report,report,true,,gas_label,,,
+gas_container,Gas Container,Récipient contenant le gaz,Container containing the gas (e.g. no container; propane tank),gaz_001,enum_single,user_input,report,report,true,,gas_container,,,
+distributor,Distributor,Distributeur,Gas distributor (from catalogue),gaz_001,enum_single,user_input,report,report,false,,,gas_distributor,,
+identification_type,Identification Type,Type de repérage,Type of identification used for this control (device by device or standard grid),gaz_001,enum_single,user_input,report,report,true,,identification_type,,,
+standard_version,Standard Version,Normes,Standard to use (2013 or 2022),gaz_001,enum_single,user_input,report,report,true,,standard_version,,,
+gas_delivery_point_number,Gas Delivery Point Number,Numéro de point de livraison gaz,Gas delivery point number,gaz_001,string,user_input,report,report,false,,,,,
+pce_number,PCE Number,Numéro PCE à 14 chiffres,14-digit metering point estimation number (PCE),gaz_001,string,user_input,report,report,false,,,,,
+meter_number,Meter Number,Numéro de compteur,Meter number,gaz_001,string,user_input,report,report,false,,,,,
+owner_name,Owner Name,Titulaire,Name of owner or holder,gaz_002,string,user_input,report,report,false,,,,,
+owner_contact,Owner Contact,Contact titulaire,Contact details of owner or holder,gaz_002,string,user_input,report,report,false,,,,,
+documents_from_client,Documents from Client,Documents remis par le donneur d'ordre,Documents provided by the client or orderer,gaz_003,string,user_input,report,report,false,,,,,
+missing_flue_vacuity_cert,Missing Flue Vacuity Cert,Attestation conduits fumées non présentée,Flue vacuity certificate less than one year old not presented,gaz_003,boolean,user_input,report,report,false,,,,,
+missing_boiler_maintenance_proof,Missing Boiler Maintenance Proof,Justificatif entretien chaudière non présenté,Proof of boiler maintenance less than one year old not presented,gaz_003,boolean,user_input,report,report,false,,,,,
+conclusion_phrase,Conclusion Phrase,Ajouter aux conclusion la phrase,Additional phrase to add to the conclusion,gaz_003,string,user_input,report,report,false,,,,,
+piping_c1_materials_copper,Piping C.1 Materials Copper,C.1 Tuyauteries fixes matériaux,C.1 Fixed piping materials check (e.g. copper; steel; PE),gaz_004,enum_single,user_input,report,report,true,,gaz_checklist_response,,,
+piping_c1_2a1,Piping C.1 Point 2a1,Point 2a1,C.1 checklist point 2a1,gaz_004,enum_single,user_input,report,report,true,,gaz_checklist_response,,,
+piping_c1_2a2,Piping C.1 Point 2a2,Point 2a2,C.1 checklist point 2a2,gaz_004,enum_single,user_input,report,report,true,,gaz_checklist_response,,,
+piping_c2_annular_space,Piping C.2 Annular Space,C.2 Espace annulaire,C.2 Fixed piping annular space visibility and sealing,gaz_005,enum_single,user_input,report,report,true,,gaz_checklist_response,,,
+leaktightness_meter_presence,Leaktightness Meter Presence,C.3 Présence compteur,Presence of a working meter (C.3),gaz_006,enum_single,user_input,report,report,true,,gaz_checklist_response,,,
+leaktightness_6a,Leaktightness 6a,6a Débit inférieur ou égal à 6 l/h,Flow rate reading less than or equal to 6 l/h,gaz_006,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+leaktightness_6b1,Leaktightness 6b1,6b1 Débit supérieur à 6 l/h robinets ouverts,Reading greater than 6 l/h with control valve(s) open,gaz_006,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+leaktightness_6b2,Leaktightness 6b2,6b2 Débit supérieur à 6 l/h robinets fermés,Reading greater than 6 l/h with control valve(s) closed,gaz_006,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+leaktightness_6c,Leaktightness 6c,6c Défaut d'étanchéité observé,At least one leakage defect observed without flow measurement,gaz_006,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+shutoff_7a1,Shut-off 7a1,7a1 Absence organe coupure supplémentaire,Absence of an additional shut-off device,gaz_006,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+shutoff_7a2,Shut-off 7a2,7a2 Organe non adapté pression,At least one shut-off device not suitable for operating pressure,gaz_006,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+shutoff_7a3,Shut-off 7a3,7a3 Organe non marqué logo,At least one shut-off device not marked with recognized brand logo,gaz_006,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+shutoff_7a4,Shut-off 7a4,7a4 Accessibilité organe coupure supplémentaire,Additional shut-off device is accessible,gaz_006,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+shutoff_7a5,Shut-off 7a5,7a5 Dispositif de manœuvre,Additional shut-off device has operating mechanism,gaz_006,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+gpl_c5_7b,GPL C.5 Point 7b,7b GPL première détente,GPL first-stage regulation presence (C.5),gaz_007,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+gpl_c5_7c1,GPL C.5 Point 7c1,7c1 Détendeur inverseur limiteur,Regulator changeover valve and limiter (C.5),gaz_007,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+gpl_c6_7d1,GPL C.6 Lyres 7d1,7d1 Lyres GPL,LPG pigtails condition (C.6),gaz_007,enum_single,user_input,report,report,false,,gaz_checklist_response,,,
+appliance_location,Appliance Location,Localisation,Location of the appliance (room or space),gaz_009,enum_single,user_input,object,object,true,,appliance_location,,gas_appliance
+appliance_name_usage,Appliance Name or Usage,Nom/Usage,Name or usage of the appliance,gaz_009,enum_single,user_input,object,object,true,,appliance_name_usage,,gas_appliance
+appliance_connection_type,Appliance Connection Type,Type d'appareil,Connection type (not connected; connected; sealed),gaz_009,enum_single,user_input,object,object,true,,appliance_connection_type,,gas_appliance
+appliance_brand,Appliance Brand,Marque,Brand of the appliance,gaz_009,enum_single,user_input,object,object,true,,,appliance_brand,gas_appliance
+appliance_model,Appliance Model,Modèle,Model of the appliance,gaz_009,string,user_input,object,object,false,,,,gas_appliance,
+manufacture_year,Manufacture Year,Année de fabrication,Year of manufacture,gaz_009,string,user_input,object,object,false,,,,gas_appliance,
+power_kw,Power kW,Puissance en Kw,Power in kW,gaz_009,number,user_input,object,object,true,,,,gas_appliance,
+measured_flow_l_min,Measured Flow l/min,Débit mesuré l/min,Measured flow rate in l/min,gaz_009,number,user_input,object,object,false,,,,gas_appliance,
+appliance_functioning,Appliance Functioning,Fonctionnement,Operation or functioning status,gaz_010,enum_single,user_input,object,object,false,,gaz_checklist_response,,gas_appliance
+maintenance_contract_present,Maintenance Contract Present,Présence contrat d'entretien,Presence of a maintenance contract,gaz_010,enum_single,user_input,object,object,false,,gaz_checklist_response,,gas_appliance
+flue_maintenance_proof,Flue Maintenance Proof,Justificatif entretien conduit,Proof of flue maintenance,gaz_010,enum_single,user_input,object,object,false,,gaz_checklist_response,,gas_appliance
+co_measurement,CO Measurement,Mesure hygiène atmosphère CO,Atmospheric CO measurement,gaz_010,enum_single,user_input,object,object,false,,gaz_checklist_response,,gas_appliance
+oca_8a1,OCA 8a1,8a1 Présence organe coupure appareil,Presence of shut-off device for each appliance (C.7),gaz_010,enum_single,user_input,object,object,false,,gaz_checklist_response,,gas_appliance
+oca_8a2,OCA 8a2,8a2 Accessibilité organe coupure,Accessibility of each shut-off device,gaz_010,enum_single,user_input,object,object,false,,gaz_checklist_response,,gas_appliance
+oca_8a3,OCA 8a3,8a3 Manœuvrabilité organe coupure,Maneuverability of each shut-off device,gaz_010,enum_single,user_input,object,object,false,,gaz_checklist_response,,gas_appliance
+oca_8c,OCA 8c,8c Tuyau caoutchouc non démontable,Shut-off device equipped with non-removable rubber-hose connector (DGI),gaz_010,enum_single,user_input,object,object,false,,gaz_checklist_response,,gas_appliance
+dgi_registration_number,DGI Registration Number,Numéro d'enregistrement DGI,Registration number in case of DGI,gaz_011,string,user_input,report,report,false,,,,,
+dgi_meter_index,DGI Meter Index,Index du compteur DGI,Meter index in case of DGI,gaz_011,string,user_input,report,report,false,,,,,
+dgi_date,DGI Date,Date de DGI,Date of DGI,gaz_011,string,user_input,report,report,false,,,,,
+dgi_total_closure,DGI Total Closure,Condamnation totale,Total closure of installation with condemnation label,gaz_011,boolean,user_input,report,report,false,,,,,
+dgi_partial_closure,DGI Partial Closure,Condamnation partielle,Partial closure or specific appliance with label,gaz_011,boolean,user_input,report,report,false,,,,,
+dgi_transmission_distributor,DGI Transmission to Distributor,Transmission info distributeur,Transmission of information to gas distributor,gaz_011,boolean,user_input,report,report,false,,,,,
+dgi_info_sheet_manager,DGI Info Sheet to Manager,Fiche info gestionnaire,Filled gas distributor information sheet to property manager or landlord,gaz_011,boolean,user_input,report,report,false,,,,,
+prerecorded_findings,Pre-recorded Findings,Constatations pré-enregistrées,Pre-recorded technical findings (checkboxes),gaz_011,string,user_input,report,report,false,,,,,
+free_findings,Free Findings,Constatations libres,Free-form findings text,gaz_011,string,user_input,report,report,false,,,,,
+duty_to_advise,Duty to Advise,Devoir de conseils,Duty to advise text,gaz_011,string,user_input,report,report,false,,,,,
+report_summary_view,Report Summary View,Résumé,Final report summary view and conclusions,gaz_012,string,user_input,report,report,false,,,,,

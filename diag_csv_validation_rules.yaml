@@ -8,12 +8,28 @@ description: Rules, hooks, skills, and validation procedures for diagnostic CSV 
 
 ## Metadata
 folder_pattern: "diag_csv/*/"
+template_folder: "template/"
 required_files:
   - tasks_template.csv
   - variables_template.csv
   - enums_template.csv
   - catalogues_template.csv
   - generators_template.csv
+
+## Joint Keys (variables_template.*_ref references *_key in the other template)
+joint_keys:
+  - template: note_types_template.csv
+    key_column: note_type_key
+    variables_ref: note_type_ref
+    description: "variables.note_type_ref -> note_types.note_type_key; note_type_key is required in note_types_template; note_type_ref required when applicable in variables_template"
+  - template: generators_template.csv
+    key_column: generator_key
+    variables_ref: generator_ref
+    description: "variables.generator_ref -> generators.generator_key; required when applicable in variables_template"
+  - template: catalogues_template.csv
+    key_column: catalogue_key
+    variables_ref: catalogue_ref
+    description: "variables.catalogue_ref -> catalogues.catalogue_key; required when applicable in variables_template"
 
 ## CSV File Schemas
 
@@ -167,12 +183,14 @@ columns:
     type: enum
     required: true
     values: ["boolean", "number", "string", "rich_text", "enum_single", "enum_multiple", "tags", "catalogue", "generator", "computed"]
+    validation: "Must be one of: boolean, number, string, enum_single, enum_multiple"
     example: "enum_multiple"
   
   - name: value_source_type
     type: enum
     required: true
     values: ["user_input", "static_default", "inherited", "system_provided", "computed", "derived"]
+    validation: "Must be one of: user_input, static_default, inherited, computed"
     example: "user_input"
   
   - name: level_registered_at
@@ -227,6 +245,14 @@ columns:
     type: string
     required: false
     foreign_key: "generators_template.csv.generator_key"
+    description: "Joint key: reference to generator_key (required when applicable)"
+    example: ""
+  
+  - name: note_type_ref
+    type: string
+    required: false
+    foreign_key: "note_types_template.csv.note_type_key"
+    description: "Joint key: reference to note_type_key (required when applicable)"
     example: ""
   
   - name: unit
@@ -237,10 +263,10 @@ columns:
   
   - name: status
     type: enum
-    required: true
+    required: false
     values: ["draft", "final", "deprecated"]
     default: "draft"
-    description: "Status of variable"
+    description: "Status of variable (optional)"
     example: "draft"
 
 ### enums_template.csv
@@ -427,13 +453,6 @@ rules:
       - If ui_type=generator, generator_key must exist in generators_template.csv
     action: "Report missing catalogue_key or generator_key references"
   
-  - id: status_field_validation
-    name: "Status Field Validation"
-    description: "All variables must have status field set"
-    severity: error
-    check: "All rows in variables_template.csv have status column populated"
-    action: "Set status to 'draft' if empty"
-  
   - id: required_field_validation
     name: "Required Field Validation"
     description: "Conditional requiredness must have conditions"
@@ -482,6 +501,62 @@ rules:
         - Report any variables with invalid level values
     action: "Report variables with invalid level_registered_at or level_belongs_to values"
     applies_to: ["variables_template.csv.level_registered_at", "variables_template.csv.level_belongs_to"]
+  
+  - id: joint_keys_ref_validation
+    name: "Joint Keys Reference Validation (enum_ref, catalogue_ref, generator_ref, note_type_ref)"
+    description: "All *_ref in variables_template must reference existing *_key in the corresponding template"
+    severity: error
+    check: |
+      1. enum_ref (if not empty) -> must exist in enums_template.csv.enum_key
+      2. catalogue_ref (if not empty) -> must exist in catalogues_template.csv.catalogue_key
+      3. generator_ref (if not empty) -> must exist in generators_template.csv.generator_key
+      4. note_type_ref (if not empty) -> must exist in note_types_template.csv.note_type_key
+    action: "Report any *_ref that doesn't exist in its respective reference table"
+    applies_to: ["variables_template.csv.enum_ref", "variables_template.csv.catalogue_ref", "variables_template.csv.generator_ref", "variables_template.csv.note_type_ref"]
+    skill: "reference_integrity_check"
+  
+  - id: variable_kind_restricted_validation
+    name: "Variable Kind Restricted Validation"
+    description: "variable_kind must be one of: boolean, number, string, enum_single, enum_multiple"
+    severity: error
+    check: |
+      For each row in variables_template.csv:
+        - Verify variable_kind is in [boolean, number, string, enum_single, enum_multiple]
+        - Report any variables with invalid variable_kind values
+    action: "Report variables with invalid variable_kind values (must be boolean, number, string, enum_single, or enum_multiple)"
+    applies_to: ["variables_template.csv.variable_kind"]
+  
+  - id: value_source_type_restricted_validation
+    name: "Value Source Type Restricted Validation"
+    description: "value_source_type must be one of: user_input, static_default, inherited, computed"
+    severity: error
+    check: |
+      For each row in variables_template.csv:
+        - Verify value_source_type is in [user_input, static_default, inherited, computed]
+        - Report any variables with invalid value_source_type values
+    action: "Report variables with invalid value_source_type values (must be user_input, static_default, inherited, or computed)"
+    applies_to: ["variables_template.csv.value_source_type"]
+  
+  - id: required_files_structure_validation
+    name: "Required Files and Structure Validation"
+    description: "Each folder in diag_csv must have all required CSV files from template folder, and each CSV structure must match template structure"
+    severity: error
+    check: |
+      1. For each folder in diag_csv/*/:
+         - Verify all required files exist: tasks_template.csv, variables_template.csv, enums_template.csv, catalogues_template.csv, generators_template.csv
+         - Files may be empty (only headers) but must exist
+         - For each CSV file:
+           a. Read header row from template folder CSV
+           b. Read header row from diag_csv folder CSV
+           c. Compare column names (order may differ, but all columns must match)
+           d. Report missing files or structure mismatches
+      2. Report:
+         - Folders missing required CSV files
+         - CSV files with column structure that doesn't match template
+         - Missing columns in CSV files
+         - Extra columns in CSV files (if not allowed)
+    action: "Report folders with missing files or CSV files with structure mismatches"
+    applies_to: ["diag_csv/*/"]
 
 ## Hooks
 
@@ -489,11 +564,13 @@ hooks:
   - name: pre_save_validation
     trigger: "Before saving any CSV file in diag_csv/**/"
     rules:
+      - required_files_structure_validation
       - csv_format_validation
       - enum_variable_validation
       - description_field_format
       - primary_key_uniqueness
     actions:
+      - "Verify required files exist and structure matches template"
       - "Run CSV format validation"
       - "Check enum references"
       - "Sanitize description fields"
@@ -504,13 +581,16 @@ hooks:
     rules:
       - task_variable_consistency
       - ui_type_consistency
-      - status_field_validation
       - variable_level_validation
+      - joint_keys_ref_validation
+      - variable_kind_restricted_validation
+      - value_source_type_restricted_validation
     actions:
       - "Verify task-variable consistency"
       - "Check UI type references"
-      - "Ensure status fields are populated"
       - "Validate level_registered_at and level_belongs_to values"
+      - "Check enum_ref, catalogue_ref, generator_ref, note_type_ref (joint keys) references"
+      - "Validate variable_kind and value_source_type values"
   
   - name: cross_file_consistency_check
     trigger: "When working with multiple CSV files in the same diagnostic folder"
@@ -518,8 +598,10 @@ hooks:
       - enum_variable_validation
       - task_variable_consistency
       - ui_type_consistency
+      - joint_keys_ref_validation
     actions:
       - "Verify all enum_ref in variables exist in enums"
+      - "Verify all catalogue_ref, generator_ref, note_type_ref in variables exist in catalogues, generators, note_types (joint keys)"
       - "Verify all task_key in variables exist in tasks"
       - "Verify all catalogue_key in tasks exist in catalogues"
       - "Verify all generator_key in tasks exist in generators"
@@ -549,32 +631,43 @@ skills:
     output: "Sanitized CSV content"
   
   - name: reference_integrity_check
-    description: "Verify all foreign key references are valid"
+    description: "Verify all foreign key references (joint keys) are valid"
     function: |
-      1. Load all CSV files in diagnostic folder
+      1. Load all CSV files in diagnostic folder and template/note_types_template.csv
       2. Extract all primary keys:
          - task_ids from tasks_template.csv
+         - variable_keys from variables_template.csv
          - enum_keys from enums_template.csv
          - catalogue_keys from catalogues_template.csv
          - generator_keys from generators_template.csv
-      3. Check all references:
+         - note_type_keys from note_types_template.csv
+      3. Check all references (joint keys and task refs):
          - variables.task_key -> tasks.task_id
-         - variables.enum_ref -> enums.enum_key
+         - variables.enum_ref -> enums.enum_key (if not empty)
+         - variables.catalogue_ref -> catalogues.catalogue_key (if not empty)
+         - variables.generator_ref -> generators.generator_key (if not empty)
+         - variables.note_type_ref -> note_types.note_type_key (if not empty)
          - tasks.catalogue_key -> catalogues.catalogue_key
          - tasks.generator_key -> generators.generator_key
+         - tasks.note_type_keys (comma-separated) -> note_types.note_type_key
       4. Report broken references
     output: "List of broken foreign key references"
   
-  - name: status_field_population
-    description: "Ensure all variables have status field set"
+  - name: folder_structure_validation
+    description: "Verify each folder in diag_csv has all required CSV files and matching structure"
     function: |
-      1. Read variables_template.csv
-      2. For each row:
-         - If status column is empty or has trailing commas:
-           - Set status to 'draft'
-           - Ensure proper column alignment
-      3. Save file
-    output: "Updated variables_template.csv with status fields"
+      1. Read template folder and extract column headers from each template CSV file
+      2. For each folder in diag_csv/*/:
+         - Check if all required files exist: tasks_template.csv, variables_template.csv, enums_template.csv, catalogues_template.csv, generators_template.csv
+         - For each existing file:
+           a. Read header row
+           b. Compare with template header (normalize column names, ignore order)
+           c. Check for missing columns
+           d. Check for extra columns (optional: report as warning)
+         - Report missing files
+         - Report structure mismatches
+      3. Return list of folders with issues and details of mismatches
+    output: "List of folders with missing files or structure mismatches, with details"
 
 ## Safeguarding Rules
 
@@ -606,7 +699,6 @@ double_checks:
     steps:
       - "Verify task_key exists in tasks_template.csv"
       - "If enum variable, verify enum_ref exists and has at least 2 items"
-      - "Verify status field is set"
       - "Verify description has no commas"
       - "Verify level_registered_at and level_belongs_to are valid hierarchy levels (case, report, property, building, storey, room, building_element, object)"
   
@@ -625,12 +717,16 @@ double_checks:
   
   - name: before_finalizing
     steps:
+      - "Verify each folder has all required CSV files from template folder"
+      - "Verify each CSV file structure matches template structure"
       - "Run all validation rules"
       - "Check for orphaned references"
       - "Verify CSV format is correct (no commas in values)"
-      - "Ensure all status fields are populated"
       - "Verify enum completeness for all enum variables"
       - "Verify all variables have valid level_registered_at and level_belongs_to values"
+      - "Verify all enum_ref, catalogue_ref, generator_ref, note_type_ref (joint keys) reference existing enums/catalogues/generators/note_types"
+      - "Verify variable_kind is in [boolean, number, string, enum_single, enum_multiple]"
+      - "Verify value_source_type is in [user_input, static_default, inherited, computed]"
 
 ## Usage Examples
 
@@ -652,3 +748,15 @@ examples:
       4. Report locations of problematic commas
     rule: csv_format_validation
     skill: csv_sanitization
+  
+  - name: folder_structure_check
+    query: "Verify each folder in diag_csv has all required CSV files and matching structure"
+    process: |
+      1. Read template/ folder and extract column headers from each template CSV
+      2. For each folder in diag_csv/*/:
+         - Check if all required files exist (may be empty)
+         - Compare CSV structure with template structure
+         - Report missing files or structure mismatches
+      3. Return list of folders with issues
+    rule: required_files_structure_validation
+    skill: folder_structure_validation

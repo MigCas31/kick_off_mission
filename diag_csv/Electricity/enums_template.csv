@@ -1,0 +1,20 @@
+enum_key,enum_title,item_value,item_label_en,item_label_fr
+building_type,Building Type,apartment,Apartment,Appartement
+building_type,Building Type,house,House,Maison
+building_type,Building Type,other,Other,Autre
+yes_no,Yes No,yes,Yes,Oui
+yes_no,Yes No,no,No,Non
+distributor,Distributor,engie,Engie,Engie
+distributor,Distributor,enedis,Enedis,Enedis
+distributor,Distributor,edf,EDF,EDF
+distributor,Distributor,alterna,Alterna,Alterna
+distributor,Distributor,direct_energie,Direct Energie,Direct Energie
+distributor,Distributor,enercoop,Enercoop,Enercoop
+distributor,Distributor,other,Other,Autre
+yes_no_nv_so,Yes No Not Verified Not Applicable,yes,Yes,Oui
+yes_no_nv_so,Yes No Not Verified Not Applicable,no,No,Non
+yes_no_nv_so,Yes No Not Verified Not Applicable,not_verified,Not verified,NV
+yes_no_nv_so,Yes No Not Verified Not Applicable,not_applicable,Not applicable,Sans Objet
+rcd_sensitivity,RCD Sensitivity,protecting_full_installation,Protecting entire installation,Protégeant toute l'installation
+rcd_sensitivity,RCD Sensitivity,partial_protection,Partial protection,Protection partielle
+rcd_sensitivity,RCD Sensitivity,absent,Absent,Absent

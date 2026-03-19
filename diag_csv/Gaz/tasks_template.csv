@@ -1,0 +1,13 @@
+task_id,task_name,task_description,lifecycle_phase,lifecycle_level,lifecycle_moment,stage,step,requiredness,condition,ui_type, note_type_keys, catalogue_key, generator_key
+gaz_001,Installation information,Enter building type; gas supplied; gas nature; gas label; container; distributor; identification type; standard; PCE; meter number,offsite-pre,report,before_arriving,1.A,report.pre-visit,always,,form,,,
+gaz_002,Titulaire (owner/holder),Enter owner or holder contact details,offsite-pre,report,before_arriving,1.A,report.pre-visit,always,,form,,,
+gaz_003,Other information and documents,Enter documents from client; missing flue vacuity cert checkbox; missing boiler maintenance proof checkbox; conclusion phrase,offsite-pre,report,before_arriving,1.A,report.pre-visit,optional,,form,,,
+gaz_004,Fixed piping – materials (C.1),Complete C.1 checklist fixed piping materials points 2a1 to 4e with Oui; Non; S.O.; A1; A2,onsite,report,on_overview,2.G,report.overview,always,,form,,,
+gaz_005,Fixed piping – annular space (C.2),Complete C.2 checklist fixed piping annular space point 5 with Oui; Non; A2; S.O.,onsite,report,on_overview,2.G,report.overview,always,,form,,,
+gaz_006,Common components – leaktightness and shut-off (C.3 C.4),Complete C.3 interior leaktightness and C.4 shut-off device checklists with Oui; Non; S.O.; A1; DGI,onsite,report,on_overview,2.G,report.overview,always,,form,,,
+gaz_007,Common components – GPL specifics (C.5 C.6),Complete C.5 first-stage regulation and C.6 LPG pigtails checklists when gas is GPL,onsite,report,on_overview,2.G,report.overview,always_if,gas_nature includes gpl,form,,,
+gaz_008,Add or register gas appliance,Per room select appliance type (A; B; C; CENR; Alvéole Gaz; Robinet en attente) and create one appliance object,onsite,room,on_overview,2.G,room.overview,always,,generator,,,gas_appliance
+gaz_009,Appliance description,Enter localisation; Nom/Usage; type; Marque; Modèle; year; power kW; measured flow l/min for the selected appliance,onsite,room,on_overview,2.G,room.overview,always,,form,,,
+gaz_010,Appliance condition and connection (C.7–C.12),Enter appliance state (Fonctionnement; contract; flue proof; CO; sketch; photo; anomalies) and Raccordement; Ventilation; Fonctionnement; Fin checklists,onsite,room,on_overview,2.G,room.overview,always,,form,,,
+gaz_011,Comments (DGI; pre-recorded; free; advice),Enter DGI case fields; pre-recorded findings checkboxes; Constatations libres; Devoir de conseils; template load/save,onsite,report,on_completion,2.L,report.on-completion,optional,,form,,,
+gaz_012,Report summary,View and confirm final Résumé tab overview and conclusions,onsite,report,on_completion,2.L,report.on-completion,always,,form,,,

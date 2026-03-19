@@ -1,0 +1,47 @@
+variable_key,label_en,label_fr,description,task_key,variable_kind,value_source_type,level_registered_at,level_belongs_to,required_default,required_if,enum_ref,catalogue_ref,generator_ref," note_type_ref"
+asbestos_material,Material / Component,Matériau / Composant,Material or component from the asbestos survey checklist (e.g. sprayed asbestos; thermal insulation; false ceilings),asbestos_001,enum_single,user_input,building_element,building_element,true,,asbestos_material,,,
+conservation_evaluation_material,Evaluation Material Category,Catégorie matériau évaluation,Material type for conservation evaluation (Flocage; Calorifugeage; Faux plafond; Autres matériaux),asbestos_004,enum_single,user_input,room,room,true,,conservation_evaluation_material,conservation_state,,
+surface_condition_degradation,Surface Condition and Degradation,État de surface et dégradation,Surface condition and degradation state (I; Ib; II; III; IV; V; PE),asbestos_004,enum_single,user_input,room,room,true,,surface_condition_degradation,conservation_state,,
+physical_protection,Physical Protection,Protection physique,Physical protection (P non-sealed; NP unprotected),asbestos_004,enum_single,user_input,room,room,true,,physical_protection,conservation_state,,
+air_circulation,Air Circulation,Circulation d'air,Air circulation level (low; medium; high),asbestos_004,enum_single,user_input,room,room,true,,air_circulation,conservation_state,,
+shocks_vibrations,Shocks and Vibrations,Chocs et vibrations,Shocks and vibrations level (low; medium; high),asbestos_004,enum_single,user_input,room,room,true,,shocks_vibrations,conservation_state,,
+conservation_score_result,Conservation Score Result,Résultat score,Calculated or validated conservation state score,asbestos_004,number,user_input,room,room,false,,,conservation_state,,
+sample_id,Sample Number,Numéro sondage,Generated or entered sample identifier (e.g. M001),asbestos_005,string,user_input,room,room,true,,,,,sample_note_type
+sample_photo,Sample Photo,Photo,Photo of the survey sample,asbestos_005,string,user_input,room,room,false,,,,,sample_note_type
+room_location,Room Location,Localisation pièce(s),Room or space where the sample is located,asbestos_005,string,user_input,room,room,true,,,,,sample_note_type
+precise_location,Precise Location,Loc. précise,More precise location within the room,asbestos_005,string,user_input,room,room,false,,,,,sample_note_type
+construction_component,Construction Component,Composant de la construction,Construction component (e.g. ceilings and false ceilings - Ceilings),asbestos_005,string,user_input,room,room,true,,,,,sample_note_type
+part_to_inspect,Part to Inspect,Partie à inspecter,Specific part to inspect (e.g. Flocage),asbestos_005,string,user_input,room,room,true,,,,,sample_note_type
+csp_list,Material Class / Liste CSP,Classe du matériau / Liste CSP,Same as asbestos conservation class (Liste A; Liste B; Liste C),asbestos_005,enum_single,computed,room,room,false,,asbestos_material_class,,,sample_note_type
+material_description,Material Description,Description,Material description (e.g. Flocage),asbestos_005,string,user_input,room,room,false,,,,,sample_note_type
+place_on_plan,Place on Plan,Placer / Plan,Indicator that sample is placed on the floor plan,asbestos_005,boolean,user_input,room,room,false,,,,,sample_note_type
+non_regulatory_on_request,Non-Regulatory on Request,Repérage non réglementaire sur demande,Non-regulatory identification on request,asbestos_005,boolean,user_input,room,room,false,,,,,sample_note_type
+conclusion_methodology,Conclusion Methodology,Méthodologie,Methodology (operator judgment or waiting for analysis),asbestos_005,enum_single,user_input,room,room,false,,conclusion_methodology,,,sample_note_type
+conclusion_status,Conclusion Status,Statut,Conclusion status (Absence / Presence / Suspect),asbestos_005,enum_single,user_input,room,room,false,,conclusion_status,,,sample_note_type
+conclusion_justification,Conclusion Justification,Justification,Justification for the conclusion,asbestos_005,string,user_input,room,room,false,,,,,sample_note_type
+conclusion_result,Conclusion Result,Résultat,Result text of the conclusion,asbestos_005,string,user_input,room,room,false,,,,,sample_note_type
+characteristic_type,Type,Type,Material type from dropdown (with + to add),asbestos_003,string,user_input,room,room,false,,,,,
+quantification_amount,Quantification amount,Quantité,Numeric amount for quantification,asbestos_003,number,user_input,room,room,false,,,,,
+quantification_unit,Quantification unit,Unité,Unit of measure (dropdown),asbestos_003,string,user_input,room,room,false,,,,,
+quantification_volume_m3,Volume (m3),Volume (m3),Volume in cubic meters,asbestos_003,number,user_input,room,room,false,,,,,
+quantification_mass_t,Mass (T),Masse (T),Mass in tonnes,asbestos_003,number,user_input,room,room,false,,,,,
+additional_info,Additional information,Info. compl,Additional information from dropdown,asbestos_003,string,user_input,room,room,false,,,,,
+component_number,Component number,Numéro du composant,Component identifier (e.g. M001),asbestos_006,string,user_input,room,room,true,,,,,
+sampling_date,Sampling date,Date du prélèvement,Date of sample collection,asbestos_006,string,user_input,room,room,true,,,,,
+sample_identification_number,Sample ID number,Numéro d'identification,Sample identification (e.g. P001),asbestos_006,string,user_input,room,room,true,,,,,
+sample_location_detail,Sample location,Localisation,Location for this sample (e.g. 1 - rdc),asbestos_006,string,user_input,room,room,false,,,,,
+sample_comments,Sample comments,Commentaires,Free text (e.g. Hors Liste),asbestos_006,string,user_input,room,room,false,,,,,
+layers_to_analyze,Layers to analyze,Couches à analyser,One layer; mixed or separated multilayer; NC,asbestos_006,enum_single,user_input,room,room,false,,layers_to_analyze,,,
+layer_details,Layer details,Détails,Additional layer description,asbestos_006,string,user_input,room,room,false,,,,,
+radiation,Radiation,Radiation,Radiation field,asbestos_006,string,user_input,room,room,false,,,,,
+sample_qr_code,Sample QR code,QR code de l'échantillon,QR code identifier,asbestos_006,string,user_input,room,room,false,,,,,
+sample_photo_collection,Sample photo,Photo,Add or edit photo for sample collection,asbestos_006,string,user_input,room,room,false,,,,,
+place_on_sketch,Place on sketch,Placer sur le croquis,Place on sketch after closing window,asbestos_006,boolean,user_input,room,room,false,,,,,
+lab_identification_number,Lab ID number,N° donné par le laboratoire,ID number assigned by laboratory,asbestos_006,string,user_input,room,room,false,,,,,
+laboratory_comments,Laboratory comments,Commentaires laboratoire,Laboratory comments,asbestos_006,string,user_input,room,room,false,,,,,
+linked_analysis_report,Linked analysis report,PV d'analyse lié,Linked PV or report reference,asbestos_006,string,user_input,room,room,false,,,,,
+sample_analysis_result,Analysis result,Résultat analyse,Presence; Absence; No response; NC,asbestos_006,enum_single,user_input,room,room,false,,sample_analysis_result,,,
+laboratory_name,Laboratory name,Nom du laboratoire,Laboratory name (e.g. Eurofins LEM),asbestos_008,string,user_input,report,report,true,,,,,
+cofrac_siret,COFRAC and SIRET number,N° COFRAC et SIRET,Accreditation and SIRET number,asbestos_008,string,user_input,report,report,false,,,,,
+laboratory_address,Address,Adresse,Street and BP address,asbestos_008,string,user_input,report,report,false,,,,,
+laboratory_postal_code_city,Postal code and city,CP et Ville,Postal code and city (e.g. 67701 Saverne),asbestos_008,string,user_input,report,report,false,,,,,

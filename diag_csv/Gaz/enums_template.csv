@@ -1,0 +1,49 @@
+enum_key,enum_title,item_value,item_label_en,item_label_fr
+building_type,Building Type,single_house,Residential (single house),Habitation (maison individuelle)
+building_type,Building Type,apartment,Apartment,Appartement
+building_type,Building Type,other,Other,Autre
+gas_supplied,Gas Supplied,yes,Yes,Oui
+gas_supplied,Gas Supplied,no,No,Non
+gas_nature,Gas Nature,natural_gas,Natural gas,Gaz naturel
+gas_nature,Gas Nature,gpl,LPG,GPL
+gas_label,Gas Label,natural_gas,Natural gas,Gaz naturel
+gas_label,Gas Label,butane,Butane gas,Gaz Butane
+gas_label,Gas Label,propane,Propane gas,Gaz Propane
+gas_label,Gas Label,air_butane,Air butane,Air butané
+gas_label,Gas Label,air_propane,Air propane,Air propané
+gas_label,Gas Label,natural_gas_and_gpl,Natural gas and GPL,Gaz naturel et GPL
+gas_label,Gas Label,butane_and_gpl,Butane and GPL,Gaz Butane et GPL
+gas_label,Gas Label,propane_and_gpl,Propane and GPL,Gaz Propane et GPL
+gas_label,Gas Label,air_butane_and_gpl,Air butane and GPL,Air butané et GPL
+gas_label,Gas Label,air_propane_and_gpl,Air propane and GPL,Air propané et GPL
+gas_container,Gas Container,no_container,No container,Pas de récipient
+gas_container,Gas Container,propane_tank,Propane tank,Citerne propane
+gas_container,Gas Container,propane_bottle,Propane bottle,Bouteille propane
+gas_container,Gas Container,butane_bottle,Butane bottle,Bouteille butane
+identification_type,Identification Type,device_by_device,Identify device by device,Réaliser le repérage appareil par appareil
+identification_type,Identification Type,standard_grid,Identify according to standard grid,Réaliser le repérage selon la grille de la norme
+standard_version,Standard Version,standard_2013,Use 2013 standard,Utiliser la Norme 2013
+standard_version,Standard Version,standard_2022,Use 2022 standard,Utiliser la Norme 2022
+appliance_location,Appliance Location,others,Others,Autres
+appliance_location,Appliance Location,cave,Cellar,Cave
+appliance_location,Appliance Location,garage,Garage,Garage
+appliance_location,Appliance Location,cellier,Pantry,Cellier
+appliance_location,Appliance Location,kitchen,Kitchen,Cuisine
+appliance_location,Appliance Location,back_kitchen,Back kitchen,Arrière-cuisine
+appliance_location,Appliance Location,loggia,Loggia,Loggia
+appliance_location,Appliance Location,basement,Basement,Sous-sol
+appliance_location,Appliance Location,veranda,Veranda,Véranda
+appliance_name_usage,Appliance Name or Usage,cooker,Stove,Cuisinière
+appliance_name_usage,Appliance Name or Usage,cooktop,Cooktop,Table de cuisson
+appliance_name_usage,Appliance Name or Usage,water_heater,Water heater,Chauffe-eau
+appliance_name_usage,Appliance Name or Usage,boiler,Boiler,Chaudière
+appliance_name_usage,Appliance Name or Usage,radiator,Radiator,Radiateur
+appliance_connection_type,Appliance Connection Type,not_connected,Not connected,Non raccordé
+appliance_connection_type,Appliance Connection Type,connected,Connected,Raccordé
+appliance_connection_type,Appliance Connection Type,sealed,Sealed,Etanche
+gaz_checklist_response,Gaz Checklist Response,yes,Yes,Oui
+gaz_checklist_response,Gaz Checklist Response,no,No,Non
+gaz_checklist_response,Gaz Checklist Response,not_applicable,Not applicable,S.O.
+gaz_checklist_response,Gaz Checklist Response,a1,Anomaly A1,A1
+gaz_checklist_response,Gaz Checklist Response,a2,Anomaly A2,A2
+gaz_checklist_response,Gaz Checklist Response,dgi,Immediate grave danger,DGI

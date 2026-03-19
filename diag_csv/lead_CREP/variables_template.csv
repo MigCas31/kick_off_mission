@@ -1,50 +1,81 @@
-variable_key,label_en,label_fr,description,task_key,variable_kind,value_source_type,level_registered_at,level_belongs_to,standard_key,required_default,required_if,enum_ref,catalogue_ref,generator_ref,unit,status
-laboratory_name,Laboratory Name,Nom du laboratoire,Name of the laboratory,lead_003,string,user_input,report,report,,false,,,,draft
-contact_name,Contact Name,Nom Contact,Contact person name,lead_003,string,user_input,report,report,,false,,,,draft
-laboratory_coordinates,Laboratory Coordinates,Coordonnées,Address and coordinates of the laboratory,lead_003,string,user_input,report,report,,false,,,,draft
-calibration_measurement_value,Calibration Measurement Value,Valeur de mesure d'étalonnage,Calibration measurement value taken at beginning of mission,lead_004,number,user_input,report,report,,true,,,mg/cm²,draft
-standard_measurement_value,Standard Measurement Value,Valeur de mesure standard,Standard measurement value taken at beginning of mission,lead_004,number,user_input,report,report,,true,,,mg/cm²,draft
-sampling_datetime,Sampling Date and Time,Date et heure de prélèvement,Date and time when initial device sampling was performed,lead_004,string,user_input,report,report,,true,,,date,draft
-measurement_precision,Measurement Precision,Précision de mesure,Measurement precision for initial device sampling,lead_004,number,user_input,report,report,,false,,,mg/cm²,draft
-sampling_notes,Sampling Notes,Notes de prélèvement,Additional notes or observations for initial device sampling,lead_004,rich_text,user_input,report,report,,false,,,,draft
-calibration_measurement_value_mid,Calibration Measurement Value,Valeur de mesure d'étalonnage,Calibration measurement value taken during room inspection,lead_005,number,user_input,report,report,,true,,,mg/cm²,draft
-standard_measurement_value_mid,Standard Measurement Value,Valeur de mesure standard,Standard measurement value taken during room inspection,lead_005,number,user_input,report,report,,true,,,mg/cm²,draft
-sampling_datetime_mid,Sampling Date and Time,Date et heure de prélèvement,Date and time when mid-mission device sampling was performed,lead_005,string,user_input,report,report,,true,,,date,draft
-measurement_precision_mid,Measurement Precision,Précision de mesure,Measurement precision for mid-mission device sampling,lead_005,number,user_input,report,report,,false,,,mg/cm²,draft
-sampling_notes_mid,Sampling Notes,Notes de prélèvement,Additional notes or observations for mid-mission device sampling,lead_005,rich_text,user_input,report,report,,false,,,,draft
-calibration_measurement_value_final,Calibration Measurement Value,Valeur de mesure d'étalonnage,Calibration measurement value taken at end of mission,lead_006,number,user_input,report,report,,true,,,mg/cm²,draft
-standard_measurement_value_final,Standard Measurement Value,Valeur de mesure standard,Standard measurement value taken at end of mission,lead_006,number,user_input,report,report,,true,,,mg/cm²,draft
-sampling_datetime_final,Sampling Date and Time,Date et heure de prélèvement,Date and time when final device sampling was performed,lead_006,string,user_input,report,report,,true,,,date,draft
-measurement_precision_final,Measurement Precision,Précision de mesure,Measurement precision for final device sampling,lead_006,number,user_input,report,report,,false,,,mg/cm²,draft
-sampling_notes_final,Sampling Notes,Notes de prélèvement,Additional notes or observations for final device sampling,lead_006,rich_text,user_input,report,report,,false,,,,draft
-rooms_visited,Rooms Visited,Locaux visités,List of rooms visited during the inspection,lead_007,tags,user_input,storey,storey,,true,,,,draft
-unmeasured_room_reason,Unmeasured Room Reason,Raison,Reason why a room was visited but not measured,lead_008,enum_single,user_input,storey,storey,,true,,lead_unmeasured_room_reason,,draft
-unmeasured_rooms_list,Unmeasured Rooms List,Liste des locaux non mesurés,List of rooms that were visited but not measured with their reasons,lead_008,rich_text,user_input,storey,storey,,true,,,,draft
-uncontrollable_element_location,Uncontrollable Element Location,Localisations,Location of the uncontrollable element,lead_009,string,user_input,room,room,,true,,,,draft
-uncontrollable_element_part,Uncontrollable Element Part,Parties du local,Parts of the premises that cannot be controlled,lead_009,enum_single,user_input,room,room,,true,,lead_uncontrollable_element_part,,draft
-uncontrollable_element_reason,Uncontrollable Element Reason,Raisons,Reason why the element cannot be controlled in lead mode before works,lead_009,enum_single,user_input,room,room,,true,,lead_uncontrollable_element_reason,,draft
-analysis_number,Analysis Number,N° analyse,Analysis number for laboratory samples,lead_012,string,user_input,report,report,,true,,,,draft
-sample_dispatch_date,Sample Dispatch Date,Date d'envoi des prélèvements,Date when samples were sent to laboratory,lead_012,string,user_input,report,report,,true,,,date,draft
-sample_reception_date,Sample Reception Date,Date de réception des prélèvements,Date when samples were received by laboratory,lead_012,string,user_input,report,report,,true,,,date,draft
-measurement_number,Measurement Number,N° mesure,Measurement number for laboratory result entry,lead_013,string,user_input,report,report,,true,,,,draft
-lab_result_room_name,Room Name,Pièce,Room name where the sample was taken,lead_013,string,user_input,report,report,,true,,,,draft
-lab_result_plan_reference,Plan Reference,Repère plan,Plan reference marker (A; B; C; etc.),lead_013,string,user_input,report,report,,true,,,,draft
-lab_result_ud_number,UD Number,N° UD,Diagnostic Unit number,lead_013,string,user_input,report,report,,true,,,,draft
-lab_result_ud_name,UD Name,Nom UD,Name of the Diagnostic Unit (UD = Unité de diagnostic),lead_013,enum_single,user_input,report,report,,true,,lead_ud_name,,draft
-lab_result_substrate,Substrate,Substrat,Material substrate of the element,lead_013,enum_single,user_input,report,report,,true,,lead_substrate,,draft
-lab_result_apparent_coating,Apparent Coating,Revêtement apparent,Visible coating on the element,lead_013,enum_single,user_input,report,report,,true,,lead_apparent_coating,,draft
-lab_result_height,Height,Hauteur,Height range of the element,lead_013,enum_single,user_input,report,report,,true,,lead_height,,draft
-lab_result_measurement_value,Measurement Value,Mesure,Lead measurement value from laboratory,lead_013,number,user_input,report,report,,true,,,mg/cm²,draft
-lab_result_conservation_state,Conservation State,Etat de conservation,Conservation state of the element,lead_013,enum_single,user_input,report,report,,true,,lead_conservation_state,,draft
-lab_result_classification,Classification,Classement,Element classification (computed or entered),lead_013,number,computed,report,report,,true,,,,draft
-lab_result_degradation_nature,Degradation Nature,Nature de la dégradation,Type of degradation observed,lead_013,enum_single,user_input,report,report,,false,,lead_degradation_nature,,draft
-results_filter_room,Results Filter Room,Filtrer par pièce,Filter results visualization by room,lead_014,enum_single,user_input,report,report,,false,,,,draft
-results_display_mode,Results Display Mode,Mode d'affichage,Display mode for results visualization,lead_014,enum_single,user_input,report,report,,false,,,,draft
-results_summary_filter_room,Results Summary Filter Room,Filtrer par pièce,Filter results summary by room,lead_015,enum_single,user_input,report,report,,false,,,,draft
-import_file,Import File,Fichier d'importation,File to import samples from measurement device,lead_016,string,user_input,report,report,,true,,,file,draft
-import_format,Import Format,Format d'importation,Import format or device type,lead_016,enum_single,user_input,report,report,,true,,lead_import_format,,draft
-import_notes,Import Notes,Notes d'importation,Import notes or errors,lead_016,rich_text,user_input,report,report,,false,,,,draft
-building_degradation_floor_ceiling_collapse,Building Degradation Floor Ceiling Collapse,Dégradation plancher plafond effondrement,The premises have at least one floor or ceiling threatening to collapse or wholly or partially collapsed,lead_017,boolean,user_input,building,building,,false,,,,draft
-building_degradation_water_damage,Building Degradation Water Damage,Dégradation traces d'eau,The premises subject to the report show significant traces of drips or runoff or water leakage on several diagnostic units of the same room,lead_017,boolean,user_input,building,building,,false,,,,draft
-building_degradation_mold_humidity,Building Degradation Mold Humidity,Dégradation moisissures humidité,The premises subject to the report show several diagnostic units of the same room covered with mold or numerous humidity stains,lead_017,boolean,user_input,building,building,,false,,,,draft
-various_observations,Various Observations,Constatations diverses,Various observations and miscellaneous notes,lead_017,rich_text,user_input,report,report,,false,,,,draft
+variable_key,label_en,label_fr,description,task_key,variable_kind,value_source_type,level_registered_at,level_belongs_to,standard_key,required_default,required_if,enum_ref,catalogue_ref,generator_ref,note_type_ref
+laboratory_name,Laboratory Name,Nom du laboratoire,Name of the laboratory,lead_003,string,user_input,report,report,,false,,,,,
+contact_name,Contact Name,Nom Contact,Contact person name,lead_003,string,user_input,report,report,,false,,,,,
+laboratory_coordinates,Laboratory Coordinates,Coordonnées,Address and coordinates of the laboratory,lead_003,string,user_input,report,report,,false,,,,,
+calibration_measurement_value,Calibration Measurement Value,Valeur de mesure d'étalonnage,Calibration measurement value taken at beginning of mission,lead_004,number,user_input,report,report,,true,,,,,
+standard_measurement_value,Standard Measurement Value,Valeur de mesure standard,Standard measurement value taken at beginning of mission,lead_004,number,user_input,report,report,,true,,,,,
+sampling_datetime,Sampling Date and Time,Date et heure de prélèvement,Date and time when initial device sampling was performed,lead_004,string,user_input,report,report,,true,,,,,
+measurement_precision,Measurement Precision,Précision de mesure,Measurement precision for initial device sampling,lead_004,number,user_input,report,report,,false,,,,,
+sampling_notes,Sampling Notes,Notes de prélèvement,Additional notes or observations for initial device sampling,lead_004,rich_text,user_input,report,report,,false,,,,,
+calibration_measurement_value_mid,Calibration Measurement Value,Valeur de mesure d'étalonnage,Calibration measurement value taken during room inspection,lead_005,number,user_input,report,report,,true,,,,,
+standard_measurement_value_mid,Standard Measurement Value,Valeur de mesure standard,Standard measurement value taken during room inspection,lead_005,number,user_input,report,report,,true,,,,,
+sampling_datetime_mid,Sampling Date and Time,Date et heure de prélèvement,Date and time when mid-mission device sampling was performed,lead_005,string,user_input,report,report,,true,,,,,
+measurement_precision_mid,Measurement Precision,Précision de mesure,Measurement precision for mid-mission device sampling,lead_005,number,user_input,report,report,,false,,,,,
+sampling_notes_mid,Sampling Notes,Notes de prélèvement,Additional notes or observations for mid-mission device sampling,lead_005,rich_text,user_input,report,report,,false,,,,,
+calibration_measurement_value_final,Calibration Measurement Value,Valeur de mesure d'étalonnage,Calibration measurement value taken at end of mission,lead_006,number,user_input,report,report,,true,,,,,
+standard_measurement_value_final,Standard Measurement Value,Valeur de mesure standard,Standard measurement value taken at end of mission,lead_006,number,user_input,report,report,,true,,,,,
+sampling_datetime_final,Sampling Date and Time,Date et heure de prélèvement,Date and time when final device sampling was performed,lead_006,string,user_input,report,report,,true,,,,,
+measurement_precision_final,Measurement Precision,Précision de mesure,Measurement precision for final device sampling,lead_006,number,user_input,report,report,,false,,,,,
+sampling_notes_final,Sampling Notes,Notes de prélèvement,Additional notes or observations for final device sampling,lead_006,rich_text,user_input,report,report,,false,,,,,
+rooms_visited,Rooms Visited,Locaux visités,List of rooms visited during the inspection,lead_007,tags,user_input,storey,storey,,true,,,,,
+unmeasured_room_reason,Unmeasured Room Reason,Raison,Reason why a room was visited but not measured,lead_008,enum_single,user_input,storey,storey,,true,,,,,
+unmeasured_rooms_list,Unmeasured Rooms List,Liste des locaux non mesurés,List of rooms that were visited but not measured with their reasons,lead_008,rich_text,user_input,storey,storey,,true,,,,,
+uncontrollable_element_location,Uncontrollable Element Location,Localisations,Location of the uncontrollable element,lead_009,string,user_input,room,room,,true,,,,,
+uncontrollable_element_part,Uncontrollable Element Part,Parties du local,Parts of the premises that cannot be controlled,lead_009,enum_single,user_input,room,room,,true,,,,,
+uncontrollable_element_reason,Uncontrollable Element Reason,Raisons,Reason why the element cannot be controlled in lead mode before works,lead_009,enum_single,user_input,room,room,,true,,,,,
+analysis_number,Analysis Number,N° analyse,Analysis number for laboratory samples,lead_012,string,user_input,report,report,,true,,,,,
+sample_dispatch_date,Sample Dispatch Date,Date d'envoi des prélèvements,Date when samples were sent to laboratory,lead_012,string,user_input,report,report,,true,,,,,
+sample_reception_date,Sample Reception Date,Date de réception des prélèvements,Date when samples were received by laboratory,lead_012,string,user_input,report,report,,true,,,,,
+measurement_number,Measurement Number,N° mesure,Measurement number for laboratory result entry,lead_013,string,user_input,report,report,,true,,,,,
+lab_result_room_name,Room Name,Pièce,Room name where the sample was taken,lead_013,string,user_input,report,report,,true,,,,,
+lab_result_plan_reference,Plan Reference,Repère plan,Plan reference marker (A; B; C; etc.),lead_013,string,user_input,report,report,,true,,,,,
+lab_result_ud_number,UD Number,N° UD,Diagnostic Unit number,lead_013,string,user_input,report,report,,true,,,,,
+lab_result_ud_name,UD Name,Nom UD,Name of the Diagnostic Unit (UD = Unité de diagnostic),lead_013,enum_single,user_input,report,report,,true,,,,,
+lab_result_substrate,Substrate,Substrat,Material substrate of the element,lead_013,enum_single,user_input,report,report,,true,,,,,
+lab_result_apparent_coating,Apparent Coating,Revêtement apparent,Visible coating on the element,lead_013,enum_single,user_input,report,report,,true,,,,,
+lab_result_height,Height,Hauteur,Height range of the element,lead_013,enum_single,user_input,report,report,,true,,,,,
+lab_result_measurement_value,Measurement Value,Mesure,Lead measurement value from laboratory,lead_013,number,user_input,report,report,,true,,,,,
+lab_result_conservation_state,Conservation State,Etat de conservation,Conservation state of the element,lead_013,enum_single,user_input,report,report,,true,,,,,
+lab_result_classification,Classification,Classement,Element classification (computed or entered),lead_013,number,computed,report,report,,true,,,,,
+lab_result_degradation_nature,Degradation Nature,Nature de la dégradation,Type of degradation observed,lead_013,enum_single,user_input,report,report,,false,,,,,
+results_filter_room,Results Filter Room,Filtrer par pièce,Filter results visualization by room,lead_014,enum_single,user_input,report,report,,false,,,,,
+results_display_mode,Results Display Mode,Mode d'affichage,Display mode for results visualization,lead_014,enum_single,user_input,report,report,,false,,,,,
+results_summary_filter_room,Results Summary Filter Room,Filtrer par pièce,Filter results summary by room,lead_015,enum_single,user_input,report,report,,false,,,,,
+import_file,Import File,Fichier d'importation,File to import samples from measurement device,lead_016,string,user_input,report,report,,true,,,,,
+import_format,Import Format,Format d'importation,Import format or device type,lead_016,enum_single,user_input,report,report,,true,,,,,
+import_notes,Import Notes,Notes d'importation,Import notes or errors,lead_016,rich_text,user_input,report,report,,false,,,,,
+building_degradation_floor_ceiling_collapse,Building Degradation Floor Ceiling Collapse,Dégradation plancher plafond effondrement,The premises have at least one floor or ceiling threatening to collapse or wholly or partially collapsed,lead_017,boolean,user_input,building,building,,false,,,,,
+building_degradation_water_damage,Building Degradation Water Damage,Dégradation traces d'eau,The premises subject to the report show significant traces of drips or runoff or water leakage on several diagnostic units of the same room,lead_017,boolean,user_input,building,building,,false,,,,,
+building_degradation_mold_humidity,Building Degradation Mold Humidity,Dégradation moisissures humidité,The premises subject to the report show several diagnostic units of the same room covered with mold or numerous humidity stains,lead_017,boolean,user_input,building,building,,false,,,,,
+various_observations,Various Observations,Constatations diverses,Various observations and miscellaneous notes,lead_017,rich_text,user_input,report,report,,false,,,,,
+device_name,Device Name,Nom de l'appareil,Name of the measurement device,lead_001,string,user_input,report,report,,true,,,,lead_measurement_device,
+serial_number,Serial Number,Numéro de série,Serial number of the measurement device,lead_001,string,user_input,report,report,,true,,,,lead_measurement_device,
+asn_declaration_number,ASN Declaration Number,Numéro de déclaration ASN,ASN declaration number for the measurement device,lead_001,string,user_input,report,report,,true,,,,lead_measurement_device,
+manufacturer,Manufacturer,Fabricant,Manufacturer of the measurement device,lead_001,enum_single,user_input,report,report,,true,,,,lead_measurement_device,
+model,Model,Modèle,Model of the measurement device,lead_001,enum_single,user_input,report,report,,true,,,,lead_measurement_device,
+source_type,Source Type,Type de source,Source type of the measurement device,lead_001,enum_single,user_input,report,report,,true,,,,lead_measurement_device,
+calibration_standard,Calibration Standard,Norme d'étalonnage,Calibration standard used for the measurement device,lead_001,string,user_input,report,report,,true,,,,lead_measurement_device,
+last_source_loading_date,Last Source Loading Date,Date de dernier chargement source,Date when the source was last loaded,lead_001,string,user_input,report,report,,true,,,,lead_measurement_device,
+asn_authorization_date,ASN Authorization Date,Date d'autorisation ASN,Date of ASN authorization,lead_001,string,user_input,report,report,,true,,,,lead_measurement_device,
+activity_at_purchase,Activity at Purchase,Activité à l'achat,Activity at the time of purchase,lead_001,string,user_input,report,report,,true,,,,lead_measurement_device,
+asn_validity_end_date,ASN Validity End Date,Date de fin de validité ASN,End date of ASN validity,lead_001,string,user_input,report,report,,true,,,,lead_measurement_device,
+device_precision,Precision of the device,Précision de l'appareil,Precision of the measurement device,lead_001,string,user_input,report,report,,true,,,,lead_measurement_device,
+asn_holder,ASN Holder,Porteur ASN,ASN holder information,lead_001,string,user_input,report,report,,true,,,,lead_measurement_device,
+certificate_pdf,Certificate PDF,Certificat PDF,PDF certificate for the measurement device,lead_001,string,user_input,report,report,,true,,,,lead_measurement_device,
+picture,Picture,Photo,Photo of the sampled element,lead_010,string,user_input,room,room,,true,,,,,lead_element_sample
+position,Position,Position,Spatial location of the element sample,lead_010,string,user_input,room,room,,true,,,,,lead_element_sample
+repere,Reference,Repère,Reference marker letter (A; B; C; etc.),lead_010,string,user_input,room,room,,true,,,,,lead_element_sample
+hauteur,Height,Hauteur,Height range of the element,lead_010,enum_single,user_input,room,room,,true,,,,,lead_element_sample
+nom_ud,Diagnostic Unit Name,Nom UD,Name of the Diagnostic Unit (UD = Unité de diagnostic),lead_010,enum_single,user_input,room,room,,true,,,,,lead_element_sample
+partie_mesuree,Measured Part,Partie mesurée,Part of the element that is measured,lead_010,enum_single,user_input,room,room,,true,,,,,lead_element_sample
+substrat,Substrate,Substrat,Material substrate of the element,lead_010,enum_single,user_input,room,room,,true,,,,,lead_element_sample
+revetement_apparent,Apparent Coating,Revêtement apparent,Visible coating on the element,lead_010,enum_single,user_input,room,room,,true,,,,,lead_element_sample
+facteurs_degradation_batis,Building Degradation Factors,Facteurs de dégradation bâtis,Building degradation factors affecting the element,lead_010,enum_single,user_input,room,room,,false,,,,,lead_element_sample
+mesure,Measurement,Mesure,Lead measurement value in mg/cm²,lead_010,number,user_input,room,room,,true,,,,,lead_element_sample
+observations_raison_nm_travaux,Observations Reason Not Mesurable Works,Observations (Raison Non Mesurable Travaux),Reason for non-measurement or work-related observations,lead_010,enum_single,user_input,room,room,,false,,,,,lead_element_sample
+nature_degradation,Nature of Degradation,Nature de la dégradation,Type of degradation observed,lead_010,enum_single,user_input,room,room,,false,,,,,lead_element_sample
+etat_conservation,State of Conservation,Etat de conservation,Conservation state of the element,lead_010,enum_single,user_input,room,room,,true,,,,,lead_element_sample
+degradation_percentage,Degradation Percentage,% Dégradation,Percentage of degradation (0-100),lead_010,number,user_input,room,room,,false,,,,,lead_element_sample
+class,Element Class,Classe de l'élément,Element Class in [0;1;2;3],lead_010,enum_single,computed,room,room,,true,,,,,lead_element_sample
+lead_element_precision," Precision of the measure of the sample"," Précision de la mesure de l'échantillon"," Precision of the measurement of the sample",lead_010,number,user_input,room,room,,true,,,,,lead_element_sample
+,,,,,,,,,,,,,,,lead_element_sample
