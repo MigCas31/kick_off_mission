@@ -1,1 +1,2 @@
 note_type_key,note_type_title,note_type_description,note_type_label_en,note_type_label_fr
+gaz_appliance_state_note,Gaz Appliance State Note,Captures appliance state C7-C12 including localisation photo anomaly and non-controlled fields per registered appliance,Gas appliance state note,Note etat appareil gaz

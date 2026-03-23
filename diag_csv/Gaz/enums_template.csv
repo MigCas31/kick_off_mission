@@ -47,3 +47,12 @@ gaz_checklist_response,Gaz Checklist Response,not_applicable,Not applicable,S.O.
 gaz_checklist_response,Gaz Checklist Response,a1,Anomaly A1,A1
 gaz_checklist_response,Gaz Checklist Response,a2,Anomaly A2,A2
 gaz_checklist_response,Gaz Checklist Response,dgi,Immediate grave danger,DGI
+operational_control,Operational Control,gas_supply_not_operational,Gas supply not operational,Alimentation en gaz non fonctionnelle
+operational_control,Operational Control,premises_or_outbuildings_not_accessible,Premises or outbuildings not accessible,Non accessibilité des locaux ou des dépendances
+operational_control,Operational Control,installation_not_supplied_with_gas,Installation not supplied with gas,Installation non alimentée en gaz
+operational_control,Operational Control,installation_not_supplied_with_electricity,Installation not supplied with electricity,Installation non alimentée en électricité
+operational_control,Operational Control,appliances_cannot_be_operated_by_designated_person,Present appliances cannot be switched on or off by a designated person,"Appareils d'utilisation présents ne pouvant être mis en marche ou arrêtés par une personne désignée"
+operational_control,Operational Control,appliance_already_in_immediate_serious_danger,Appliance already marked as immediate serious danger,Appareil déjà mis en Danger Grave et Immédiat
+operational_control,Operational Control,appliance_switched_off,Appliance switched off,Appareil à l'arrêt
+operational_control,Operational Control,appliance_out_of_service,Appliance out of service,Appareil hors service
+operational_control,Operational Control,appliance_out_of_service_no_tightness_or_flow_test,Appliance out of service with no tightness or flow test,Appareil hors service test d'étanchéité et de débit non réalisé
