@@ -1,0 +1,11 @@
+task_id,task_name,task_description,lifecycle_phase,lifecycle_level,lifecycle_moment,stage,step,requiredness,condition,ui_type, note_type_keys, catalogue_key, generator_key
+asbestos_001,Add Diagnostic Element,Add one material or survey point with number photo location and place on plan,onsite,room,on_overview,2.G,room.overview,always,,form,,,
+asbestos_002,Survey Point Materials and List CSP,Enter construction component part to inspect Liste CSP and description from checklist,onsite,room,on_overview,2.G,room.overview,always,,form,,,
+asbestos_003,Characteristics and Quantification,Enter material type quantification (amount; unit; m3; T) and additional info,onsite,room,on_overview,2.G,room.overview,optional,,form,,,
+asbestos_004,Conservation State and Evaluation,Select material state run Evaluate for classification; complete evaluation form (category; surface; protection; circulation; shocks) and validate score,onsite,room,on_overview,2.G,room.overview,optional,,catalogue_registration,,conservation_state,
+asbestos_005,Samples and Conclusion,Add sample with classification photo and place; set methodology (operator judgment or waiting for analysis); set status (Absence / Presence / Suspect) with justification and result,onsite,room,on_overview,2.G,room.overview,optional,,note_type,sample_note_type,,
+asbestos_006,Sample Details and Lab Link,Enter per-sample date ID location layers; link lab ID and PV; record analysis result,onsite,room,on_overview,2.G,room.overview,optional,,form,,,
+asbestos_007,Analysis Reports,Import analysis report (PV); link to sample; edit legend; copy zone from PDF or image,onsite,report,on_completion,2.L,report.on-completion,optional,,form,,,
+asbestos_008,Laboratory Coordinates,Enter lab name COFRAC and SIRET number address postal code and city; save default choices,onsite,report,on_completion,2.L,report.on-completion,optional,,form,,,
+asbestos_009,Uncontrollable Elements,Add uncontrollable element with locations parts of room reasons and means to implement,onsite,report,on_completion,2.L,report.on-completion,optional,,form,,,
+asbestos_010,Report Options and Conclusions,Set pre-report sentence in conclusions and Mention options,offsite-post,report,on_completion,3.A,case.report-completion,optional,,form,,,

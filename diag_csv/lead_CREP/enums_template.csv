@@ -1,10 +1,10 @@
 enum_key,enum_title,item_value,item_label_en,item_label_fr
-lead_height,Height,ht_less_than_0_5m,Height less than 0.5 m,Ht < 0,5 m
-lead_height,Height,ht_0_5_to_1m,Height between 0.5 m and 1 m,0,5 m < Ht < 1 m
-lead_height,Height,ht_1_to_1_5m,Height between 1 m and 1.5 m,1 m < Ht < 1,5 m
-lead_height,Height,ht_1_5_to_2m,Height between 1.5 m and 2 m,1,5 m < Ht < 2 m
-lead_height,Height,ht_2_to_2_5m,Height between 2 m and 2.5 m,2 m < Ht < 2,5 m
-lead_height,Height,ht_2_5_to_3m,Height between 2.5 m and 3 m,2,5 m < Ht < 3 m
+lead_height,Height,ht_less_than_0_5m,Height less than 0.5 m,Ht < 0.5m
+lead_height,Height,ht_0_5_to_1m,Height between 0.5 m and 1 m,0.5 m < Ht < 1 m
+lead_height,Height,ht_1_to_1_5m,Height between 1 m and 1.5 m,1 m < Ht < 1.5m
+lead_height,Height,ht_1_5_to_2m,Height between 1.5 m and 2 m,1.5 m < Ht < 2 m
+lead_height,Height,ht_2_to_2_5m,Height between 2 m and 2.5 m,2 m < Ht < 2.5m
+lead_height,Height,ht_2_5_to_3m,Height between 2.5 m and 3 m,2.5 m < Ht < 3 m
 lead_height,Height,ht_greater_than_3m,Height greater than 3 m,Ht > 3 m
 lead_ud_name,Diagnostic Unit Name,furniture,Furniture,Ameublement
 lead_ud_name,Diagnostic Unit Name,rafter,Rafter,Arbalétrier
@@ -193,10 +193,10 @@ lead_conservation_state,Conservation State,not_visible,Not Visible,Non visible
 lead_conservation_state,Conservation State,not_degraded,Not Degraded,Non dégradé
 lead_conservation_state,Conservation State,usage_state,Usage State,Etat d'usage
 lead_conservation_state,Conservation State,degraded,Degraded,Dégradé
-lead_element_class,Element Class in [0;1;2;3],0,"Class 0: Lead < 1 mg/cm² (Regardless of condition)","Classe 0 : Plomb < 1 mg/cm² (Quel que soit l'état)"
-lead_element_class,Element Class in [0;1;2;3],1,"Class 1: Lead >= 1 mg/cm² (Non-degraded or good condition)","Classe 1 : Plomb >= 1 mg/cm² (Non dégradé ou état d'usage)"
-lead_element_class,Element Class in [0;1;2;3],2,"Class 2: Lead >= 1 mg/cm² (Slightly degraded / Wear and tear)","Classe 2 : Plomb >= 1 mg/cm² (État d'usage / Dégradation légère)"
-lead_element_class,Element Class in [0;1;2;3],3,"Class 3: Lead >= 1 mg/cm² (Severely degraded / Dangerous)","Classe 3 : Plomb >= 1 mg/cm² (Dégradé / Risque d'exposition)"
+lead_element_class,Element Class in [0;1;2;3],0,Class 0: Lead < 1 mg/cm² (Regardless of condition),Classe 0 : Plomb < 1 mg/cm² (Quel que soit l'état)
+lead_element_class,Element Class in [0;1;2;3],1,Class 1: Lead >= 1 mg/cm² (Non-degraded or good condition),Classe 1 : Plomb >= 1 mg/cm² (Non dégradé ou état d'usage)
+lead_element_class,Element Class in [0;1;2;3],2,Class 2: Lead >= 1 mg/cm² (Slightly degraded / Wear and tear),Classe 2 : Plomb >= 1 mg/cm² (État d'usage / Dégradation légère)
+lead_element_class,Element Class in [0;1;2;3],3,Class 3: Lead >= 1 mg/cm² (Severely degraded / Dangerous),Classe 3 : Plomb >= 1 mg/cm² (Dégradé / Risque d'exposition)
 lead_device_manufacturer,Device Manufacturer,arelco,ARELCO,ARELCO
 lead_device_manufacturer,Device Manufacturer,fondis,FONDIS,FONDIS
 lead_device_manufacturer,Device Manufacturer,protec,PROTEC,PROTEC
@@ -211,3 +211,5 @@ lead_device_source_type,Device Source Type,cd_109,109 Cd,109 Cd
 lead_device_source_type,Device Source Type,co_57,57 Co,57 Co
 lead_device_source_type,Device Source Type,cadmium_109,Cadmium 109,Cadmium 109
 lead_device_source_type,Device Source Type,cobalt_57,Cobalt 57,Cobalt 57
+conclusion_methodology,Conclusion Methodology,operator_judgment,Operator judgment,Sur jugement de l'opérateur
+conclusion_methodology,Conclusion Methodology,waiting_for_analysis,Waiting for analysis results,En attente des résultats d'analyse
