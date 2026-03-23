@@ -1,9 +1,8 @@
 task_id,task_name,task_description,lifecycle_phase,lifecycle_level,lifecycle_moment,stage,step,requiredness,condition,ui_type, note_type_keys, catalogue_key, generator_key
-termite_001,Add Inspected Element,Discover and add inspected elements to the diagnostic as they are found during room inspection,onsite,room,on_overview,2.G,room.overview,always,,note_type,termite_inspected_element,,
-termite_002,Object of Inspection Configuration,Configure the object of inspection including location object type material details and part selection,onsite,room,on_overview,2.G,room.overview,always,,generator,,,termite_inspection_object
-termite_003,Standardized Inspection Configuration,Configure standardized inspection data including presence indicators infestation degree and termite species result,onsite,room,on_overview,2.G,room.overview,optional,,generator,,,termite_standardized_inspection
-termite_004,Summary Status,View and confirm summary status for Termites Parasites and Fungi,onsite,room,on_overview,2.G,room.overview,optional,,form,,,
-termite_005,Element Additional Information,Enter additional information and notes for the inspected element,onsite,room,on_overview,2.G,room.overview,optional,,form,,,
+termite_001,Add Inspected Element,Discover and add inspected elements to the diagnostic as they are found during room inspection,onsite,room,on_overview,2.G,room.overview,optional,,note_type,termite_inspected_element,,
+termite_002,Object of Inspection Configuration,Configure the object of inspection including location object type material details and part selection,onsite,room,on_overview,2.G,room.overview,optional,for each termite_inspected_element,generator,,,termite_inspection_object
+termite_003,Standardized Inspection Configuration,Configure standardized inspection data including termite fungi and parasite presence indicators infestation degrees and species results,onsite,room,on_overview,2.G,room.overview,optional,,generator,,conclusion_termite,termite_standardized_inspection
+termite_004,Summary Status,View and confirm summary status for Termites Parasites and Fungi,onsite,room,on_overview,2.G,room.overview,always,,form,,,
 termite_006,Termite Detection Duration,Enter the duration of termite detection with options to match field duration,onsite,report,on_completion,2.L,report.on-completion,optional,,form,,,
 termite_007,Various Observations,Enter various observations with template management,onsite,report,on_completion,2.L,report.on-completion,optional,,form,,,
 termite_008,Comments Deviation from Norm,Enter comments regarding deviations from the norm with template management,onsite,report,on_completion,2.L,report.on-completion,optional,,form,,,

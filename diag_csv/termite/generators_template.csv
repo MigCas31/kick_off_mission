@@ -1,3 +1,3 @@
 generator_key,generator_title,generator_description,generator_label_en,generator_label_fr
 termite_inspection_object,Object of Inspection,Configure the object of inspection including location object type material details and part selection,Object of Inspection,Objet de l'inspection
-termite_standardized_inspection,Standardized Inspection,Configure standardized inspection data including presence indicators infestation degree and termite species result,Standardized Inspection,Inspection normalisée
+termite_standardized_inspection,Standardized Inspection,Configure standardized inspection data including termite fungi and parasite presence indicators infestation degrees and species results,Standardized Inspection,Inspection normalisée

@@ -35,6 +35,38 @@ termite_inspection_object,Inspection Object,wall_plate,Wall plate,Panne sablièr
 termite_inspection_object,Inspection Object,rafters,Rafters,Chevrons
 termite_inspection_object,Inspection Object,battening,Battening,Voligeage
 termite_inspection_object,Inspection Object,lathwork,Lathwork,Liteaunage
+termite_inspection_object,Inspection Object,false_ceiling,False ceiling,Faux plafond
+termite_inspection_object,Inspection Object,false_floor,False floor,Faux plancher
+termite_inspection_object,Inspection Object,window,Window,Fenêtre
+termite_inspection_object,Inspection Object,duct,Duct,Gaine
+termite_inspection_object,Inspection Object,joinery_frames,Joinery frames,Huisseries
+termite_inspection_object,Inspection Object,slab,Slab,Dalle
+termite_inspection_object,Inspection Object,wood_debris,Wood debris,Débris de bois
+termite_inspection_object,Inspection Object,staircase,Staircase,Escalier
+termite_inspection_object,Inspection Object,water_drainage,Water drainage,Évacuation d'eau
+termite_inspection_object,Inspection Object,boards,Boards,Planches
+termite_inspection_object,Inspection Object,baseboards,Baseboards,Plinthes
+termite_inspection_object,Inspection Object,door,Door,Porte
+termite_inspection_object,Inspection Object,beams,Beams,Poutres
+termite_inspection_object,Inspection Object,inspection_chamber,Inspection chamber,Regard
+termite_inspection_object,Inspection Object,ceiling_covering,Ceiling covering,Revêtement de plafond
+termite_inspection_object,Inspection Object,floor_covering,Floor covering,Revêtement de sol
+termite_inspection_object,Inspection Object,wall_covering,Wall covering,Revêtement mural
+termite_inspection_object,Inspection Object,ground,Ground,Sol
+termite_inspection_object,Inspection Object,trees,Trees,Arbres
+termite_inspection_object,Inspection Object,other_vegetation,Other vegetation,Autres végétaux
+termite_inspection_object,Inspection Object,crops,Crops,Cultures
+termite_inspection_object,Inspection Object,plant_debris,Plant debris,Débris de végétaux
+termite_inspection_object,Inspection Object,footbridge,Footbridge,Passerelle
+termite_inspection_object,Inspection Object,fence_posts,Fence posts,Piquets de clôture
+termite_inspection_object,Inspection Object,gate,Gate,Portail
+termite_inspection_object,Inspection Object,posts,Posts,Poteaux
+termite_inspection_object,Inspection Object,backfill,Backfill,Remblais
+termite_inspection_object,Inspection Object,stumps,Stumps,Souches
+termite_inspection_object,Inspection Object,wood_storage,Wood storage,Stockage de bois
+termite_inspection_object,Inspection Object,tie_beam,Tie beam,Entrait
+termite_inspection_object,Inspection Object,false_tie_beam,False tie beam,Faux-entrait
+termite_inspection_object,Inspection Object,king_post,King post,Poinçon
 termite_object_detail,Object Detail,steel,Steel,Acier
 termite_object_detail,Object Detail,steel_lacquered,Steel lacquered,Acier laqué
 termite_object_detail,Object Detail,steel_painted,Steel painted,Acier peint
@@ -174,12 +206,12 @@ termite_location_height,Location Height,upper,Upper,Supérieure
 termite_location_height,Location Height,total,Total,Totale
 termite_location_height,Location Height,low,Low,Basse
 termite_location_height,Location Height,high,High,Haute
-termite_location_height,Location Height,height_less_than_0_5m,Height < 0.5m,Hauteur < 0,5m
-termite_location_height,Location Height,height_0_5_to_1m,0.5m < Height < 1m,0,5m < Hauteur < 1m
-termite_location_height,Location Height,height_1_to_1_5m,1m < Height < 1.5m,1m < Hauteur < 1,5m
-termite_location_height,Location Height,height_1_5_to_2m,1.5m < Height < 2m,1,5m < Hauteur < 2m
-termite_location_height,Location Height,height_2_to_2_5m,2m < Height < 2.5m,2m < Hauteur < 2,5m
-termite_location_height,Location Height,height_2_5_to_3m,2.5m < Height < 3m,2,5m < Hauteur < 3m
+termite_location_height,Location Height,height_less_than_0_5m,Height < 0.5m,Hauteur < 0.5m,
+termite_location_height,Location Height,height_0_5_to_1m,0.5m < Height < 1m,0.5m < Hauteur < 1m,
+termite_location_height,Location Height,height_1_to_1_5m,1m < Height < 1.5m,1m < Hauteur < 1.5m,
+termite_location_height,Location Height,height_1_5_to_2m,1.5m < Height < 2m,1.5m < Hauteur < 2m,
+termite_location_height,Location Height,height_2_to_2_5m,2m < Height < 2.5m,2m < Hauteur < 2.5m,
+termite_location_height,Location Height,height_2_5_to_3m,2.5m < Height < 3m,2.5m < Hauteur < 3m,
 termite_location_height,Location Height,height_greater_than_3m,Height > 3m,Hauteur > 3m
 termite_opening_type,Opening Type,opening,Opening,Ouvrant
 termite_opening_type,Opening Type,fixed,Fixed,Dormant
@@ -240,6 +272,12 @@ termite_infestation_degree,Infestation Degree,widespread_presence,Widespread pre
 termite_infestation_degree,Infestation Degree,minor_presence,Minor presence,présence faible
 termite_infestation_degree,Infestation Degree,presence_on_entire_element,Presence on entire element,présence sur tout l'élément concerné
 termite_infestation_degree,Infestation Degree,presence_on_part_of_element,Presence on part of element,présence sur une partie de l'élément
+termite_species_result,Termite Species Result,no_termite_infestation_signs,No signs of termite infestation,Absence d'indices d'infestation de termites
+termite_species_result,Termite Species Result,termite_infestation_signs_present,Signs of termite infestation present,Présence d'indices d'infestation de termites
+termite_species_result,Termite Species Result,subterranean_termites,Subterranean termites,Termites souterrains
+termite_species_result,Termite Species Result,drywood_termites,Drywood termites,Termites de bois sec
+termite_species_result,Termite Species Result,arboreal_termites,Arboreal termites,Termites arboricoles
+termite_species_result,Termite Species Result,cryptotermes,Cryptotermes,Cryptotermes
 termite_species_result,Termite Species Result,kalotermes,Kalotermes,Kalotermes
 termite_species_result,Termite Species Result,kalotermes_flavicolis,Kalotermes flavicolis,Kalotermes flavicolis
 termite_species_result,Termite Species Result,reticulitermes,Reticulitermes,Reticulitermes
@@ -248,8 +286,49 @@ termite_species_result,Termite Species Result,reticulitermes_grassei,Reticuliter
 termite_species_result,Termite Species Result,reticulitermes_lucifugus,Reticulitermes lucifugus,Reticulitermes lucifugus
 termite_species_result,Termite Species Result,reticulitermes_santonensis,Reticulitermes santonensis,Reticulitermes santonensis
 termite_species_result,Termite Species Result,reticulitermes_urbis,Reticulitermes urbis,Reticulitermes urbis
-termite_species_result,Termite Species Result,others,--- Others ---,--- Autres ---
 termite_species_result,Termite Species Result,unspecified_type,Unspecified type,Type non spécifié
+fungi_presence_indicators,Fungi Presence Indicators,micelium_or_fruiting_body,Mycelium or fruiting body visible,Mycélium ou fructification visible
+fungi_presence_indicators,Fungi Presence Indicators,cubic_rot_clues,Cubic rot clues present,Indices de pourriture cubique
+fungi_presence_indicators,Fungi Presence Indicators,fibrous_rot_clues,Fibrous rot clues present,Indices de pourriture fibreuse
+fungi_presence_indicators,Fungi Presence Indicators,soft_rot_clues,Soft rot clues present,Indices de pourriture molle
+fungi_presence_indicators,Fungi Presence Indicators,wood_humidity_signs,Wood humidity signs,Signes d'humidité du bois
+fungi_infestation_degree,Fungi Infestation Degree,minor_degradations,Minor degradation(s),dégradation(s) faible(s)
+fungi_infestation_degree,Fungi Infestation Degree,major_degradations,Major degradation(s),dégradation(s) importante(s)
+fungi_infestation_degree,Fungi Infestation Degree,slightly_degraded_elements,Slightly degraded element(s),élément(s) faiblement dégradé(s)
+fungi_infestation_degree,Fungi Infestation Degree,heavily_degraded_elements,Heavily degraded element(s),élément(s) fortement dégradé(s)
+fungi_infestation_degree,Fungi Infestation Degree,presence_on_entire_element,Presence on entire element,présence sur tout l'élément concerné
+fungi_infestation_degree,Fungi Infestation Degree,presence_on_part_of_element,Presence on part of element,présence sur une partie de l'élément
+fungi_species_result,Fungi Species Result,no_fungal_infestation_signs,No signs of fungal infestation,Absence d'indices d'infestation fongique
+fungi_species_result,Fungi Species Result,fungal_infestation_signs_present,Signs of fungal infestation present,Présence d'indices d'infestation fongique
+fungi_species_result,Fungi Species Result,cubic_rot_fungus,Cubic rot fungus,Champignon de pourriture cubique
+fungi_species_result,Fungi Species Result,fibrous_rot_fungus,Fibrous rot fungus,Champignon de pourriture fibreuse
+fungi_species_result,Fungi Species Result,soft_rot_fungus,Soft rot fungus,Champignon de pourriture molle
+fungi_species_result,Fungi Species Result,lignivore_fungus,Lignivore fungus,Champignon lignivore
+fungi_species_result,Fungi Species Result,wood_development_fungus,Wood development fungus,Champignon de développement du bois
+fungi_species_result,Fungi Species Result,mushroom,Mushroom,Champignon
+parasite_presence_indicators,Parasite Presence Indicators,exit_holes_visible,Exit holes visible,Trous de sortie visibles
+parasite_presence_indicators,Parasite Presence Indicators,galleries_visible,Galleries visible,Galeries visibles
+parasite_presence_indicators,Parasite Presence Indicators,frass_visible,Frass visible,Vermoulure visible
+parasite_presence_indicators,Parasite Presence Indicators,fresh_bore_dust,Fresh bore dust,Farine fraîche de percement
+parasite_presence_indicators,Parasite Presence Indicators,insect_activity_traces,Insect activity traces,Traces d'activité d'insectes
+parasite_infestation_degree,Parasite Infestation Degree,minor_degradations,Minor degradation(s),dégradation(s) faible(s)
+parasite_infestation_degree,Parasite Infestation Degree,major_degradations,Major degradation(s),dégradation(s) importante(s)
+parasite_infestation_degree,Parasite Infestation Degree,slightly_degraded_elements,Slightly degraded element(s),élément(s) faiblement dégradé(s)
+parasite_infestation_degree,Parasite Infestation Degree,heavily_degraded_elements,Heavily degraded element(s),élément(s) fortement dégradé(s)
+parasite_infestation_degree,Parasite Infestation Degree,presence_on_entire_element,Presence on entire element,présence sur tout l'élément concerné
+parasite_infestation_degree,Parasite Infestation Degree,presence_on_part_of_element,Presence on part of element,présence sur une partie de l'élément
+parasite_species_result,Parasite Species Result,lyctus_brunneus,Lyctus brunneus,Lyctus brunneus
+parasite_species_result,Parasite Species Result,lyctus_linearis,Lyctus linearis,Lyctus linearis
+parasite_species_result,Parasite Species Result,petites_vrillettes_anobium_punctatum,Petites vrillettes (Anobium punctatum),Petites vrillettes (Anobium punctatum)
+parasite_species_result,Parasite Species Result,xestobium_rufovillosum_grosses_vrillettes,Xestobium rufovillosum (Grosses vrillettes),Xestobium rufovillosum (Grosses vrillettes)
+parasite_species_result,Parasite Species Result,black_borer_agent,Black borer agent,Agent de piqûres noires
+parasite_species_result,Parasite Species Result,fresh_wood_longhorn,Fresh wood longhorn,Capricorne de bois frais
+parasite_species_result,Parasite Species Result,grand_sirex_urocerus_gigas,Grand sirex (Urocerus gigas),Grand sirex (Urocerus gigas)
+parasite_species_result,Parasite Species Result,common_sirex_sirex_juvencus,Common sirex (Sirex juvencus),Sirex commun (Sirex juvencus)
+parasite_species_result,Parasite Species Result,carpenter_bee_xylocopa_violacea,Carpenter bee (Xylocopa violacea),Abeilles charpentières (Xylocopa violacea)
+parasite_species_result,Parasite Species Result,ground_nesting_wasps,Ground nesting wasps,Guêpes fouisseuses
+parasite_species_result,Parasite Species Result,ants,Ants,Fourmis
+parasite_species_result,Parasite Species Result,unspecified_type,Unspecified type,Type non spécifié
 termite_arrete_status,Official Comments Arrêté Status,located_in_arrete_zone,Located in area subject to order,Bien situé dans une zone soumise à un arrêté
 termite_arrete_status,Official Comments Arrêté Status,not_subject_to_arrete,Not subject to order,Non soumise à un arrêté
 termite_arrete_status,Official Comments Arrêté Status,verify_termite_com_fr,Verify Termite.com.fr,Vérif. Termite.com.fr
