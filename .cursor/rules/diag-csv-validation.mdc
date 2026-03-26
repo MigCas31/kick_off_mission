@@ -48,6 +48,7 @@ admin_023,Lead Report Mission Configuration,Configure mission type analysis scop
 - `level_registered_at`: Level where variable is registered. Must be one of: `case`, `report`, `property`, `building`, `storey`, `room`, `building_element`, `object`
 - `level_belongs_to`: Level the variable belongs to. Must be one of: `case`, `report`, `property`, `building`, `storey`, `room`, `building_element`, `object`
 - `required_default`: Default required status (`true`/`false`)
+- `required_in_pdf`: Required in generated PDF (`True`/`False`)
 - `required_if`: Condition for required status (e.g., `minors_present=true`)
 - `enum_ref`: Reference to `enum_key` in enums_template.csv (if `variable_kind` is `enum_single` or `enum_multiple`)
 - `catalogue_ref`: Reference to catalogue if applicable

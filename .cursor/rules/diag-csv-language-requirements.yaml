@@ -36,6 +36,7 @@ All CSV template files in:
 - `note_type_key` - Must be English, lowercase, with underscores
 - `generator_key` - Must be English, lowercase, with underscores
 - `catalogue_key` - Must be English, lowercase, with underscores
+- `required_in_pdf` - Must be English boolean text (`True` or `False`)
 - `note_type_title` - Must be English
 - `note_type_description` - Must be English
 - `generator_title` - Must be English

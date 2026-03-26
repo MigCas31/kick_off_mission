@@ -221,6 +221,13 @@ columns:
     values: ["true", "false"]
     example: "true"
   
+  - name: required_in_pdf
+    type: boolean
+    required: false
+    values: ["True", "False", "true", "false"]
+    description: "Whether the variable must appear in generated PDF output"
+    example: "False"
+  
   - name: required_if
     type: string
     required: false
