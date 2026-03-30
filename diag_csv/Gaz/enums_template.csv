@@ -52,8 +52,15 @@ operational_control,Operational Control,gas_supply_not_operational,Gas supply no
 operational_control,Operational Control,premises_or_outbuildings_not_accessible,Premises or outbuildings not accessible,Non accessibilité des locaux ou des dépendances
 operational_control,Operational Control,installation_not_supplied_with_gas,Installation not supplied with gas,Installation non alimentée en gaz
 operational_control,Operational Control,installation_not_supplied_with_electricity,Installation not supplied with electricity,Installation non alimentée en électricité
-operational_control,Operational Control,appliances_cannot_be_operated_by_designated_person,Present appliances cannot be switched on or off by a designated person,"Appareils d'utilisation présents ne pouvant être mis en marche ou arrêtés par une personne désignée"
+operational_control,Operational Control,appliances_cannot_be_operated_by_designated_person,Present appliances cannot be switched on or off by a designated person,Appareils d'utilisation présents ne pouvant être mis en marche ou arrêtés par une personne désignée
 operational_control,Operational Control,appliance_already_in_immediate_serious_danger,Appliance already marked as immediate serious danger,Appareil déjà mis en Danger Grave et Immédiat
 operational_control,Operational Control,appliance_switched_off,Appliance switched off,Appareil à l'arrêt
 operational_control,Operational Control,appliance_out_of_service,Appliance out of service,Appareil hors service
 operational_control,Operational Control,appliance_out_of_service_no_tightness_or_flow_test,Appliance out of service with no tightness or flow test,Appareil hors service test d'étanchéité et de débit non réalisé
+conclusion_phrase,Conclusion Phrase,installation_no_anomalies,No anomalies,L'installation ne comporte aucune anomalie.
+conclusion_phrase,Conclusion Phrase,installation_anomalies_a1_repair_later,A1 anomalies repair later,L'installation comporte des anomalies de type A1 qui devront être réparées ultérieurement.
+conclusion_phrase,Conclusion Phrase,installation_anomalies_a2_repair_best_delays,A2 anomalies repair as soon as possible,L'installation comporte des anomalies de type A2 qui devront être réparées dans les meilleurs délais.
+conclusion_phrase,Conclusion Phrase,installation_anomalies_dgi_before_recommissioning,Serious and Immediate Danger (DGI) anomalies repair before recommissioning,L'installation comporte des anomalies de type DGI qui devront être réparées avant la remise en service.
+conclusion_phrase,Conclusion Phrase,installation_anomaly_32c_syndic_landlord,Anomaly 32c syndic or social landlord,L'installation comporte une anomalie 32c qui devra faire l'objet d'un traitement particulier par le syndic ou le bailleur social sous le contrôle du distributeur de gaz.
+case_dgi_operator_action_taken,DGI Operator Action Taken,total_closure_with_condemnation_label,Total closure with condemnation label,Fermeture totale avec pose d'une étiquette signalant la condamnation de l'installation de gaz
+case_dgi_operator_action_taken,DGI Operator Action Taken,partial_closure_with_condemnation_label,Partial closure with condemnation label,Fermeture partielle avec pose d'une étiquette signalant la condamnation d'un appareil ou d'une partie de l'installation.

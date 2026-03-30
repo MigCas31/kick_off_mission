@@ -1,0 +1,6 @@
+Type,Sub-type,Air Intake,Flue Gas Exhaust,Description (EN),Description (FR)
+A,A1,Indoor air,Indoor air,Flueless appliance,Appareil non raccordé
+B,B11,Indoor air,Natural (Chimney),Open flue (Natural draught),Tirage naturel (avec coupe-tirage)
+B,B14 / B23,Indoor air,Forced (Fan),Fan assisted open flue,Flux forcé (avec extracteur)
+C,C13,Outdoor air,Outdoor (Wall),Balanced flue (Horizontal),Ventouse horizontale
+C,C33,Outdoor air,Outdoor (Roof),Balanced flue (Vertical),Ventouse verticale

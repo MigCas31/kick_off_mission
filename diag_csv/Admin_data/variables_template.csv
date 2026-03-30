@@ -59,7 +59,7 @@ scope_of_identification,Scope of Identification,Perimetre repérage,Scope of ide
 building_plan_image,Building Plan Image,Plan du batiment,Image file of the building plan,admin_011,string,user_input,building,building,False,,,,,,False
 room_building_level_designation,Room Building Level Designation,Designation batiment niveau,Designation of building and level for the room,admin_014,enum_single,user_input,room,room,True,,building_level_designation,,,,False
 room_designation,Room Designation,Designation piece,Designation or name of the room,admin_014,enum_single,user_input,room,room,True,,room_designation,,,,False
-room_non_visit_justification,Room Non-Visit Justification,Justification de non visite,Justification for not visiting the room,admin_015,enum_single,user_input,room,room,False,room_not_visited,non_visit_justification,,,,False
+room_non_visit_justification,Room Non-Visit Justification,Justification de non visite,Justification for not visiting the room,admin_015,enum_single,user_input,room,room,False,room_not_visited,non_visit_justification,,,,True
 room_floor_material,Room Floor Material,Materiau sol,Floor materials,admin_016,enum_multiple,user_input,room,room,True,,floor_material,,,,False
 room_wall_material,Room Wall Material,Materiau mur,Wall materials,admin_017,enum_multiple,user_input,room,room,True,,wall_material,,,,False
 room_ceiling_material,Room Ceiling Material,Materiau plafond,Ceiling materials,admin_018,enum_multiple,user_input,room,room,True,,ceiling_material,,,,False
