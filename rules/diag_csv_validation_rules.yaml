@@ -15,6 +15,7 @@ required_files:
   - enums_template.csv
   - catalogues_template.csv
   - generators_template.csv
+  - note_types_template.csv
 
 ## Joint Keys (variables_template.*_ref references *_key in the other template)
 joint_keys:
@@ -550,7 +551,7 @@ rules:
     severity: error
     check: |
       1. For each folder in diag_csv/*/:
-         - Verify all required files exist: tasks_template.csv, variables_template.csv, enums_template.csv, catalogues_template.csv, generators_template.csv
+         - Verify all required files exist: tasks_template.csv, variables_template.csv, enums_template.csv, catalogues_template.csv, generators_template.csv, note_types_template.csv
          - Files may be empty (only headers) but must exist
          - For each CSV file:
            a. Read header row from template folder CSV
@@ -640,14 +641,14 @@ skills:
   - name: reference_integrity_check
     description: "Verify all foreign key references (joint keys) are valid"
     function: |
-      1. Load all CSV files in diagnostic folder and template/note_types_template.csv
+      1. Load all CSV files in the diagnostic folder (including note_types_template.csv)
       2. Extract all primary keys:
          - task_ids from tasks_template.csv
          - variable_keys from variables_template.csv
          - enum_keys from enums_template.csv
          - catalogue_keys from catalogues_template.csv
          - generator_keys from generators_template.csv
-         - note_type_keys from note_types_template.csv
+         - note_type_keys from note_types_template.csv in that folder
       3. Check all references (joint keys and task refs):
          - variables.task_key -> tasks.task_id
          - variables.enum_ref -> enums.enum_key (if not empty)
@@ -663,9 +664,9 @@ skills:
   - name: folder_structure_validation
     description: "Verify each folder in diag_csv has all required CSV files and matching structure"
     function: |
-      1. Read template folder and extract column headers from each template CSV file
+      1. Read template folder and extract column headers from each template CSV file (all entries in required_files, including note_types_template.csv)
       2. For each folder in diag_csv/*/:
-         - Check if all required files exist: tasks_template.csv, variables_template.csv, enums_template.csv, catalogues_template.csv, generators_template.csv
+         - Check if all required files exist: tasks_template.csv, variables_template.csv, enums_template.csv, catalogues_template.csv, generators_template.csv, note_types_template.csv
          - For each existing file:
            a. Read header row
            b. Compare with template header (normalize column names, ignore order)

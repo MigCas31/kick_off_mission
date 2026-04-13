@@ -1,4 +1,4 @@
-variable_key,label_en,label_fr,description,task_key,variable_kind,value_source_type,level_registered_at,level_belongs_to,required_default,required_if,enum_ref,catalogue_ref,generator_ref," note_type_ref",required_in_pdf
+variable_key,label_en,label_fr,description,task_key,variable_kind,value_source_type,level_registered_at,level_belongs_to,required_default,required_if,enum_ref,catalogue_ref,generator_ref, note_type_ref,required_in_pdf
 picture,Picture,Photo,Photo of the inspected element,termite_001,string,user_input,room,room,optional,,,,,termite_inspected_element,False
 observation_text,Observation,Observation,Text description of the observation,termite_001,string,user_input,room,room,false,,,,,termite_inspected_element,False
 location,Location,,Location of the inspected object,termite_002,string,user_input,room,room,false,,,,,,False

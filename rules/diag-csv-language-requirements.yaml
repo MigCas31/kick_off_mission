@@ -11,8 +11,8 @@ globs: diag_csv/**/*.csv,template/note_types_template.csv
 
 ### Applies To
 All CSV template files in:
-- `diag_csv/**/*.csv`
-- `template/note_types_template.csv`
+- `diag_csv/**/*.csv` (including each subfolder's `note_types_template.csv`)
+- `template/note_types_template.csv` (reference copy for column layout and defaults)
 
 ### Column Language Rules
 

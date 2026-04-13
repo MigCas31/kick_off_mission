@@ -133,7 +133,7 @@ lead_substrate,Substrate,cob,Cob,torchis
 lead_substrate,Substrate,tiles,Tiles,tuiles
 lead_substrate,Substrate,glazing,Glazing,vitrage
 lead_apparent_coating,Apparent Coating,slate,Slate,ardoises
-lead_apparent_coating,Apparent Coating,none,None,aucun
+lead_apparent_coating,Apparent Coating,none,,aucun
 lead_apparent_coating,Apparent Coating,cladding,Cladding,bardage
 lead_apparent_coating,Apparent Coating,bitumen,Bitumen,bitume
 lead_apparent_coating,Apparent Coating,raw,Raw,brut

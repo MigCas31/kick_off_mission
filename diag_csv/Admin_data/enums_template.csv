@@ -90,7 +90,7 @@ floor_material,Floor Material,earthen_floor,Earthen floor,Terre battue
 floor_material,Floor Material,earth_grass,Earth and grass,Terre et herbe
 floor_material,Floor Material,terracotta_tiles,Terracotta tiles,Tomettes
 wall_material,Wall Material,slates,Slates,Ardoises
-wall_material,Wall Material,none,None,Aucun
+wall_material,Wall Material,none,,Aucun
 wall_material,Wall Material,cladding,Cladding,Bardage
 wall_material,Wall Material,steel_cladding,Steel cladding,Bardage acier
 wall_material,Wall Material,metal_cladding,Metal cladding,Bardage métallique

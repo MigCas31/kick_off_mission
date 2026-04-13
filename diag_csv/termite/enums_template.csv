@@ -206,12 +206,12 @@ termite_location_height,Location Height,upper,Upper,Supérieure
 termite_location_height,Location Height,total,Total,Totale
 termite_location_height,Location Height,low,Low,Basse
 termite_location_height,Location Height,high,High,Haute
-termite_location_height,Location Height,height_less_than_0_5m,Height < 0.5m,Hauteur < 0.5m,
-termite_location_height,Location Height,height_0_5_to_1m,0.5m < Height < 1m,0.5m < Hauteur < 1m,
-termite_location_height,Location Height,height_1_to_1_5m,1m < Height < 1.5m,1m < Hauteur < 1.5m,
-termite_location_height,Location Height,height_1_5_to_2m,1.5m < Height < 2m,1.5m < Hauteur < 2m,
-termite_location_height,Location Height,height_2_to_2_5m,2m < Height < 2.5m,2m < Hauteur < 2.5m,
-termite_location_height,Location Height,height_2_5_to_3m,2.5m < Height < 3m,2.5m < Hauteur < 3m,
+termite_location_height,Location Height,height_less_than_0_5m,Height < 0.5m,Hauteur < 0.5m
+termite_location_height,Location Height,height_0_5_to_1m,0.5m < Height < 1m,0.5m < Hauteur < 1m
+termite_location_height,Location Height,height_1_to_1_5m,1m < Height < 1.5m,1m < Hauteur < 1.5m
+termite_location_height,Location Height,height_1_5_to_2m,1.5m < Height < 2m,1.5m < Hauteur < 2m
+termite_location_height,Location Height,height_2_to_2_5m,2m < Height < 2.5m,2m < Hauteur < 2.5m
+termite_location_height,Location Height,height_2_5_to_3m,2.5m < Height < 3m,2.5m < Hauteur < 3m
 termite_location_height,Location Height,height_greater_than_3m,Height > 3m,Hauteur > 3m
 termite_opening_type,Opening Type,opening,Opening,Ouvrant
 termite_opening_type,Opening Type,fixed,Fixed,Dormant

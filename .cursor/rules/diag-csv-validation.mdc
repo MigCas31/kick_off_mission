@@ -6,7 +6,7 @@ globs: diag_csv/**/*.csv,template/note_types_template.csv
 # Diagnostic CSV Templates Validation and Automation Rules
 
 ## Overview
-This rule set defines validation, automation, and safeguarding rules for working with diagnostic CSV templates. Each diagnostic folder (e.g., `diag_csv/Admin_data`) contains 5 CSV templates that must be kept consistent and validated. Note types are defined in `template/note_types_template.csv` and referenced by tasks via `note_type_keys`.
+This rule set defines validation, automation, and safeguarding rules for working with diagnostic CSV templates. Each diagnostic folder (e.g., `diag_csv/Admin_data`) contains 6 CSV templates that must be kept consistent and validated, including `note_types_template.csv` in that folder (column layout matches `template/note_types_template.csv`; copy missing files from `template/`). Note types are referenced by tasks via `note_type_keys`.
 
 ## CSV File Structure
 
@@ -102,7 +102,7 @@ mission_analysis_scope,Mission Analysis Scope,common_parts,Common parts,Analyse 
 - `generator_label_fr`: French label
 
 ### 6. note_types_template.csv
-**Purpose**: Defines note type structures for observation capture and evidence-based tasks. Note types are stored in `template/note_types_template.csv` and referenced by tasks via `note_type_keys` (comma-separated list).
+**Purpose**: Defines note type structures for observation capture and evidence-based tasks. Each `diag_csv/*/` folder must include `note_types_template.csv` (same columns as `template/note_types_template.csv`). Tasks reference note types via `note_type_keys` (comma-separated list).
 
 **Columns** (must match template exactly):
 - `note_type_key`: Unique identifier for the note type (primary key, links to `tasks.note_type_keys`; required)
@@ -189,11 +189,11 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 **Action**: Report duplicates.
 
 ### Rule 11: Note Type-Task Consistency
-**Check**: All `note_type_keys` values in `tasks_template.csv` (comma-separated list) must exist as `note_type_key` in `note_types_template.csv`.
+**Check**: All `note_type_keys` values in `tasks_template.csv` (comma-separated list) must exist as `note_type_key` in that diagnostic folder's `note_types_template.csv`.
 **Action**: 
 1. Parse comma-separated `note_type_keys` from tasks
-2. Extract all unique `note_type_key` values from `note_types_template.csv`
-3. Report any note type keys referenced in tasks that don't exist in note_types_template.csv
+2. Extract all unique `note_type_key` values from that folder's `note_types_template.csv`
+3. Report any note type keys referenced in tasks that don't exist in that file
 
 ### Rule 12: Note Type Variable Kind Validation
 **Check**: Variables in `note_types_template.csv` must have valid `variable_kind` values (`image`, `text`, `rich_text`, `location`, `number`, `string`, etc.).
@@ -307,7 +307,7 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 3. Verify all `task_key` in variables exist in tasks
 4. Verify all `catalogue_key` in tasks exist in catalogues
 5. Verify all `generator_key` in tasks exist in generators
-6. Verify all `note_type_keys` in tasks exist in note_types_template.csv (parse comma-separated values)
+6. Verify all `note_type_keys` in tasks exist in that folder's `note_types_template.csv` (parse comma-separated values)
 7. Verify all *_ref in variables (catalogue_ref, generator_ref, note_type_ref) reference existing *_key (joint keys)
 
 ## Skills
@@ -342,14 +342,14 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 **Implementation**:
 ```python
 # Pseudo-code
-1. Load all CSV files in diagnostic folder and template/note_types_template.csv
+1. Load all CSV files in the diagnostic folder (including note_types_template.csv)
 2. Extract all primary keys:
    - task_ids from tasks_template.csv
    - variable_keys from variables_template.csv
    - enum_keys from enums_template.csv
    - catalogue_keys from catalogues_template.csv
    - generator_keys from generators_template.csv
-   - note_type_keys from template/note_types_template.csv
+   - note_type_keys from note_types_template.csv in that folder
 3. Check all references:
    - variables.task_key -> tasks.task_id
    - variables.enum_ref -> enums.enum_key (if not empty)
@@ -380,10 +380,10 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 1. Read tasks_template.csv
 2. Extract all note_type_keys values (comma-separated lists)
 3. Split comma-separated values and collect unique note_type_key values
-4. Read template/note_types_template.csv
+4. Read note_types_template.csv in the same diagnostic folder
 5. Extract all unique note_type_key values
 6. Compare and report:
-   - Note type keys in tasks that don't exist in note_types_template.csv
+   - Note type keys in tasks that don't exist in that folder's note_types_template.csv
    - Note type keys in note_types_template.csv that are not referenced by any task (optional warning)
 7. Return list of broken references
 ```
@@ -393,7 +393,7 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 **Implementation**:
 ```python
 # Pseudo-code
-1. Read template/note_types_template.csv
+1. Read note_types_template.csv in the diagnostic folder being validated
 2. For each note_type_key:
    - Group rows by note_type_key
    - Verify field_order values are unique and sequential
@@ -412,7 +412,7 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 **Implementation**:
 ```python
 # Pseudo-code
-1. Read template/note_types_template.csv
+1. Read note_types_template.csv in the diagnostic folder being validated
 2. Group rows by note_type_key
 3. For each note_type_key:
    - Count number of variables (rows)
@@ -527,7 +527,7 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 4. Check for orphaned references (tasks, variables, enums, catalogues, generators, note types)
 5. Verify CSV format is correct (no commas in values)
 6. Verify enum completeness for all enum variables
-7. Verify all note_type_keys referenced in tasks exist in note_types_template.csv
+7. Verify all note_type_keys referenced in tasks exist in that folder's note_types_template.csv
 8. Verify note type variables have correct structure and field orders
 9. Verify all variables have valid `level_registered_at` and `level_belongs_to` values
 10. Verify all `enum_ref` and `catalogue_ref` reference existing enums/catalogues
@@ -557,14 +557,14 @@ lead_element_sample,Lead Element Sample,Observation note for capturing element s
 **Process**:
 1. Read tasks_template.csv, extract all note_type_keys values
 2. Parse comma-separated note type keys
-3. Read template/note_types_template.csv, extract all unique note_type_key values
+3. Read note_types_template.csv in the same diagnostic folder, extract all unique note_type_key values
 4. Compare and report missing note type keys
 5. Return list of tasks with broken note type references
 
 ### Example 4: Note Type Variable Validation
 **Query**: "Check if note type variables have correct field_order and variable_kind"
 **Process**:
-1. Read template/note_types_template.csv
+1. Read note_types_template.csv in the diagnostic folder being validated
 2. Group by note_type_key
 3. For each note type, verify field_order values are unique and sequential
 4. Verify variable_kind values are valid (image, text, location, number, etc.)
